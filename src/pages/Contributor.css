@@ -1,0 +1,23 @@
+.pic{
+    padding: 50px 0;
+    /* background-color: var(--backgroud); */
+    color: var(--white-color);
+    font-family:'Montserrat:400', sans-serif;
+    text-transform: capitalize ;
+}
+
+
+.contributor{
+    
+    width:16rem;
+    box-shadow:18px 19px 11px -11px none;
+    transition:0.1s all   ;
+    background-color:var(--card-2);
+
+}
+
+.contributor:hover{
+    box-shadow: none;
+    transform: translateY(-5px)
+    
+}
