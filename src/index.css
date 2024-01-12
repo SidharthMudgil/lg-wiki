@@ -1,0 +1,26 @@
+
+body {
+  margin: 0;
+  font-family:  'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --black-color : #272424cf ;
+  --white-color:  #F5F5F5 ;
+  --backgroud: #424242 ;
+  --card-1: #bfb3f3 ;
+  --card-2: #27332fce ;
+  --text-color: #C5C5C5 ;
+  --grey-100: #EAEAEA ;
+ 
+}
+
