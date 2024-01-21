@@ -1,0 +1,65 @@
+.pic{
+ 
+    color: var(--white-color);
+    font-family:'Montserrat:400', sans-serif;
+    text-transform: capitalize ;
+    
+    padding: 0 20px;
+}
+
+.firstpart{
+position: relative;
+        display: grid  ;
+          grid-template-columns: repeat(10, 150px);
+
+}
+
+.secondpart{
+    display: grid  ;
+    grid-template-columns:repeat(9,150px);
+
+    margin-left: 4.1rem;
+    position: relative;
+    
+}
+
+
+
+
+.con{
+    width: 113.53px;
+    height: 113.53px;
+  /* background-image:url("../dev2.jpg");
+  background-size: cover; */
+
+
+    transition: all 0.2s;
+    clip-path: polygon(52% 0, 100% 30%, 100% 70%, 52% 100%, 0% 70%, 0% 30%);
+}
+.con:hover , .label:hover   {
+
+background-color: rgba(20, 210, 39, 0.34) ;
+
+    opacity: 1;
+
+
+}
+
+.label{
+    position: absolute;
+    width:113.53px;
+    height: 113.53px;
+top:0;
+    clip-path: polygon(52% 0, 100% 30%, 100% 70%, 52% 100%, 0% 70%, 0% 30%);
+
+    opacity: 0;
+   
+}
+.text{
+position: absolute;
+top: 40px;
+left:40px;
+ color:black;
+
+    
+}
