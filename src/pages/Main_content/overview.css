@@ -21,11 +21,13 @@ padding:10px 0 25px 0;
 font-family: Montserrat;
 font-size: 22px;
 font-weight: 400;
+width:40rem;
+height: 171px;
 line-height: 27px;
 
 
 justify-self: center;
-margin: auto 0;
+margin: 0 auto;
 
 
 }

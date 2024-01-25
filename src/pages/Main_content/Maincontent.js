@@ -28,20 +28,18 @@ export default function Maincontent() {
             accessKey="k"
           />
           <p className=" basic-info py-3 my-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book . It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. <br />
-            Go read our unique post at Coding Internships
+          Welcome to LG-Wiki, your go-to resource for all things Liquid Galaxy! LG-Wiki is your gateway to understanding, exploring, and maximizing the potential of Liquid Galaxy.
           </p>
         </div>
 
         {/* <!-- contributer card info --> */}
-       <Overview/>  
+       <Overview/> 
+       <div className="pic">   
+    
+
       <Contribute />
-      
+      </div>
+  
       </div>
     </div>
   );

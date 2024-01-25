@@ -4,21 +4,25 @@
     font-family:'Montserrat:400', sans-serif;
     text-transform: capitalize ;
     
-    padding: 0 20px;
+    padding: 20px 40px ;
 }
 
 .firstpart{
 position: relative;
         display: grid  ;
-          grid-template-columns: repeat(10, 150px);
+          grid-template-columns: repeat(13,100px);
+          column-gap:10px;
+          margin-top: -22px;
+          margin-left: 0;
 
 }
 
 .secondpart{
     display: grid  ;
-    grid-template-columns:repeat(9,150px);
-
-    margin-left: 4.1rem;
+    grid-template-columns:repeat(12,100px);
+    column-gap: 10px;
+    margin-left: 3.35rem;
+    margin-top:-22px;
     position: relative;
     
 }
@@ -27,8 +31,8 @@ position: relative;
 
 
 .con{
-    width: 113.53px;
-    height: 113.53px;
+    width: 100px;
+    height: 100px;
   /* background-image:url("../dev2.jpg");
   background-size: cover; */
 
@@ -47,8 +51,8 @@ background-color: rgba(20, 210, 39, 0.34) ;
 
 .label{
     position: absolute;
-    width:113.53px;
-    height: 113.53px;
+    width:100px;
+    height: 100px;
 top:0;
     clip-path: polygon(52% 0, 100% 30%, 100% 70%, 52% 100%, 0% 70%, 0% 30%);
 
@@ -57,9 +61,13 @@ top:0;
 }
 .text{
 position: absolute;
-top: 40px;
-left:40px;
+top: 35px;
+left:32px;
  color:black;
 
     
+}
+.container{
+    width: 100px;
+    height: 100px;
 }
