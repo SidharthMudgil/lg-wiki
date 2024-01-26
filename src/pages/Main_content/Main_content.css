@@ -1,0 +1,18 @@
+
+.back{
+    color: var(--text-color);
+    background-color: #16151a;
+    /* background-color: var(--backgroud); */
+    /* var(--grey-backgroud) */
+}
+.basic-info{
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    padding: 0 25px;
+    
+    
+}

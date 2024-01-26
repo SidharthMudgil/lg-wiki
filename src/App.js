@@ -1,28 +1,30 @@
+import {  Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import './App.css';
-// import Maincontent from './pages/Maincontent';
-import Naviagtion from './pages/Navigaton';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
+import Maincontent from './pages/Main_content/Maincontent';
 
-// } from "react-router-dom";
+import Layout from './pages/layout/Layout';
+import NavigatorH from './pages/Navigator/NavigatorH';
+
+
 function App() {
+  const router =createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<NavigatorH/>}>
+        <Route path='' element={(<Maincontent/>)} />
+
+       <Route path='docs' element={<Layout />}>
+        <Route path='' element={(<></>   )} />
+</Route>
+      </Route>
+    )
+  )
+  
   return (
-    <Naviagtion />
-    // <Router>
-    //   <Switch>
-    //       <Route path="/Maincontent">
-    //       <Maincontent />
-    //       </Route>
-      
-    //     </Switch>
-     
-    
+<>
+<RouterProvider router={router}/>
 
 
-    // </Router>
-
+</>
   );
 }
 
