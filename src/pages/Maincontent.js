@@ -3,7 +3,7 @@ import lg from "./lg.png";
 import "./Main_content.css";
 
 export default function Maincontent() {
-  return (  
+  return (
     <div>
       <div className="back">
         <nav className="bg-transparent  font-semibold   text-lg ">

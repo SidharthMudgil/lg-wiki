@@ -91,7 +91,7 @@ export default function Contribute() {
 
             <div className="name text-center p-1"> {item.name} </div>
             <div className="des text-center p-1"> {item.des} </div>
-        
+
           </div>
         );
       })}

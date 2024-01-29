@@ -8,9 +8,9 @@ export default function Header() {
     <>
       <nav className="  nav font-semibold  b    text-lg ">
         <div className="float-left py-2  px-5">
-          <img src={LogoLg} alt="logo" className="w-10 h-10  " />
-    </div> 
-         <ul className="flex justify-center space-x-11 items-center py-4 px-4 ">
+          <img src= {LogoLg} alt="logo" className="w-10 h-10  " />
+        </div>
+        <ul className="flex justify-center space-x-11 items-center py-4 px-4 ">
           <li className="nav-li">
             <Link to="">Home</Link>
           </li>
@@ -21,7 +21,7 @@ export default function Header() {
           <li className="nav-li">
             <Link to="/arc">architecture</Link>
           </li>
-         
+
         </ul>
       </nav>
     </>

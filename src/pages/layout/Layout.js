@@ -5,9 +5,9 @@ import Navigaton from "./Navigaton";
 export default function Layout() {
   return (
     <>
-    <div className="main h-screen">
-      <Navigaton />
-      <Outlet />
+      <div className="main h-screen">
+        <Navigaton />
+        <Outlet />
       </div>
     </>
   );

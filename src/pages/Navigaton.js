@@ -5,7 +5,7 @@ export default function Navigaton() {
   function menubar(x) {
     let id = document.getElementById(x);
     let dis = getComputedStyle(id);
-    if (dis.display == "none") {
+    if (dis.display === "none") {
       document.getElementById(x).style.display = "block";
     } else {
       document.getElementById(x).style.display = "none";
@@ -23,7 +23,7 @@ export default function Navigaton() {
                 type="search"
                 placeholder="Search"
                 className="rounded-xl  w-52 h-11 search "
-              />  
+              />
             </li>
             <li
               onClick={() => {
@@ -54,19 +54,19 @@ export default function Navigaton() {
                 <li className="menutab" >CodeSample</li>
               </ul>
             </li>
-            <li  onClick={() => {
+            <li onClick={() => {
               let id = 3;
               menubar(id);
             }}
               className="py-1 menu-ul ">
-            Quickstart
-            <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
-            <ul id="3"  className="menuex">
-              <li className="menutab" >Architeture </li>
+              Quickstart
+              <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
+              <ul id="3" className="menuex">
+                <li className="menutab" >Architeture </li>
 
-              <li className="menutab"> team </li>
-            </ul>
-          </li>
+                <li className="menutab"> team </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>

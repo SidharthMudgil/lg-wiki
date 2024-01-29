@@ -1,14 +1,11 @@
-
-
-.nav-li{
-    cursor: pointer;
-    transition:0.2s ease-in;
+.nav-li {
+  cursor: pointer;
+  transition: 0.2s ease-in;
 }
-.nav-li:hover{
-    transform: scale(1.1);
+.nav-li:hover {
+  transform: scale(1.1);
 }
-.back{
-    color: var(--text-color);
-    background-color: var(--backgroud);
-    /* var(--grey-backgroud) */
+.back {
+  color: var(--text-color);
+  background-color: var(--backgroud);
 }

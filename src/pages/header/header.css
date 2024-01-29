@@ -1,24 +1,21 @@
-.nav{
-    background-color: var(--header-color);
-    color: var(--text-color);
-    text-transform: capitalize;
-    /* border-bottom: 1px solid var(--text-color,0.1); */
-   
+.nav {
+  background-color: var(--header-color);
+  color: var(--text-color);
+  text-transform: capitalize;
 }
 
-.nav-li{
-    cursor: pointer;
-    transition:0.2s ease-in;
+.nav-li {
+  cursor: pointer;
+  transition: 0.2s ease-in;
 }
-.nav-li:hover{
-    transform: scale(1.1);
+.nav-li:hover {
+  transform: scale(1.1);
 }
 
-.footer{
-    font-family: "Montserrat";
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--text-color);
-    background-color: var(--footer-color);
-
+.footer {
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--footer-color);
 }

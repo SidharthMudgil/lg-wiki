@@ -1,27 +1,22 @@
-
 body {
   margin: 0;
-  font-family:  'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 :root {
-  --black-color : #272424cf ;
-  --white-color:  #F5F5F5 ;
-  --backgroud:  #121615 ;
-  --header-color: #1E2524 ;
-  --l-nav: #293130 ;
-  --text-color: #FFFFFF ;
-  --footer-color: #1E2524;
-;
- 
+  --black-color: #272424cf;
+  --white-color: #f5f5f5;
+  --backgroud: #121615;
+  --header-color: #1e2524;
+  --l-nav: #293130;
+  --text-color: #ffffff;
+  --footer-color: #1e2524;
 }
-
