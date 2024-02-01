@@ -10,6 +10,13 @@ export default function Navigaton() {
         if (e.ctrlKey && e.key === 'k') {
           e.preventDefault();
           inputRef.current.focus();
+          document.getElementById("search").style.width="15rem";
+          document.getElementById("search").style.borderRadius="25px"
+          document.getElementById("icon").style.display="none";
+          document.getElementById("iconsub").style.display="none";
+          document.getElementById("iconsubk").style.display="none";
+
+
         }
       };
   
@@ -17,6 +24,8 @@ export default function Navigaton() {
   
       return () => {
         window.removeEventListener('keydown', handleKeyDown);
+      
+
       };
     }, []);
 
@@ -37,16 +46,25 @@ export default function Navigaton() {
 
         <ul className="menu ">
           <li >
-            <span className="add_icon border_start"> <i className="fas fa-search"></i>  </span>
+            <span className="add_icon border_start" id="icon"> <i className="fas fa-search"></i>  </span>
             <input
               type="search"
               placeholder="Search..."
               className="   search  "
             ref={inputRef}
-              
-            />
-            <span className="add_icon border_end"> <div className="icon_background"> ctrl</div> 
-            <span className=" "><div className="icon_background"> k </div> </span> </span>
+            onFocus={()=>{ 
+               document.getElementById("search").style.width="15rem";
+          document.getElementById("search").style.borderRadius="25px"
+          document.getElementById("icon").style.display="none";
+          document.getElementById("iconsub").style.display="none";
+          document.getElementById("iconsubk").style.display="none";
+
+
+            }}
+              id="search"
+          />
+            <span className="add_icon border_end " id="iconsub"> <div className="icon_background"  id="iconsub"> ctrl</div> 
+            <div className="icon_background"  id="iconsubk"> k </div>  </span>
 
           </li>
           <li
