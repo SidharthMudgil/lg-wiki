@@ -1,73 +1,76 @@
 .pic{
  
-    color: var(--white-color);
-    font-family:'Montserrat:400', sans-serif;
-    text-transform: capitalize ;
-    
-    padding: 20px 40px ;
+  color: var(--white-color);
+  font-family:'Montserrat:400', sans-serif;
+  text-transform: capitalize ;
+  
+  padding: 20px 40px ;
 }
 
 .firstpart{
 position: relative;
-        display: grid  ;
-          grid-template-columns: repeat(13,100px);
-          column-gap:10px;
-          margin-top: -22px;
-          margin-left: 0;
+      display: grid  ;
+        grid-template-columns: repeat(13,100px);
+        column-gap:10px;
+        margin-top: -22px;
+        margin-left: 0;
 
 }
 
 .secondpart{
-    display: grid  ;
-    grid-template-columns:repeat(12,100px);
-    column-gap: 10px;
-    margin-left: 3.35rem;
-    margin-top:-22px;
-    position: relative;
-    
+  display: grid  ;
+  grid-template-columns:repeat(12,100px);
+  column-gap: 10px;
+  margin-left: 3.35rem;
+  margin-top:-22px;
+  position: relative;
+  
 }
 
 
 
 
 .con{
-    width: 100px;
-    height: 100px;
-  /* background-image:url("../dev2.jpg");
-  background-size: cover; */
+  width: 100px;
+  height: 100px;
+/* background-image:url("../dev2.jpg");
+background-size: cover; */
 
 
-    transition: all 0.2s;
-    clip-path: polygon(52% 0, 100% 30%, 100% 70%, 52% 100%, 0% 70%, 0% 30%);
+  transition: all 0.2s;
+  clip-path: polygon(52% 0, 100% 30%, 100% 70%, 52% 100%, 0% 70%, 0% 30%);
 }
 .con:hover , .label:hover   {
 
-background-color: rgba(20, 210, 39, 0.34) ;
+background-color: rgba(158, 232, 166, 0.34) ;
 
-    opacity: 1;
+  opacity: 1;
 
 
 }
 
 .label{
-    position: absolute;
-    width:100px;
-    height: 100px;
+  position: absolute;
+  width:100px;
+  height: 100px;
 top:0;
-    clip-path: polygon(52% 0, 100% 30%, 100% 70%, 52% 100%, 0% 70%, 0% 30%);
+  clip-path: polygon(52% 0, 100% 30%, 100% 70%, 52% 100%, 0% 70%, 0% 30%);
 
-    opacity: 0;
-   
+  opacity: 0;
+ 
 }
 .text{
 position: absolute;
-top: 35px;
-left:32px;
- color:black;
-
-    
+top:30px;
+left:6px;
+color:black;
+font-family: Montserrat;
+font-weight: bold;
+text-align: center;
+opacity: 1;
+  
 }
 .container{
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
