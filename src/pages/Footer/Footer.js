@@ -17,29 +17,29 @@ export default function Footer() {
             </a>
             <a
               href="https://liquidgalaxy.eu" target='_blank'
-              className="block  py-4  "           >
+              className="block  py-4  " rel="noreferrer"           >
               <i className="fa fa-globe px-4 "></i>www.liquidgalaxylab.eu
             </a>
             <div className="icon block px-4 py-4 space-x-4">
 
 
-              <a href="http://liquidgalaxy.eu" target='_blank'>
+              <a href="http://liquidgalaxy.eu" target='_blank' rel="noreferrer">
                 <i className="fa-brands fa-instagram fa-xl"></i>
               </a>
-              <a href="http://liquidgalaxy.eu" target='_blank'>
+              <a href="http://liquidgalaxy.eu" target='_blank' rel="noreferrer">
                 <i className="fa-brands fa-discord fa-xl"></i>
               </a>
-              <a href="http://liquidgalaxy.eu" target='_blank'>
+              <a href="http://liquidgalaxy.eu" target='_blank' rel="noreferrer">
 
                 <i className="fa-brands fa-github fa-xl"></i>
               </a>
-              <a href="http://liquidgalaxy.eu" target='_blank'>
+              <a href="http://liquidgalaxy.eu" target='_blank' rel="noreferrer">
                 <i className="fa-brands fa-youtube fa-xl"></i>
               </a>
-              <a href="http://liquidgalaxy.eu" target='_blank'>
+              <a href="http://liquidgalaxy.eu" target='_blank' rel="noreferrer">
                 <i className="fa-brands fa-twitter fa-xl"></i>
               </a>
-              <a href="http://liquidgalaxy.eu" target='_blank'>
+              <a href="http://liquidgalaxy.eu" target='_blank' rel="noreferrer">
                 <i className="fa-brands fa-google-play fa-xl"></i>
               </a>
             </div>
@@ -52,7 +52,7 @@ export default function Footer() {
 
           </div>
         </div>
-       
+
       </div>
 
 
