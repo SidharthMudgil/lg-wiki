@@ -49,28 +49,29 @@
   text-transform: capitalize;
   background-color: var(--l-nav);
 }
-.add_icon{
-  background-color:#1e2524;
+
+.add_icon {
+  background-color: #1e2524;
   color: white;
-display: inline;;
+  display: inline;
   padding: 13px 12px;
-  
 }
-.border_start{
+
+.border_start {
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-
 }
-.border_end{
+
+.border_end {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-
 }
-.icon_background{
-  padding:2px 7px;
+
+.icon_background {
+  padding: 2px 7px;
   display: inline;
   margin: 5px;
   border-radius: 3px;
-  
-  background-color:#37403f;
+
+  background-color: #37403f;
 }

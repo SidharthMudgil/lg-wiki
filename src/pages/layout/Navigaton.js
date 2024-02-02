@@ -1,33 +1,33 @@
-import React ,{useRef,useEffect}from "react";
+import React, { useRef, useEffect } from "react";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 
 export default function Navigaton() {
-  
+
   const inputRef = useRef(null);
-    useEffect(() => {
-      const handleKeyDown = (e) => {
-        if (e.ctrlKey && e.key === 'k') {
-          e.preventDefault();
-          inputRef.current.focus();
-          document.getElementById("search").style.width="15rem";
-          document.getElementById("search").style.borderRadius="25px"
-          document.getElementById("icon").style.display="none";
-          document.getElementById("iconsub").style.display="none";
-          document.getElementById("iconsubk").style.display="none";
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey && e.key === 'k') {
+        e.preventDefault();
+        inputRef.current.focus();
+        document.getElementById("search").style.width = "15rem";
+        document.getElementById("search").style.borderRadius = "25px"
+        document.getElementById("icon").style.display = "none";
+        document.getElementById("iconsub").style.display = "none";
+        document.getElementById("iconsubk").style.display = "none";
 
 
-        }
-      };
-  
-      window.addEventListener('keydown', handleKeyDown);
-  
-      return () => {
-        window.removeEventListener('keydown', handleKeyDown);
-      
+      }
+    };
 
-      };
-    }, []);
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+
+
+    };
+  }, []);
 
   function menubar(x) {
     let id = document.getElementById(x);
@@ -51,20 +51,20 @@ export default function Navigaton() {
               type="search"
               placeholder="Search..."
               className="   search  "
-            ref={inputRef}
-            onFocus={()=>{ 
-               document.getElementById("search").style.width="15rem";
-          document.getElementById("search").style.borderRadius="25px"
-          document.getElementById("icon").style.display="none";
-          document.getElementById("iconsub").style.display="none";
-          document.getElementById("iconsubk").style.display="none";
+              ref={inputRef}
+              onFocus={() => {
+                document.getElementById("search").style.width = "15rem";
+                document.getElementById("search").style.borderRadius = "25px"
+                document.getElementById("icon").style.display = "none";
+                document.getElementById("iconsub").style.display = "none";
+                document.getElementById("iconsubk").style.display = "none";
 
 
-            }}
+              }}
               id="search"
-          />
-            <span className="add_icon border_end " id="iconsub"> <div className="icon_background"  id="iconsub"> ctrl</div> 
-            <div className="icon_background"  id="iconsubk"> k </div>  </span>
+            />
+            <span className="add_icon border_end " id="iconsub"> <div className="icon_background" id="iconsub"> ctrl</div>
+              <div className="icon_background" id="iconsubk"> k </div>  </span>
 
           </li>
           <li
