@@ -41,15 +41,17 @@ export default function Maincontent() {
 
             />
           </div>
-
+    <div>
           <input
             type="search "
             placeholder="Search..."
-            className=" search_main  search px-2 focus:outline-none"
+            className=" search_main  search  border_start  focus:outline-none"
             ref={inputRef}
 
           />
-          <p className=" basic-info py-3 my-2">
+            <span className="add_icon border_end   " id="icon"> <i className="fas fa-search"></i>  </span>
+</div>
+          <p className=" basic-info">
             Welcome to LG Wiki, your one-stop web app for all things Liquid Galaxy! Discover simplified information and documentation covering the ins and outs of Liquid Galaxy. Find easy-to-follow guides on implementing various functionalities and working seamlessly with Liquid Galaxy technology. LG Wiki provides clear instructions and insights into the architecture, making it your go-to resource for both beginners and enthusiasts.
           </p>
         </div>

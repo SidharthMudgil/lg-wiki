@@ -3,16 +3,16 @@ import React from 'react'
 export default function Footer() {
   return (
     <>
-      <div className="w-full  bottom-0 footer  pb-10 ">
+      <div className="w-full  bottom-0 footer  ">
         <label className='mx-auto  block text-center p-8 font-bold text-2xl capitalize'>contact us</label>
 
         <div className='grid grid-cols-2  '>
 
-          <div className='px-44'>
+          <div className='pl-64 pr-4'>
 
             <a
               href="mailto:liquildgalaxylab@gmail.com"
-              className="block py-4 "           >
+              className="block py-4 "            >
               <i className="fa fa-envelope px-4 "></i>liquidgalaxylab@gmail.com
             </a>
             <a
@@ -45,13 +45,14 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className='capitalize px-44 '>
+          <div className='capitalize pl-64 pr-4 '>
             <p className='py-4'>Dev gadani</p>
             <p className='py-4'>sidhart mudgil </p>
             <p className='py-4'>arin </p>
 
           </div>
         </div>
+        <label className=' mx-auto  block text-center p-8 font-bold text-xl capitalize'>contribute  to liquidgalaxy</label>
 
       </div>
 
