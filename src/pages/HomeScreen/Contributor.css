@@ -1,0 +1,76 @@
+.pic-gallery{
+  display: inline-block;
+  margin: 0  auto 10rem auto;
+}
+
+.pic {
+  color: var(--white-color);
+  font-family: "Montserrat:400", sans-serif;
+  text-transform: capitalize;
+  padding: 1.25rem  2.5rem;
+  display: grid;
+  grid-template-columns: repeat(13  ,5rem);
+  column-gap: 2rem;
+  row-gap: 5rem;
+  
+}
+
+.img-container {
+  width:3.75rem;
+  height:3.75rem;
+  transition: all 0.2s;
+  position: relative;
+  
+ 
+}
+
+.img-contributor:hover,
+.label:hover {
+  animation-delay:0.5s;
+     
+  animation: moveInBottom 0.5s ease-out;
+  opacity: 1;
+}
+.img-contributor{
+  border-radius: 10rem;
+
+opacity: 1;
+  
+}
+
+.label {
+  position: absolute;
+  width:3.75rem;
+  height:3.75rem;
+  border-radius: 10rem;
+
+top:0;
+  opacity: 0;
+  background-color: #bcabab9c
+
+}
+
+.text {
+  position: absolute;
+bottom: 0rem;
+left:-0.5rem;
+  color: white;
+  font-family: Montserrat;
+  font-size: 0.8rem;
+
+  opacity: 1;
+background-color: rgba(65, 63, 63, 0.782);
+padding: 0.2rem 0 s;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    overflow: 1;
+    transform: translate(0); } }
+
+
+   
+

@@ -1,14 +1,28 @@
-body {
-  margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,*::before{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+
+
+}
+
+
+html,body {
+  margin: 0px;
   font-family: "Montserrat", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+  padding: 0;
+  font-size:1rem;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
 }
 
 :root {

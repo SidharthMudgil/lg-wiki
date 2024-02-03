@@ -2,8 +2,16 @@
   background-color: var(--header-color);
   color: var(--text-color);
   text-transform: capitalize;
+  background-size: 100% 100%;
+  width: 100%;
+  font-size: 1.3rem;
 }
-
+.nav-logo{
+  float: inline-start;
+  display:block;
+  padding: 0.63rem 0.5rem 0;
+  /* width:10rem; */
+}
 .nav-li {
   cursor: pointer;
   transition: 0.2s ease-in;
@@ -11,10 +19,14 @@
 .nav-li:hover {
   transform: scale(1.1);
 }
+.nav-ul{
+  margin-left: -4rem;
+  width: 100%;
+}
 
 .footer {
   font-family: "Montserrat";
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--text-color);
   background-color: var(--footer-color);

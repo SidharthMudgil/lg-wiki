@@ -1,5 +1,5 @@
 import React from "react";
-import "./infooverview.css";
+import "./InfoOverview.css";
 
 import opensource from "../../assets/opensource.svg"
 import rig from "../../assets/rig.png"
@@ -7,7 +7,8 @@ import technology from "../../assets/technologies.svg"
 import usecases from "../../assets/usecases.svg"
 
 export default function InfoOverview() {
-  return (
+  return (<>
+  <div className=" inline-block  mx-auto">
     <div className="overview">
       <div className="overview-text-box">
         <div className="overview-text ">
@@ -53,6 +54,7 @@ export default function InfoOverview() {
         </div>
       </div>
     </div>
+    </div><br/></>
   );
 }
 
