@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="w-full  bottom-0 footer  ">
         <label className='mx-auto  block text-center p-8 font-bold text-2xl capitalize'>contact us</label>
 
-        <div className='grid grid-cols-2  '>
+        <div className=' flex  flex-wrap '>
 
-          <div className='pl-64 pr-4'>
+          <div className=' block mx-auto'>
 
             <a
               href="mailto:liquildgalaxylab@gmail.com"
@@ -20,7 +20,7 @@ export default function Footer() {
               className="block  py-4  " rel="noreferrer"           >
               <i className="fa fa-globe px-4 "></i>www.liquidgalaxylab.eu
             </a>
-            <div className="icon block px-4 py-4 space-x-4">
+            <div className="icon flex px-4 py-4 space-x-4 ">
 
 
               <a href="http://liquidgalaxy.eu" target='_blank' rel="noreferrer">
@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className='capitalize pl-64 pr-4 '>
+          <div className='capitalize block  mx-auto'>
             <p className='py-4'>Dev gadani</p>
             <p className='py-4'>sidhart mudgil </p>
             <p className='py-4'>arin </p>

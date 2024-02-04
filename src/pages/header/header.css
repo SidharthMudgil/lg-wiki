@@ -2,25 +2,35 @@
   background-color: var(--header-color);
   color: var(--text-color);
   text-transform: capitalize;
-  background-size: 100% 100%;
-  width: 100%;
+display: flex;
+
   font-size: 1.3rem;
 }
 .nav-logo{
   float: inline-start;
   display:block;
-  padding: 0.63rem 0.5rem 0;
-  /* width:10rem; */
+  padding: 0.63rem 0 0 0.5rem ;
+/* flex-basis: 10%; */
 }
 .nav-li {
+  display: flex;
   cursor: pointer;
   transition: 0.2s ease-in;
+  margin: 0 25px;
+
+
 }
 .nav-li:hover {
   transform: scale(1.1);
 }
 .nav-ul{
-  margin-left: -4rem;
+
+  margin-left: -5rem;
+  display: flex;;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 auto; */
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -30,4 +40,5 @@
   font-weight: 400;
   color: var(--text-color);
   background-color: var(--footer-color);
+  
 }

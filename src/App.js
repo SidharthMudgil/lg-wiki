@@ -1,9 +1,9 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import './App.css';
-import MainContent from './pages/HomeScreen/MainContent';
+import MainContent from './pages/homeScreen/MainContent';
 
-import Layout from './pages/LeftNavigation/Layout';
-import NavigatorH from './pages/NavigationHeader/NavigationHeader';
+import Layout from './pages/leftNavigation/Layout';
+import NavigatorH from './pages/navigationHeader/NavigationHeader';
 
 
 function App() {

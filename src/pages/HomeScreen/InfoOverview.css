@@ -1,32 +1,42 @@
-.overview {
-  display: grid;
-  grid-template-columns: repeat(2, 44rem);
-  padding: 2rem 1rem 9rem 1rem;
+.overview{ 
+     
+}
+
+.overview-flex {
+  display: flex ;
+flex-basis: 100%;
+  padding: 2rem 1rem 2rem 1rem;
 }
 
 .overview-text-box {
-  width: 45rem;
-  height: 22.5rem;
+  display: flex ;
+  /* width: 45rem;
+  height: 22.5rem; */
   text-align: center;
   padding: 6.875rem 0 0 0;
   margin: 5rem 0;
-}
+
+  flex-basis: 50%;
+} 
 
 .overview-text {
   font-family: Montserrat;
   font-size: 1.375rem;
   font-weight: 400;
-  width: 40rem;
-  height: 10.688rem;
+  /* width: 40rem;
+  height: 10.688rem; */
   line-height: 1.68rem;
-padding: 2rem 0;
+padding: 2rem 0rem;
   margin: 0 auto;
 }
 
 .overview-image {
-  width: 45rem;
-  height: 22.5rem;
+  display: flex;
+flex-basis: 50%;
   text-align: center;
-  padding: 1.563rem;
-  margin: 5rem 0;
+  padding: 3rem ;
+  margin: 5rem auto;
+}
+.overview-image img{
+  margin: 0 auto;
 }

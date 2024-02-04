@@ -1,6 +1,7 @@
 .pic-gallery{
-  display: inline-block;
-  margin: 0  auto 10rem auto;
+  /* display: inline-block; */
+  margin: 0  auto 0 auto; 
+  padding: 10rem 0;
 }
 
 .pic {
@@ -8,11 +9,11 @@
   font-family: "Montserrat:400", sans-serif;
   text-transform: capitalize;
   padding: 1.25rem  2.5rem;
-  display: grid;
-  grid-template-columns: repeat(13  ,5rem);
-  column-gap: 2rem;
-  row-gap: 5rem;
-  
+  display: flex ;
+  flex-wrap: wrap;
+column-gap:0.500rem;
+row-gap: 4.3rem;
+justify-content: center;
 }
 
 .img-container {
@@ -21,7 +22,7 @@
   transition: all 0.2s;
   position: relative;
   
- 
+  flex-basis: 5.33rem;
 }
 
 .img-contributor:hover,
@@ -32,6 +33,8 @@
   opacity: 1;
 }
 .img-contributor{
+  width:3.75rem;
+  height:3.75rem;
   border-radius: 10rem;
 
 opacity: 1;

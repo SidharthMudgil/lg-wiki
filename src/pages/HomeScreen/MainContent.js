@@ -27,21 +27,23 @@ export default function MainContent() {
     <>
       <div className="background">
         <div className="home  ">
-          <div className="py-20 ">
+          <div className="py-20 basis-[100%] ">
             <img src={lg} alt="liquild GALAXY" className="home-logo   " />
+          </div> 
           </div>
-         
+         <div className=" search-main ">
             <input
               type="search "
               placeholder="Search..."
-              className=" search_main  search  border_start  focus:outline-none  mb-16"
+              className="  search  border_start  focus:outline-none  "
               ref={inputRef}
             />
             <span className="search-icon search-icon-main border_end   " id="icon">
               {" "}
               <i className="fas fa-search"></i>{" "}
             </span>
-          
+            </div>
+
           <p className=" basic-info">
             Welcome to LG Wiki, your one-stop web app for all things Liquid
             Galaxy! Discover simplified information and documentation covering
@@ -51,7 +53,7 @@ export default function MainContent() {
             insights into the architecture, making it your go-to resource for
             both beginners and enthusiasts.
           </p>
-        </div>
+      
 
         {/* Informatio of liquidgalaxy   */}
         <InfoOverview />
