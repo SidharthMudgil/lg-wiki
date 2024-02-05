@@ -2,8 +2,8 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import './App.css';
 import MainContent from './pages/homeScreen/MainContent';
 
-import Layout from './pages/leftNavigation/Layout';
-import NavigatorHeader from './pages/navigationHeader/NavigationHeader';
+import Layout from './pages/header/leftNavigation/Layout';
+import NavigatorHeader from './pages/homeScreen/navigationHeader/NavigationHeader';
 
 
 function App() {

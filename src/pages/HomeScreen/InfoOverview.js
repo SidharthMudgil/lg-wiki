@@ -15,7 +15,7 @@ export default function InfoOverview() {
             <div className="overview-text ">
               Liquid Galaxy offers a captivating panoramic system powered by
               multiple computers, providing
-              <br /> a seamless and engaging visual experience{" "}
+            a seamless and engaging visual experience{" "}
             </div>
           </div>
           <div className="overview-image">
@@ -29,8 +29,8 @@ export default function InfoOverview() {
           <div className="overview-text-box">
             <div className="overview-text ">
               {" "}
-              Beyond Google Earth, Liquid Galaxy integrates <br />
-              open source software to enhance administration <br />
+              Beyond Google Earth, Liquid Galaxy integrates 
+              open source software to enhance administration 
               and support various applications, enriching the panoramic
               environment.
             </div>
@@ -42,8 +42,8 @@ export default function InfoOverview() {
               {" "}
               Liquid Galaxy serves as a Geographic Information System (GIS) and
               finds applications in education, tourism,
-              <br /> 3D visualization, data handling, and gaming.
-              <br /> Its versatility makes it a powerful <br />
+                3D visualization, data handling, and gaming.
+               Its versatility makes it a powerful 
               tool across diverse industries.{" "}
             </div>
           </div>
