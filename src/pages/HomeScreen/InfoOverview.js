@@ -18,12 +18,12 @@ export default function InfoOverview() {
             a seamless and engaging visual experience{" "}
             </div>
           </div>
-          <div className="overview-image">
+          <div className="img-width overview-image ">
             <img src={rig}    alt="image1" />
           </div>
         </div>
         <div className="overview-flex">
-          <div className="overview-image">
+          <div className="img-width overview-image">
             <img src={opensource} className="" alt="image1" />
           </div>
           <div className="overview-text-box">
@@ -47,12 +47,12 @@ export default function InfoOverview() {
               tool across diverse industries.{" "}
             </div>
           </div>
-          <div className="overview-image">
+          <div className="img-width overview-image">
             <img src={usecases}  alt="image1" />
           </div>
         </div>
         <div className="overview-flex">
-          <div className="overview-image">
+          <div className="img-width overview-image">
             <img src={technology}  alt="image1" />
           </div>{" "}
           <div className="overview-text-box">

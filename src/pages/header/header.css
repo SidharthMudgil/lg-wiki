@@ -42,3 +42,6 @@ display: flex;
   background-color: var(--footer-color);
   
 }
+.footer a:hover{
+border-bottom: 1px solid var(--text-color) ;
+}

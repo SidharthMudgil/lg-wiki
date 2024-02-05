@@ -1,11 +1,12 @@
 .overview{ 
      padding: 2rem;
+
 }
 
 .overview-flex {
   display: flex ;
-/* flex-basis: 100%; */
-  padding: 2rem 1rem 2rem 1rem; 
+
+gap: 40px;
 }
 
 .overview-text-box {
@@ -13,9 +14,10 @@
   /* width: 45rem;
   height: 22.5rem; */
   text-align: center;
-  padding: 6.875rem 0 0 0;
-  margin: 5rem 0;
-
+  /* padding: 6.875rem 0 0 0; */
+  /* margin: 5rem 0; */
+align-items: center;
+justify-content: center;
   flex-basis: 50%;
 } 
 
@@ -25,18 +27,21 @@
   font-weight: 400;
   /* width: 40rem;
   height: 10.688rem; */
+  flex-basis:80%;
   line-height: 1.68rem;
-padding: 2rem 0rem;
-  margin: 0 auto;
+/* padding: 2rem 0rem; */
+  /* margin: 0 auto; */
 }
 
 .overview-image {
   display: flex;
 flex-basis: 50%;
   text-align: center;
-  /* padding: 3rem  ; */
   margin: 5rem auto;
 }
 .overview-image img{
  width: 100%;
+}
+.img-width{
+  flex-basis: 30%;
 }
