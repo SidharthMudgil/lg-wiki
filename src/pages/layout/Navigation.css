@@ -34,6 +34,7 @@
   color: var(--text-color);
 }
 
+<<<<<<< HEAD
 .main {
   background-color: var(--backgroud);
 }
@@ -74,4 +75,39 @@
   border-radius: 3px;
 
   background-color: #37403f;
+=======
+}
+
+.dod{
+    display: flex;
+    color: white;
+    font-size: 50px;
+    padding-top: 10px;
+    padding-left: 100px;
+    justify-content: flex-start;
+
+}
+
+#kkk{
+    display: flex;
+    font-size: 20px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+.map-container{
+    display: flex;
+    font-size: 20px;
+    border: 1px solid white;
+    height: auto;
+    width: auto;
+
+    
+    color: white;
+    padding-top: 20px;
+    padding-left: 100px;
+    box-sizing: content-box;
+
+>>>>>>> 3b23d5c (added documentation part)
 }

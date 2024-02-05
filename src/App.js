@@ -12,9 +12,15 @@ function App() {
       <Route path='/' element={<NavigatorH />}>
         <Route path='' element={(<Maincontent />)} />
 
+<<<<<<< HEAD
         <Route path='docs' element={<Layout />}>
           <Route path='' element={(<></>)} />
         </Route>
+=======
+       <Route path='Docs' element={<Layout />}>
+        <Route path='' element={(<></>   )} />
+</Route>
+>>>>>>> 3b23d5c (added documentation part)
       </Route>
     )
   )

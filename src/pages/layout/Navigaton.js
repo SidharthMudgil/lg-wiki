@@ -61,6 +61,7 @@ export default function Navigaton() {
 
 
               }}
+<<<<<<< HEAD
               id="search"
             />
             <span className="add_icon border_end " id="iconsub"> <div className="icon_background" id="iconsub"> ctrl</div>
@@ -70,6 +71,34 @@ export default function Navigaton() {
           <li
             onClick={() => {
               let id = 1;
+=======
+              className="py-1 menu-ul "  >
+              installation
+              <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
+
+              <ul id="1" className="menuex">
+                <li className="menutab"> <Link to='nav' >demo text</Link></li>
+                <li className="menutab"><Link to='/' >demo text</Link></li>
+              </ul>
+            </li>
+            <li
+              onClick={() => {
+                let id = 2;
+                menubar(id);
+              }}
+              className="py-1  menu-ul "
+            >
+              installation
+              <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
+
+              <ul id="2" className="menuex">
+                <li className="menutab"><Link to='' >demo text</Link></li>
+                <li className="menutab" ><Link to='' >demo text</Link></li>
+              </ul>
+            </li>
+            <li  onClick={() => {
+              let id = 3;
+>>>>>>> 3b23d5c (added documentation part)
               menubar(id);
             }}
             className="py-1 menu-ul "  >
@@ -109,9 +138,76 @@ export default function Navigaton() {
               <li className="menutab"> <Link to='' >demo text</Link> </li>
             </ul>
           </li>
+<<<<<<< HEAD
         </ul>
       </div>
 
+=======
+          </ul>
+        
+        </div>
+        <div>
+    <div className="dod">
+            Step 1
+           
+    </div>
+    <div>
+    <p id="kkk">
+            Lorem ipsum dolor sit amet consectetur. Sagittis non pharetra felis sodales nulla odio aliquet ut dui. Viverra faucibus faucibus nulla ullamcorper congue ultricies eget orci arcu. Id luctus mollis venenatis lectus in sed. Eu in ultrices ullamcorper ultricies. Sagittis posuere ut praesent risus ultrices nisl proin mauris sed.
+            </p>
+            </div>
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div className="dod">
+              Step 2
+            </div>
+            <p id="kkk">
+            Lorem ipsum dolor sit amet consectetur. Sagittis non pharetra felis sodales nulla odio aliquet ut dui. Viverra faucibus faucibus nulla ullamcorper congue ultricies eget orci arcu. Id luctus mollis venenatis lectus in sed. Eu in ultrices ullamcorper ultricies. Sagittis posuere ut praesent risus ultrices nisl proin mauris sed.
+            </p>
+    </div>
+    <div>
+
+   
+            </div>
+
+
+              
+            <div className="map-container">
+            <div>
+              <pre>
+                
+              return object : BoundedMatcher<Object, Map>(Map::class.java{
+                })
+              
+              </pre>
+            </div> 
+             </div>
+
+            
+
+            <div className="dod">
+              Step 3
+            </div>
+            <p id="kkk">
+            Lorem ipsum dolor sit amet consectetur. Sagittis non pharetra felis sodales nulla odio aliquet ut dui. Viverra faucibus faucibus nulla ullamcorper congue ultricies eget orci arcu. Id luctus mollis venenatis lectus in sed. Eu in ultrices ullamcorper ultricies. Sagittis posuere ut praesent risus ultrices nisl proin mauris sed.
+            </p>
+  
+>>>>>>> 3b23d5c (added documentation part)
     </div>
   );
 }

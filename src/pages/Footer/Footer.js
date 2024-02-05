@@ -51,6 +51,18 @@ export default function Footer() {
             <p className='py-4'>arin </p>
 
           </div>
+<<<<<<< HEAD
+=======
+        
+        <div className='capitalize px-44 '>  
+        <p className='py-4'>Dev gadani</p>
+        <p className='py-4'>sidhart mudgil </p>
+        <p className='py-4'>arin Kulkarni</p>
+        
+        </div>
+        </div>
+    <label className=' mx-auto  block text-center p-8 font-bold text-xl capitalize'>contribute  to liquidgalaxy</label>
+>>>>>>> 3b23d5c (added documentation part)
         </div>
 
       </div>
