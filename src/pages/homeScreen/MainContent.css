@@ -62,7 +62,7 @@
 
   flex-grow: 1;
   border-radius: 30px;
-  padding: 1rem 3.4rem 1rem 2.5rem !important;
+  padding: 1rem 3.4rem 1rem 3rem !important;
   background-color: #1e2524;
   align-items: center;
   border-radius: 45;
@@ -71,7 +71,7 @@
 
 .search-icon {
   position: absolute;
-  left: 10px;
+  left: 20px;
 }
 
 .search-img-icon {
