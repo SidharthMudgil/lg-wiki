@@ -1,0 +1,53 @@
+.dod{
+    display: flex;
+    color: white;
+    font-size: 50px;
+    padding-top: 10px;
+    padding-left: 100px;
+    justify-content: flex-start;
+    padding-right: 50px;
+
+}
+
+#kkk{
+    display: flex;
+    font-size: 15px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 60px;
+}
+
+.map-container{
+
+    
+    display: flex;
+    font-size: 20px;
+    border: 1px  white;
+    height: auto;
+    width: auto;
+
+    margin-top: 40px;
+    color: white;
+    padding-top: 30px;
+    padding-left: 100px;
+    box-sizing: content-box;
+    padding-right: 70px;
+    margin-right: 70px;
+    padding-left: 100px;
+    margin-left: 60px;
+
+}
+
+.whole{
+    display: block;
+    padding-right: 80px;
+    overflow: -moz-hidden-unscrollable;
+
+
+}
+
+.j{
+    
+    border-radius: 10px;
+}
