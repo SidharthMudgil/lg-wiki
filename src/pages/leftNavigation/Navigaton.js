@@ -60,11 +60,11 @@ export default function Navigaton() {
                 id="search"
               />
               <span className="search-img">
-              <span className="search-img-icon  ctrl-key" id="iconsub">
+              <span className="search-img-icon  nav-search ctrl-key" id="iconsub">
                   ctrl
                 </span>
 
-                <span className="search-img-icon k-key" id="iconsubk">
+                <span className="search-img-icon nav-search k-key" id="iconsubk">
                   k
                 </span>
               </span>
