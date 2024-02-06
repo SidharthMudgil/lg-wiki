@@ -59,7 +59,7 @@ export default function Navigaton() {
                 }}
                 id="search"
               />
-              <span className="search-img">
+              {/*<span className="search-img">
               <span className="search-img-icon  nav-search ctrl-key" id="iconsub">
                   ctrl
                 </span>
@@ -68,6 +68,7 @@ export default function Navigaton() {
                   k
                 </span>
               </span>
+*/}
             </div>
           </li>
 
