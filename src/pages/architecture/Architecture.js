@@ -29,7 +29,7 @@ export default function Architecture() {
         <h1 className=" text-3xl flex mx-auto p-10">
           Master Slave Architecture :-
         </h1>
-        <p>
+        <p className="pb-9">
           The master-slave architecture is a design pattern commonly used in
           computing and communication systems where one device or process, known
           as the master, controls and directs the actions of other devices or
@@ -38,9 +38,9 @@ export default function Architecture() {
           processes respond to commands from the master. 
         </p>
         <br />
-        <h1 className=" text-3xl flex mx-auto p-10">Master:</h1>
-        <p>
-          <br />
+        <h1 className=" text-2xl flex  p-10">Master:</h1>
+        <p className="items-center flex">
+        
           1. The central controlling entity that initiates commands and manages
           the overall operation.
           <br />
@@ -50,10 +50,10 @@ export default function Architecture() {
           devices; in a database system, a primary server managing replicas.
         </p>{" "}
         <div className=" flex flex-col gap-6 p-14 w-full">
-          <img src={master} className="bg-white mx-auto " />
+          <img src={master}  alt="master-slave" className="bg-white mx-auto " />
         </div>
-        <h1 className=" text-3xl flex mx-auto p-10 ">Slave:</h1>
-        <p>
+        <h1 className=" text-2xl flex p-10 ">Slave:</h1>
+        <p className="items-center flex">
           1. Devices or processes that operate under the control and direction
           of the master.
           <br />

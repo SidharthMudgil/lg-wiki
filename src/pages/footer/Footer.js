@@ -46,9 +46,10 @@ export default function Footer() {
           </div>
 
           <div className='capitalize block  mx-auto'>
-            <p className='py-4'>Dev gadani</p>
-            <p className='py-4'>sidhart mudgil </p>
-            <p className='py-4'>arin </p>
+            <p className='py-4'>  <a href="https://github.com/devtgadani" target='_blank' rel="noreferrer">Dev gadani</a></p>
+            <p className='py-4'>  <a href="https://github.com/SidharthMudgil" target='_blank' rel="noreferrer">sidhart mudgil</a></p>
+            <p className='py-4'>  <a href="https://github.com/akoolarni" target='_blank' rel="noreferrer">arin kulkerni</a></p>
+          
 
           </div>
         </div>
