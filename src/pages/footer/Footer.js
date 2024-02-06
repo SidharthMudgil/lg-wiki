@@ -66,7 +66,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                sidhart mudgil
+                sidharth mudgil
               </a>
             </p>
             <p className="py-4">
@@ -76,7 +76,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                arin kulkerni
+                arin kulkarni
               </a>
             </p>
           </div>

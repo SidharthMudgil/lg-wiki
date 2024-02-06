@@ -25,11 +25,11 @@
 }
 /* animation hover effect  */
 
-.img-contributor:hover,
-.label:hover {
-  animation-delay: 0.5s;
+.img-contributor:only-child,
+.label:hover{
+  /* animation-delay: 0.5s; */
 
-  animation: moveInBottom 0.5s ease-out;
+  animation: moveInBottom 0.2s forwards;
   opacity: 1;
 }
 .img-contributor {
@@ -40,30 +40,38 @@
   opacity: 1;
 }
 
-/* adding the tint on image via label div  */
+/* adding image hover  via label div  */
 
 .label {
   position: absolute;
+top:0;
+  display: flex;
+  border-radius: 10rem;   
+  color: white;
+  
   width: 3.75rem;
   height: 3.75rem;
-  border-radius: 10rem;
-
-  top: 0;
   opacity: 0;
-  background-color: #bcabab9c;
+  padding: 0.2rem 0 ;
+ 
 }
 
-.text {
+.text { 
   position: absolute;
-  bottom: 0rem;
-  left: -0.5rem;
-  color: white;
+  display: flex;
   font-family: Montserrat;
-  font-size: 0.8rem;
+  
+  text-align: center;
+  background-color: var(--l-nav);
+  bottom: -1.8rem;
+  font-size:bold;
+  border-radius: 1rem;
+  margin:0 -3rem;
+  justify-content: center;
+  width:10rem;
 
-  opacity: 1;
-  background-color: rgba(65, 63, 63, 0.782);
-  padding: 0.2rem 0 s;
+
+
 }
 
 /* animation hover effect on the img keyframes */
@@ -71,7 +79,11 @@
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-10px);
   }
   100% {
     overflow: 1;

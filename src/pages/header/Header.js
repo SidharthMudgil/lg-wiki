@@ -1,26 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/wiki-logo.png"
+import logo from "../../assets/wiki-logo.png";
 
 import "./header.css";
 
 export default function Header() {
   return (
     <>
-  
       <nav className="  nav    ">
-      <div className=" nav-logo ">
-          <img src= {logo} alt="logo" className=" h-10  " />
-        </div><div className=" nav-ul  ">
-        
-        {/* navbar items to show */}
+        <div className=" nav-logo ">
+          <img src={logo} alt="logo" className=" h-10  " />
+        </div>
+        <div className=" nav-ul  ">
+          {/* navbar items to show */}
 
           <NavLink
             to=""
             className="nav-li"
             style={({ isActive }) => ({
-              borderBottom: isActive ? '1px solid white': ''
-          
+              pointerEvents: isActive ? "none" : "",
+              borderBottom: isActive ? "1px solid white" : "",
             })}
           >
             home
@@ -29,8 +28,8 @@ export default function Header() {
             to="/docs"
             className="nav-li"
             style={({ isActive }) => ({
-            
-              borderBottom: isActive ? '1px solid white': ''
+              pointerEvents: isActive ? "none" : "",
+              borderBottom: isActive ? "1px solid white" : "",
             })}
           >
             documentation
@@ -39,20 +38,13 @@ export default function Header() {
             to="/arc"
             className="nav-li"
             style={({ isActive }) => ({
-              borderBottom: isActive ? '1px solid white': ''
-
-        
+              pointerEvents: isActive ? "none" : "",
+              borderBottom: isActive ? "1px solid white" : "",
             })}
           >
-           architecture
+            architecture
           </NavLink>
         </div>
-      
-
-
-
-
-     
       </nav>
     </>
   );

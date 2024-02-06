@@ -31,11 +31,12 @@ export default function MainContent() {
       <div className="background">
         <div className="home  ">
            {/* main logo */}
-          <div className="py-20 basis-[100%] ">
+          <div className=" basis-[100%] ">
             <img src={lg} alt="liquild GALAXY" className="home-logo   " />
           </div>
         </div>
-        <div className=" search-main ">
+        <div className=" search-main w-full">
+          <div className="search-box">
           <span className="search-icon  " id="icon">
             {" "}
             <i className="fas fa-search"></i>{" "}
@@ -43,25 +44,18 @@ export default function MainContent() {
           <input
             type="search "
             placeholder="Search..."
-            className="  search focus:outline-none  "
+            className="  search focus:outline-none "
             ref={inputRef}
           />
           <span className="search-img">
 
             {/* svg for ctrl and k keys  */}
+            <span className="search-img-icon ctrl-key ">ctrl</span>
+       
 
-            <svg width="25" height="20" className="search-img-icon">
-              <path
-                d="M4.505 4.496h2M5.505 5.496v5M8.216 4.496l.055 5.993M10 7.5c.333.333.5.667.5 1v2M12.326 4.5v5.996M8.384 4.496c1.674 0 2.116 0 2.116 1.5s-.442 1.5-2.116 1.5M3.205 9.303c-.09.448-.277 1.21-1.241 1.203C1 10.5.5 9.513.5 8V7c0-1.57.5-2.5 1.464-2.494.964.006 1.134.598 1.24 1.342M12.553 10.5h1.953"
-                stroke-width="1.2"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="square"
-              ></path>
-            </svg>
-
-            <span className="search-img-icon ">k</span>
+            <span className="search-img-icon k-key">k</span>
           </span>
+        </div>
         </div>
 
         <p className=" basic-info">

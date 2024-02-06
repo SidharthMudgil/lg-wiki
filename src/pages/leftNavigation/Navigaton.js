@@ -13,10 +13,8 @@ export default function Navigaton() {
       if (e.ctrlKey && e.key === "k") {
         e.preventDefault();
         inputRef.current.focus();
-        document.getElementById("search").style.width = "15rem";
-        document.getElementById("search").style.borderRadius = "25px";
-        document.getElementById("icon").style.display = "none";
-        document.getElementById("iconsub").style.display = "none";
+      
+          document.getElementById("iconsub").style.display = "none";
         document.getElementById("iconsubk").style.display = "none";
       }
     };
@@ -55,31 +53,18 @@ export default function Navigaton() {
                 className="  search menu-search focus:outline-none  "
                 ref={inputRef}
                 onFocus={() => {
-                  document.getElementById("search").style.width = "15rem";
-                  document.getElementById("search").style.borderRadius = "25px";
-                  document.getElementById("icon").style.display = "none";
-                  document.getElementById("iconsub").style.display = "none";
+         
+                  document.getElementById("iconsub").style.display = "none"; 
                   document.getElementById("iconsubk").style.display = "none";
                 }}
                 id="search"
               />
               <span className="search-img">
-                <svg
-                  width="25"
-                  height="20"
-                  className="search-img-icon"
-                  id="iconsub"
-                >
-                  <path
-                    d="M4.505 4.496h2M5.505 5.496v5M8.216 4.496l.055 5.993M10 7.5c.333.333.5.667.5 1v2M12.326 4.5v5.996M8.384 4.496c1.674 0 2.116 0 2.116 1.5s-.442 1.5-2.116 1.5M3.205 9.303c-.09.448-.277 1.21-1.241 1.203C1 10.5.5 9.513.5 8V7c0-1.57.5-2.5 1.464-2.494.964.006 1.134.598 1.24 1.342M12.553 10.5h1.953"
-                    stroke-width="1.2"
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-linecap="square"
-                  ></path>
-                </svg>
+              <span className="search-img-icon  ctrl-key" id="iconsub">
+                  ctrl
+                </span>
 
-                <span className="search-img-icon " id="iconsubk">
+                <span className="search-img-icon k-key" id="iconsubk">
                   k
                 </span>
               </span>
@@ -101,7 +86,7 @@ export default function Navigaton() {
             <ul id="1" className="menuex">
               <li className="menutab">
                 {" "}
-                <Link to="nav">demo text</Link>
+                <Link to="/docs/title">demo text</Link>
               </li>
               <li className="menutab">
                 <Link to="/">demo text</Link>
