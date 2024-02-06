@@ -47,9 +47,9 @@ export default function MainContent() {
             className="  search focus:outline-none "
             ref={inputRef}
           />
-          <span className="search-img">
+         {/* <span className="search-img">
 
-            {/* svg for ctrl and k keys  
+             svg for ctrl and k keys  
             <span className="search-img-icon ctrl-key ">ctrl</span>
        
 
