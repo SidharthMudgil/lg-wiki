@@ -1,6 +1,5 @@
 import React from "react";
 import "./InfoOverview.css";
-
 import opensource from "../../assets/opensource.svg";
 import rig from "../../assets/rig.png";
 import technology from "../../assets/technologies.svg";
@@ -14,25 +13,24 @@ export default function InfoOverview() {
           <div className="overview-text-box">
             <div className="overview-text ">
               Liquid Galaxy offers a captivating panoramic system powered by
-              multiple computers, providing
-            a seamless and engaging visual experience{" "}
+              multiple computers, providing a seamless and engaging visual
+              experience{" "}
             </div>
           </div>
           <div className="img-width overview-image ">
-            <img src={rig}    alt="image1" />
+            <img src={rig} alt="rig.png" />
           </div>
         </div>
         <div className="overview-flex">
           <div className="img-width overview-image">
-            <img src={opensource} className="" alt="image1" />
+            <img src={opensource} className="" alt="opensource.svg" />
           </div>
           <div className="overview-text-box">
             <div className="overview-text ">
               {" "}
-              Beyond Google Earth, Liquid Galaxy integrates 
-              open source software to enhance administration 
-              and support various applications, enriching the panoramic
-              environment.
+              Beyond Google Earth, Liquid Galaxy integrates open source software
+              to enhance administration and support various applications,
+              enriching the panoramic environment.
             </div>
           </div>
         </div>
@@ -41,19 +39,18 @@ export default function InfoOverview() {
             <div className="overview-text ">
               {" "}
               Liquid Galaxy serves as a Geographic Information System (GIS) and
-              finds applications in education, tourism,
-                3D visualization, data handling, and gaming.
-               Its versatility makes it a powerful 
-              tool across diverse industries.{" "}
+              finds applications in education, tourism, 3D visualization, data
+              handling, and gaming. Its versatility makes it a powerful tool
+              across diverse industries.{" "}
             </div>
           </div>
           <div className="img-width overview-image">
-            <img src={usecases}  alt="image1" />
+            <img src={usecases} alt="usecases.svg" />
           </div>
         </div>
         <div className="overview-flex">
           <div className="img-width overview-image">
-            <img src={technology}  alt="image1" />
+            <img src={technology} alt="technology.svg" />
           </div>{" "}
           <div className="overview-text-box">
             <div className="overview-text ">

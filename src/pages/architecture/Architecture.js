@@ -4,7 +4,7 @@ export default function Architecture() {
   return (
     <div className="background p-14">
       <div className="flex flex-wrap text-left text-lg">
-        <h1 className="text-3xl flex mx-auto p-10"> Overview :</h1>
+        <h1 className=" flex mx-auto p-10 md:text-2xl lg:text-3xl"> Overview :</h1>
         <p>
           Liquid Galaxy is a remarkable panoramic system that is tremendously
           compelling. It started off as a Google 20% project created by Google
@@ -26,7 +26,7 @@ export default function Architecture() {
           that content of various types can be displayed in the immersive
           panoramic environment.
         </p>
-        <h1 className=" text-3xl flex mx-auto p-10">
+        <h1 className="  flex mx-auto p-10 md:text-2xl lg:text-3xl">
           Master Slave Architecture :-
         </h1>
         <p className="pb-9">
@@ -35,12 +35,11 @@ export default function Architecture() {
           as the master, controls and directs the actions of other devices or
           processes, known as slaves. The master device or process typically
           initiates and coordinates activities, while the slave devices or
-          processes respond to commands from the master. 
+          processes respond to commands from the master.
         </p>
         <br />
-        <h1 className=" text-2xl flex  p-10">Master:</h1>
+        <h1 className="  flex  p-10 md:text-xl lg:text-2xl">Master:</h1>
         <p className="items-center flex">
-        
           1. The central controlling entity that initiates commands and manages
           the overall operation.
           <br />
@@ -50,9 +49,9 @@ export default function Architecture() {
           devices; in a database system, a primary server managing replicas.
         </p>{" "}
         <div className=" flex flex-col gap-6 p-14 w-full">
-          <img src={master}  alt="master-slave" className="bg-white mx-auto " />
+          <img src={master} alt="master-slave" className="bg-white mx-auto " />
         </div>
-        <h1 className=" text-2xl flex p-10 ">Slave:</h1>
+        <h1 className=" flex  p-10 md:text-xl lg:text-2xl ">Slave:</h1>
         <p className="items-center flex">
           1. Devices or processes that operate under the control and direction
           of the master.
@@ -66,6 +65,5 @@ export default function Architecture() {
         </p>{" "}
       </div>
     </div>
-    //   </div>
   );
 }

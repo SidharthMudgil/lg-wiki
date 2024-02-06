@@ -12,7 +12,8 @@ export default function Header() {
       <div className=" nav-logo ">
           <img src= {logo} alt="logo" className=" h-10  " />
         </div><div className=" nav-ul  ">
-  
+        
+        {/* navbar items to show */}
 
           <NavLink
             to=""

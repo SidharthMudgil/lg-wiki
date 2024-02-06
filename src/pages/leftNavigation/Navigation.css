@@ -1,7 +1,12 @@
+/* sub-title  menu div */
+
 .menuex {
   display: none;
   color: #f5a942;
 }
+
+/* title menu div */
+
 
 .menu-ul {
   padding-top: 0.938rem;
@@ -17,25 +22,22 @@
   border-radius: 1.25rem;
   background-color: rgba(127, 255, 212, 0.2);
 }
-.menu-search-div { 
 
-  /* max-height: 2.7rem !important; */
-  padding :0 !important;
-  /* max-width: 38rem !important; */
-
+/* search div css */
+.menu-search-div {
+  padding: 0 !important;
   display: flex;
-position: relative;
-justify-content: center;
-align-items: center;
-margin:  0 auto;
-
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
-.menu-search{
+.menu-search {
   padding: 0.5rem 0 0.5rem 2.5rem !important;
   width: 15rem !important;
 }
 
-.menu-search-icon{
+.menu-search-icon {
   position: absolute;
   left: 10px;
   color: var(--text-color);
@@ -48,9 +50,13 @@ margin:  0 auto;
   color: var(--text-color);
 }
 
+/* background in layout div  */
+
 .main {
   background-color: var(--backgroud);
 }
+
+/* left align css */
 
 .left {
   display: block;
@@ -58,19 +64,9 @@ margin:  0 auto;
   font-size: 1.25rem;
   padding: 0.313rem;
   justify-content: space-evenly;
-  padding:1.125rem 1.125rem;
-
+  padding: 1.125rem 1.125rem;
   text-transform: capitalize;
   background-color: var(--l-nav);
 }
 
 
-.border_start {
-  border-top-left-radius: 1.563rem;
-  border-bottom-left-radius: 1.563rem;
-}
-
-.border_end {
-  border-top-right-radius: 1.563rem;
-  border-bottom-right-radius: 1.563rem;
-}

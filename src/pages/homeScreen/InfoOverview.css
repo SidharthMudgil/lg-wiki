@@ -1,47 +1,41 @@
-.overview{ 
-     padding: 2rem;
-
+.overview {
+  padding: 2rem;
 }
 
 .overview-flex {
-  display: flex ;
-
-gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .overview-text-box {
-  display: flex ;
-  /* width: 45rem;
-  height: 22.5rem; */
+  display: flex;
   text-align: center;
-  /* padding: 6.875rem 0 0 0; */
-  /* margin: 5rem 0; */
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
   flex-basis: 50%;
-} 
+}
 
 .overview-text {
   font-family: Montserrat;
   font-size: 1.375rem;
   font-weight: 400;
-  /* width: 40rem;
-  height: 10.688rem; */
-  flex-basis:80%;
+
+  flex-basis: 80%;
   line-height: 1.68rem;
-/* padding: 2rem 0rem; */
-  /* margin: 0 auto; */
 }
 
 .overview-image {
   display: flex;
-flex-basis: 50%;
+  flex-basis: 50%;
   text-align: center;
   margin: 5rem auto;
 }
-.overview-image img{
- width: 100%;
+.overview-image img {
+  width: 100%;
 }
-.img-width{
+
+/* for making img small css div  */
+
+.img-width {
   flex-basis: 30%;
 }
