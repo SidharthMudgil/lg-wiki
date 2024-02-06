@@ -49,12 +49,13 @@ export default function MainContent() {
           />
           <span className="search-img">
 
-            {/* svg for ctrl and k keys  */}
+            {/* svg for ctrl and k keys  
             <span className="search-img-icon ctrl-key ">ctrl</span>
        
 
             <span className="search-img-icon k-key">k</span>
           </span>
+*/}
         </div>
         </div>
 
