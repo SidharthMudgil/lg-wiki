@@ -35,7 +35,7 @@ image_dict = {"": image_fetch_array}
 
 # path for making a new file with data
 
-js_file_path = "src/pages/Main_content/image_list.js"
+js_file_path = "image_list.js"
 with open(js_file_path, "w") as js_file:
 
     # writing the data
