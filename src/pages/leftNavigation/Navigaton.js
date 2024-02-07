@@ -85,12 +85,12 @@ export default function Navigaton() {
             installation
             <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
             <ul id="1" className="menuex">
-              <li className="menutab">
+              <li className="menutab" >
                 {" "}
-                <Link to="/docs/title">demo text</Link>
+                <Link to="/docs/title" className="menutab-link">demo text</Link>
               </li>
               <li className="menutab">
-                <Link to="/">demo text</Link>
+                <Link to="/" className="menutab-link">demo text</Link>
               </li>
             </ul>
           </li>
@@ -101,7 +101,7 @@ export default function Navigaton() {
             }}
             className="py-1  menu-ul "
           >
-            installation
+            LG Commands
             <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
             <ul id="2" className="menuex">
               <li className="menutab">

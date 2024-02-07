@@ -2,7 +2,7 @@
 
 .menuex {
   display: none;
-  color: #f5a942;
+  color: var(--text-color);
 }
 
 /* title menu div */
@@ -14,13 +14,13 @@
 }
 
 .menutab {
+  
   padding: 0.313rem 0.625rem;
 }
 
 .menutab:hover {
-  color: aquamarine;
+  color:#f5a942;
   border-radius: 1.25rem;
-  background-color: rgba(127, 255, 212, 0.2);
 }
 
 /* search div css */

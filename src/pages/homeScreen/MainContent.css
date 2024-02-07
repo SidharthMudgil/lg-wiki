@@ -16,7 +16,7 @@
 .home-logo {
   width: 30rem;
   height: 16.375rem;
-  margin: 5rem 0;
+  margin:  5rem 0  1rem;
 
   display: inline-flex;
   flex-basis: 100%;
@@ -32,7 +32,7 @@
   margin: 0 auto;
   justify-self: center;
 
-  padding: 5rem 1px;
+  padding: 2rem 1px;
 }
 
 /* search div */
@@ -59,9 +59,7 @@
   align-items: center;}
 .search {
  flex-basis: 10%;
-  
-
-  flex-grow: 1;
+ flex-grow: 1;
   border-radius: 30px;
   padding: 1rem 3.4rem 1rem 3rem !important;
   background-color: #1e2524;
