@@ -44,6 +44,7 @@
   /* max-width: 38rem !important; */
 
   display: flex;
+  position: relative;
   
   justify-content: center;
   align-items: center;
@@ -104,4 +105,22 @@ border-top-right-radius: 20px;
   right: 10px;
   display: flex;
   gap: 5px;
+}
+
+.suggestion{
+  display: flex ;
+ position: absolute; 
+ top: 3rem;
+width: 95%;
+background-color:#1e2524;
+ flex-direction: column;
+ border-bottom-left-radius: 1rem;
+ border-bottom-right-radius: 1rem;
+}
+.suggestion-item{
+  display: flex;
+  padding: 0.5rem 1rem ;
+  
+
+
 }

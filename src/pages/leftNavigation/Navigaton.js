@@ -14,8 +14,8 @@ export default function Navigaton() {
         e.preventDefault();
         inputRef.current.focus();
       
-          document.getElementById("iconsub").style.display = "none";
-        document.getElementById("iconsubk").style.display = "none";
+        //   document.getElementById("iconsub").style.display = "none";
+        // document.getElementById("iconsubk").style.display = "none";
       }
     };
 
@@ -54,8 +54,8 @@ export default function Navigaton() {
                 ref={inputRef}
                 onFocus={() => {
          
-                  document.getElementById("iconsub").style.display = "none"; 
-                  document.getElementById("iconsubk").style.display = "none";
+                  // document.getElementById("iconsub").style.display = "none"; 
+                  // document.getElementById("iconsubk").style.display = "none";
                 }}
                 id="search"
               />
