@@ -82,7 +82,7 @@ export default function Navigaton() {
             }}
             className="py-1 menu-ul "
           >
-            installition
+            installation
             <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
             <ul id="1" className="menuex">
               <li className="menutab">
@@ -101,7 +101,7 @@ export default function Navigaton() {
             }}
             className="py-1  menu-ul "
           >
-            installition
+            installation
             <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
             <ul id="2" className="menuex">
               <li className="menutab">
