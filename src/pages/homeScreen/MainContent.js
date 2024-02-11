@@ -37,24 +37,22 @@ export default function MainContent() {
   ];
 
   //seach suggestion function
-
   const [Suggest, setSuggest] = useState([]);
   const handleSearch = (event) => {
     const searchTerm = event.target.value.toLowerCase();
 
     // Filter the data based on the search term
     const filteredData = data.filter((item) =>
-    item.toLowerCase().includes(searchTerm)
-  );
-      
+      item.toLowerCase().includes(searchTerm)
+    );
+
     // Perform any action with filteredData (e.g., display it)
-    if(searchTerm !== "") {
+    if (searchTerm !== "") {
       setSuggest(filteredData);
     } else {
       setSuggest([]);
     }
   };
-//     
 
   return (
     <>
@@ -79,25 +77,15 @@ export default function MainContent() {
               onChange={handleSearch}
             />
 
-            {/* after word adding feature */}
+            <div className="suggestion">
+              {Suggest.map((item, index) => {
+                return (<div className="suggestion-item">{item}</div>);
+              })}
 
-            {/* <span className="search-img">
-
-             svg for ctrl and k keys  
-            <span className="search-img-icon ctrl-key ">ctrl</span>
-       
-
-            <span className="search-img-icon k-key">k</span>
-          </span>
-*/}
-<div className="suggestion">
-              {Suggest.map((item,index)=>{
-                return(  <div className="suggestion-item">{item}</div>);})}
-            
             </div>
-          
+
           </div>
-          
+
         </div>
 
         <p className=" basic-info">
