@@ -10,12 +10,14 @@ def convert_to_png(input_dir):
             image_path = os.path.join(input_dir, filename)
             try:
                 with Image.open(image_path) as img:
-                    img.save(image_path, format='PNG')
+                    png_path = os.path.splitext(image_path)[0] + '.png'
+                    img.save(png_path, format='PNG')
+                    os.remove(image_path)
                     print(f"Converted {filename} to PNG")
             except Exception as e:
                 print(f"Error converting {filename}: {e}")
 
-def generate_contributor_list(directory):
+def generate_and_write_contributor_list(directory, output_file):
     contributor_list = []
     index = 1
     for filename in os.listdir(directory):
@@ -30,10 +32,13 @@ def generate_contributor_list(directory):
                 }
                 contributor_list.append(contributor)
                 index += 1
-    return contributor_list
+    
+    with open(output_file, 'w') as f:
+        f.write("const contributors = ")
+        json.dump(contributor_list, f, indent=4)
+        f.write(";\n")
+        f.write("export default contributors;")
 
-input_directory = ""
-contributor_json = generate_contributor_list(input_directory)
-
+input_directory = "src/contributors/"
 convert_to_png(input_directory)
-print(json.dumps(contributor_json, indent=4))
+generate_and_write_contributor_list(input_directory, "src/pages/homeScreen/ImageList.js")
