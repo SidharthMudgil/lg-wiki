@@ -34,16 +34,6 @@ export default function Header() {
           >
             documentation
           </NavLink>
-          <NavLink
-            to="/arc"
-            className="nav-li"
-            style={({ isActive }) => ({
-              pointerEvents: isActive ? "none" : "",
-              borderBottom: isActive ? "1px solid white" : "",
-            })}
-          >
-            architecture
-          </NavLink>
         </div>
       </nav>
     </>
