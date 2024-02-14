@@ -49,7 +49,7 @@ export default function Footer() {
           {/* link for contributor in Lg-Wiki */}
 
           <div className="capitalize block mx-auto">
-            <p className="py-4">
+            <p className="py-2">
               {" "}
               <a
                 href="https://github.com/SidharthMudgil"
@@ -59,7 +59,7 @@ export default function Footer() {
                 sidharth mudgil
               </a>
             </p>
-            <p className="py-4">
+            <p className="py-2">
               {" "}
               <a
                 href="https://github.com/devtgadani"
@@ -69,7 +69,7 @@ export default function Footer() {
                 Dev gadani
               </a>
             </p>
-            <p className="py-4">
+            <p className="py-2">
               {" "}
               <a
                 href="https://github.com/akoolarni"
@@ -79,7 +79,7 @@ export default function Footer() {
                 arin kulkarni
               </a>
             </p>
-            <p className="py-4">
+            <p className="py-2">
               {" "}
               <a
                 href="https://github.com/vedantkingh"
