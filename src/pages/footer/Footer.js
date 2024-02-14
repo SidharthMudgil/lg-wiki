@@ -92,7 +92,14 @@ export default function Footer() {
           </div>
         </div>
         <label className=" mx-auto  block text-center p-8 font-bold text-xl capitalize">
-          contribute to liquid galaxy
+          contribute to <a
+            href="https://github.com/SidharthMudgil/lg-wiki"
+            target="_blank"
+            rel="noreferrer"
+            style={{ borderBottom: "1.5px solid white", }}
+          >
+            LG Wiki
+          </a>
         </label>
       </div>
     </>

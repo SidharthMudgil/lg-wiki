@@ -19,7 +19,7 @@ export default function Header() {
             className="nav-li"
             style={({ isActive }) => ({
               pointerEvents: isActive ? "none" : "",
-              borderBottom: isActive ? "1px solid white" : "",
+              borderBottom: isActive ? "2px solid white" : "",
             })}
           >
             home
@@ -29,7 +29,7 @@ export default function Header() {
             className="nav-li"
             style={({ isActive }) => ({
               pointerEvents: isActive ? "none" : "",
-              borderBottom: isActive ? "1px solid white" : "",
+              borderBottom: isActive ? "2px solid white" : "",
             })}
           >
             documentation

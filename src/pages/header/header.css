@@ -15,12 +15,12 @@
   display: flex;
   cursor: pointer;
   transition: 0.2s ease-in;
-  margin: 0 62px  ;
+  margin: 0 62px;
 }
 
 .nav-li {
   position: relative;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .nav-li::before {
@@ -29,8 +29,8 @@
   bottom: 0;
   left: 0;
   width: 0;
-  height: 1px;
-  background-color: #EEEEEE;
+  height: 2px;
+  background-color: #eeeeee;
   transition: width 0.3s ease-out;
 }
 
