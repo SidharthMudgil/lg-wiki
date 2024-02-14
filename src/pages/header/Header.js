@@ -7,11 +7,11 @@ import "./header.css";
 export default function Header() {
   return (
     <>
-      <nav className="  nav    ">
-        <div className=" nav-logo ">
-          <img src={logo} alt="logo" className=" h-10  " />
+      <nav className="nav">
+        <div className="nav-logo">
+          <img src={logo} alt="logo" className="h-10" />
         </div>
-        <div className=" nav-ul  ">
+        <div className="nav-ul">
           {/* navbar items to show */}
 
           <NavLink
@@ -19,7 +19,7 @@ export default function Header() {
             className="nav-li"
             style={({ isActive }) => ({
               pointerEvents: isActive ? "none" : "",
-              borderBottom: isActive ? "2px solid white" : "",
+              borderBottom: isActive ? "1.5px solid white" : "",
             })}
           >
             home
@@ -29,7 +29,7 @@ export default function Header() {
             className="nav-li"
             style={({ isActive }) => ({
               pointerEvents: isActive ? "none" : "",
-              borderBottom: isActive ? "2px solid white" : "",
+              borderBottom: isActive ? "1.5px solid white" : "",
             })}
           >
             documentation
