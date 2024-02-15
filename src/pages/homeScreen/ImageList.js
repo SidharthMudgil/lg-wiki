@@ -1,5 +1,4 @@
- const contributer = 
- [
+const contributors = [
     {
         "index": 1,
         "path": require("../../contributors/Aditya Kumar - GSoC 2023.png"),
@@ -12,7 +11,7 @@
     },
     {
         "index": 3,
-        "path": require("../../contributors/Adri\u00e0 Salamero - IES Caparrella.jpg"),
+        "path": require("../../contributors/Adri\u00e0 Salamero - IES Caparrella.png"),
         "name": "Adri\u00e0 Salamero"
     },
     {
@@ -27,17 +26,17 @@
     },
     {
         "index": 6,
-        "path": require("../../contributors/Albert Merino - Former EPS Student.jpg"),
+        "path": require("../../contributors/Albert Merino - Former EPS Student.png"),
         "name": "Albert Merino"
     },
     {
         "index": 7,
-        "path": require("../../contributors/Albert Morera - Lleida Drone.jpg"),
+        "path": require("../../contributors/Albert Morera - Lleida Drone.png"),
         "name": "Albert Morera"
     },
     {
         "index": 8,
-        "path": require("../../contributors/Albert Planes - EPS Student.jpg"),
+        "path": require("../../contributors/Albert Planes - EPS Student.png"),
         "name": "Albert Planes"
     },
     {
@@ -52,7 +51,7 @@
     },
     {
         "index": 11,
-        "path": require("../../contributors/Aleks Samuilov - EPS Student.jpg"),
+        "path": require("../../contributors/Aleks Samuilov - EPS Student.png"),
         "name": "Aleks Samuilov"
     },
     {
@@ -62,22 +61,22 @@
     },
     {
         "index": 13,
-        "path": require("../../contributors/Alexandra Rivero - Former ULL Student.jpg"),
+        "path": require("../../contributors/Alexandra Rivero - Former ULL Student.png"),
         "name": "Alexandra Rivero"
     },
     {
         "index": 14,
-        "path": require("../../contributors/Alicia Mart\u00cdn - GDG Vigo.jpg"),
+        "path": require("../../contributors/Alicia Mart\u00cdn - GDG Vigo.png"),
         "name": "Alicia Mart\u00cdn"
     },
     {
         "index": 15,
-        "path": require("../../contributors/Amanda Martins - Facens Univercity.jpg"),
+        "path": require("../../contributors/Amanda Martins - Facens Univercity.png"),
         "name": "Amanda Martins"
     },
     {
         "index": 16,
-        "path": require("../../contributors/Amine Manouri - AGRO Project.jpg"),
+        "path": require("../../contributors/Amine Manouri - AGRO Project.png"),
         "name": "Amine Manouri"
     },
     {
@@ -87,17 +86,17 @@
     },
     {
         "index": 18,
-        "path": require("../../contributors/Andreu I Sert - GDG Lleida.jpg"),
+        "path": require("../../contributors/Andreu I Sert - GDG Lleida.png"),
         "name": "Andreu I Sert"
     },
     {
         "index": 19,
-        "path": require("../../contributors/Andreu Iba\u00f1ez - Liquid Galaxy Lab.jpg"),
+        "path": require("../../contributors/Andreu Iba\u00f1ez - Liquid Galaxy Lab.png"),
         "name": "Andreu Iba\u00f1ez"
     },
     {
         "index": 20,
-        "path": require("../../contributors/Andrew Leahy - Sidney University.jpg"),
+        "path": require("../../contributors/Andrew Leahy - Sidney University.png"),
         "name": "Andrew Leahy"
     },
     {
@@ -107,7 +106,7 @@
     },
     {
         "index": 22,
-        "path": require("../../contributors/Arnav Aggarwal - GCI Student.jpg"),
+        "path": require("../../contributors/Arnav Aggarwal - GCI Student.png"),
         "name": "Arnav Aggarwal"
     },
     {
@@ -122,32 +121,32 @@
     },
     {
         "index": 25,
-        "path": require("../../contributors/Augusto Shimizu - Facens University.jpg"),
+        "path": require("../../contributors/Augusto Shimizu - Facens University.png"),
         "name": "Augusto Shimizu"
     },
     {
         "index": 26,
-        "path": require("../../contributors/Avinash Kasyap - GCI Student.jpg"),
+        "path": require("../../contributors/Avinash Kasyap - GCI Student.png"),
         "name": "Avinash Kasyap"
     },
     {
         "index": 27,
-        "path": require("../../contributors/Blai Domingo - INS Torrevicens.jpg"),
+        "path": require("../../contributors/Blai Domingo - INS Torrevicens.png"),
         "name": "Blai Domingo"
     },
     {
         "index": 28,
-        "path": require("../../contributors/Bruno Fa\u00e9 - Facens University.jpg"),
+        "path": require("../../contributors/Bruno Fa\u00e9 - Facens University.png"),
         "name": "Bruno Fa\u00e9"
     },
     {
         "index": 29,
-        "path": require("../../contributors/Carlos De Dios - Former EPS Student.jpg"),
+        "path": require("../../contributors/Carlos De Dios - Former EPS Student.png"),
         "name": "Carlos De Dios"
     },
     {
         "index": 30,
-        "path": require("../../contributors/Chaimae El Morabet - Women Techmakers.jpg"),
+        "path": require("../../contributors/Chaimae El Morabet - Women Techmakers.png"),
         "name": "Chaimae El Morabet"
     },
     {
@@ -157,22 +156,22 @@
     },
     {
         "index": 32,
-        "path": require("../../contributors/Chema Molins - Flutter Master.jpg"),
+        "path": require("../../contributors/Chema Molins - Flutter Master.png"),
         "name": "Chema Molins"
     },
     {
         "index": 33,
-        "path": require("../../contributors/Claudia Mihaela - EPS Student.jpg"),
+        "path": require("../../contributors/Claudia Mihaela - EPS Student.png"),
         "name": "Claudia Mihaela"
     },
     {
         "index": 34,
-        "path": require("../../contributors/C\u00e1ndido Caballero - Universidad de la Laguna.jpg"),
+        "path": require("../../contributors/C\u00e1ndido Caballero - Universidad de la Laguna.png"),
         "name": "C\u00e1ndido Caballero"
     },
     {
         "index": 35,
-        "path": require("../../contributors/Dani Vigo - INS Caparrella.jpg"),
+        "path": require("../../contributors/Dani Vigo - INS Caparrella.png"),
         "name": "Dani Vigo"
     },
     {
@@ -182,7 +181,7 @@
     },
     {
         "index": 37,
-        "path": require("../../contributors/Denis - Y\u00fcksel - Bilken Univ.-Ankara.jpg"),
+        "path": require("../../contributors/Denis - Y\u00fcksel - Bilken Univ.-Ankara.png"),
         "name": "Denis"
     },
     {
@@ -192,27 +191,27 @@
     },
     {
         "index": 39,
-        "path": require("../../contributors/Diego Turun - Ilerna.jpg"),
+        "path": require("../../contributors/Diego Turun - Ilerna.png"),
         "name": "Diego Turun"
     },
     {
         "index": 40,
-        "path": require("../../contributors/Dylan Iskander - GCI Student.jpg"),
+        "path": require("../../contributors/Dylan Iskander - GCI Student.png"),
         "name": "Dylan Iskander"
     },
     {
         "index": 41,
-        "path": require("../../contributors/Eloi Palau - INS Torrevicens.jpg"),
+        "path": require("../../contributors/Eloi Palau - INS Torrevicens.png"),
         "name": "Eloi Palau"
     },
     {
         "index": 42,
-        "path": require("../../contributors/Emilie Ma - GCI Student.jpg"),
+        "path": require("../../contributors/Emilie Ma - GCI Student.png"),
         "name": "Emilie Ma"
     },
     {
         "index": 43,
-        "path": require("../../contributors/Eric Monn\u00e9 - FACENS University.jpg"),
+        "path": require("../../contributors/Eric Monn\u00e9 - FACENS University.png"),
         "name": "Eric Monn\u00e9"
     },
     {
@@ -227,32 +226,32 @@
     },
     {
         "index": 46,
-        "path": require("../../contributors/Francesc - Mu\u00f1oz - Ins Caparrella.jpg"),
+        "path": require("../../contributors/Francesc - Mu\u00f1oz - Ins Caparrella.png"),
         "name": "Francesc"
     },
     {
         "index": 47,
-        "path": require("../../contributors/Francesc Munt\u00e9 - LIeida Drone.jpg"),
+        "path": require("../../contributors/Francesc Munt\u00e9 - LIeida Drone.png"),
         "name": "Francesc Munt\u00e9"
     },
     {
         "index": 48,
-        "path": require("../../contributors/Francesc Tuset - EPS Student.jpg"),
+        "path": require("../../contributors/Francesc Tuset - EPS Student.png"),
         "name": "Francesc Tuset"
     },
     {
         "index": 49,
-        "path": require("../../contributors/Gabriel lzquierdo - UCC.jpg"),
+        "path": require("../../contributors/Gabriel lzquierdo - UCC.png"),
         "name": "Gabriel lzquierdo"
     },
     {
         "index": 50,
-        "path": require("../../contributors/Gerard - Rovira - EPS Student.jpg"),
+        "path": require("../../contributors/Gerard - Rovira - EPS Student.png"),
         "name": "Gerard"
     },
     {
         "index": 51,
-        "path": require("../../contributors/Gerard Farr\u00e8 - Former EPS Student.jpg"),
+        "path": require("../../contributors/Gerard Farr\u00e8 - Former EPS Student.png"),
         "name": "Gerard Farr\u00e8"
     },
     {
@@ -277,7 +276,7 @@
     },
     {
         "index": 56,
-        "path": require("../../contributors/Guillem Barbosa - Former EPS Student.jpg"),
+        "path": require("../../contributors/Guillem Barbosa - Former EPS Student.png"),
         "name": "Guillem Barbosa"
     },
     {
@@ -287,7 +286,7 @@
     },
     {
         "index": 58,
-        "path": require("../../contributors/Hugo Castro - LIeida Drone.jpg"),
+        "path": require("../../contributors/Hugo Castro - LIeida Drone.png"),
         "name": "Hugo Castro"
     },
     {
@@ -297,17 +296,17 @@
     },
     {
         "index": 60,
-        "path": require("../../contributors/Imflevi - GCI Student.jpg"),
+        "path": require("../../contributors/Imflevi - GCI Student.png"),
         "name": "Imflevi"
     },
     {
         "index": 61,
-        "path": require("../../contributors/Ismael Arroyo - Former EPS Student.jpg"),
+        "path": require("../../contributors/Ismael Arroyo - Former EPS Student.png"),
         "name": "Ismael Arroyo"
     },
     {
         "index": 62,
-        "path": require("../../contributors/Ivan Colomer - EPS Student.jpg"),
+        "path": require("../../contributors/Ivan Colomer - EPS Student.png"),
         "name": "Ivan Colomer"
     },
     {
@@ -317,12 +316,12 @@
     },
     {
         "index": 64,
-        "path": require("../../contributors/Ivan Santos - Former ULL Student.jpg"),
+        "path": require("../../contributors/Ivan Santos - Former ULL Student.png"),
         "name": "Ivan Santos"
     },
     {
         "index": 65,
-        "path": require("../../contributors/Iv\u00e1n Josa - Former EPS Student.jpg"),
+        "path": require("../../contributors/Iv\u00e1n Josa - Former EPS Student.png"),
         "name": "Iv\u00e1n Josa"
     },
     {
@@ -332,12 +331,12 @@
     },
     {
         "index": 67,
-        "path": require("../../contributors/Jakub Szczepaniak - GCI Student.jpg"),
+        "path": require("../../contributors/Jakub Szczepaniak - GCI Student.png"),
         "name": "Jakub Szczepaniak"
     },
     {
         "index": 68,
-        "path": require("../../contributors/Jamile Passaro - Facens University.jpg"),
+        "path": require("../../contributors/Jamile Passaro - Facens University.png"),
         "name": "Jamile Passaro"
     },
     {
@@ -357,22 +356,22 @@
     },
     {
         "index": 72,
-        "path": require("../../contributors/Javier Calvo - Former EPS Student.jpg"),
+        "path": require("../../contributors/Javier Calvo - Former EPS Student.png"),
         "name": "Javier Calvo"
     },
     {
         "index": 73,
-        "path": require("../../contributors/Jezabel Molina - Universidad de la Laguna.jpg"),
+        "path": require("../../contributors/Jezabel Molina - Universidad de la Laguna.png"),
         "name": "Jezabel Molina"
     },
     {
         "index": 74,
-        "path": require("../../contributors/Joel Lopez - IES Caparella.jpg"),
+        "path": require("../../contributors/Joel Lopez - IES Caparella.png"),
         "name": "Joel Lopez"
     },
     {
         "index": 75,
-        "path": require("../../contributors/Jose Miguel - Ilerna.jpg"),
+        "path": require("../../contributors/Jose Miguel - Ilerna.png"),
         "name": "Jose Miguel"
     },
     {
@@ -392,12 +391,12 @@
     },
     {
         "index": 79,
-        "path": require("../../contributors/Juliana Izac - Facens Univercity.jpg"),
+        "path": require("../../contributors/Juliana Izac - Facens Univercity.png"),
         "name": "Juliana Izac"
     },
     {
         "index": 80,
-        "path": require("../../contributors/Julio Bondia - Former URV Student.jpg"),
+        "path": require("../../contributors/Julio Bondia - Former URV Student.png"),
         "name": "Julio Bondia"
     },
     {
@@ -407,22 +406,22 @@
     },
     {
         "index": 82,
-        "path": require("../../contributors/Karine Pistili - Facens University.jpg"),
+        "path": require("../../contributors/Karine Pistili - Facens University.png"),
         "name": "Karine Pistili"
     },
     {
         "index": 83,
-        "path": require("../../contributors/Kevin Eliezer - ULL Student.jpg"),
+        "path": require("../../contributors/Kevin Eliezer - ULL Student.png"),
         "name": "Kevin Eliezer"
     },
     {
         "index": 84,
-        "path": require("../../contributors/Kevin Souza - Facens University.jpg"),
+        "path": require("../../contributors/Kevin Souza - Facens University.png"),
         "name": "Kevin Souza"
     },
     {
         "index": 85,
-        "path": require("../../contributors/Kripa Kini - GCI Student.jpg"),
+        "path": require("../../contributors/Kripa Kini - GCI Student.png"),
         "name": "Kripa Kini"
     },
     {
@@ -437,7 +436,7 @@
     },
     {
         "index": 88,
-        "path": require("../../contributors/Leonardo - Ruas - Facens University.jpg"),
+        "path": require("../../contributors/Leonardo - Ruas - Facens University.png"),
         "name": "Leonardo"
     },
     {
@@ -452,22 +451,22 @@
     },
     {
         "index": 91,
-        "path": require("../../contributors/Leticia Vigna - Facens Univercity.jpg"),
+        "path": require("../../contributors/Leticia Vigna - Facens Univercity.png"),
         "name": "Leticia Vigna"
     },
     {
         "index": 92,
-        "path": require("../../contributors/Livia Sayuri - Facenes University.jpg"),
+        "path": require("../../contributors/Livia Sayuri - Facenes University.png"),
         "name": "Livia Sayuri"
     },
     {
         "index": 93,
-        "path": require("../../contributors/Llu\u00cds Mart\u00cdnez - Ilerna Academy.jpg"),
+        "path": require("../../contributors/Llu\u00cds Mart\u00cdnez - Ilerna Academy.png"),
         "name": "Llu\u00cds Mart\u00cdnez"
     },
     {
         "index": 94,
-        "path": require("../../contributors/Lot Amor\u00f3s - Dronecoria.jpg"),
+        "path": require("../../contributors/Lot Amor\u00f3s - Dronecoria.png"),
         "name": "Lot Amor\u00f3s"
     },
     {
@@ -477,7 +476,7 @@
     },
     {
         "index": 96,
-        "path": require("../../contributors/Luis Juliana - Facens University.jpg"),
+        "path": require("../../contributors/Luis Juliana - Facens University.png"),
         "name": "Luis Juliana"
     },
     {
@@ -492,37 +491,37 @@
     },
     {
         "index": 99,
-        "path": require("../../contributors/Manuel Paz - Data Scientist.jpg"),
+        "path": require("../../contributors/Manuel Paz - Data Scientist.png"),
         "name": "Manuel Paz"
     },
     {
         "index": 100,
-        "path": require("../../contributors/Marc Gonzalez - Former EPS Student.jpg"),
+        "path": require("../../contributors/Marc Gonzalez - Former EPS Student.png"),
         "name": "Marc Gonzalez"
     },
     {
         "index": 101,
-        "path": require("../../contributors/Marc Sol\u00e8 - Former EPS Student.jpg"),
+        "path": require("../../contributors/Marc Sol\u00e8 - Former EPS Student.png"),
         "name": "Marc Sol\u00e8"
     },
     {
         "index": 102,
-        "path": require("../../contributors/Marcel Porta - Former EPS Student.jpg"),
+        "path": require("../../contributors/Marcel Porta - Former EPS Student.png"),
         "name": "Marcel Porta"
     },
     {
         "index": 103,
-        "path": require("../../contributors/Mari Luz Mosteiro - GDG Santiago.jpg"),
+        "path": require("../../contributors/Mari Luz Mosteiro - GDG Santiago.png"),
         "name": "Mari Luz Mosteiro"
     },
     {
         "index": 104,
-        "path": require("../../contributors/Marian Ionuts - INS Torrevicens.jpg"),
+        "path": require("../../contributors/Marian Ionuts - INS Torrevicens.png"),
         "name": "Marian Ionuts"
     },
     {
         "index": 105,
-        "path": require("../../contributors/Mario Ezquerro - GDG La Rioja.jpg"),
+        "path": require("../../contributors/Mario Ezquerro - GDG La Rioja.png"),
         "name": "Mario Ezquerro"
     },
     {
@@ -532,17 +531,17 @@
     },
     {
         "index": 107,
-        "path": require("../../contributors/Matheus Vinicius - Facens University.jpg"),
+        "path": require("../../contributors/Matheus Vinicius - Facens University.png"),
         "name": "Matheus Vinicius"
     },
     {
         "index": 108,
-        "path": require("../../contributors/Merul Dhiman - GCI Student.jpg"),
+        "path": require("../../contributors/Merul Dhiman - GCI Student.png"),
         "name": "Merul Dhiman"
     },
     {
         "index": 109,
-        "path": require("../../contributors/Merve Isler - GDG Ankara.jpg"),
+        "path": require("../../contributors/Merve Isler - GDG Ankara.png"),
         "name": "Merve Isler"
     },
     {
@@ -552,7 +551,7 @@
     },
     {
         "index": 111,
-        "path": require("../../contributors/Moises Lodeiro - Former ULL Student.jpg"),
+        "path": require("../../contributors/Moises Lodeiro - Former ULL Student.png"),
         "name": "Moises Lodeiro"
     },
     {
@@ -562,12 +561,12 @@
     },
     {
         "index": 113,
-        "path": require("../../contributors/Nerea Serrano - LIeida Drine.jpg"),
+        "path": require("../../contributors/Nerea Serrano - LIeida Drine.png"),
         "name": "Nerea Serrano"
     },
     {
         "index": 114,
-        "path": require("../../contributors/N\u00fabia Stanquini - Facens University.jpg"),
+        "path": require("../../contributors/N\u00fabia Stanquini - Facens University.png"),
         "name": "N\u00fabia Stanquini"
     },
     {
@@ -577,32 +576,32 @@
     },
     {
         "index": 116,
-        "path": require("../../contributors/Omshi Samal - Former GCI Winner.jpg"),
+        "path": require("../../contributors/Omshi Samal - Former GCI Winner.png"),
         "name": "Omshi Samal"
     },
     {
         "index": 117,
-        "path": require("../../contributors/Orestes Carracedo - GDG Viga.jpg"),
+        "path": require("../../contributors/Orestes Carracedo - GDG Viga.png"),
         "name": "Orestes Carracedo"
     },
     {
         "index": 118,
-        "path": require("../../contributors/Oscar Carrasco - ULL Student.jpg"),
+        "path": require("../../contributors/Oscar Carrasco - ULL Student.png"),
         "name": "Oscar Carrasco"
     },
     {
         "index": 119,
-        "path": require("../../contributors/Oscar Palacin - Former EPS Student.jpg"),
+        "path": require("../../contributors/Oscar Palacin - Former EPS Student.png"),
         "name": "Oscar Palacin"
     },
     {
         "index": 120,
-        "path": require("../../contributors/Otavio Jesus - Facens University.jpg"),
+        "path": require("../../contributors/Otavio Jesus - Facens University.png"),
         "name": "Otavio Jesus"
     },
     {
         "index": 121,
-        "path": require("../../contributors/Paco Mart\u00cdn - IBM Research.jpg"),
+        "path": require("../../contributors/Paco Mart\u00cdn - IBM Research.png"),
         "name": "Paco Mart\u00cdn"
     },
     {
@@ -617,7 +616,7 @@
     },
     {
         "index": 124,
-        "path": require("../../contributors/Pau Machetti - GCI 2018.jpg"),
+        "path": require("../../contributors/Pau Machetti - GCI 2018.png"),
         "name": "Pau Machetti"
     },
     {
@@ -647,7 +646,7 @@
     },
     {
         "index": 130,
-        "path": require("../../contributors/Rafa Dur\u00e1n - Former EPS Student.jpg"),
+        "path": require("../../contributors/Rafa Dur\u00e1n - Former EPS Student.png"),
         "name": "Rafa Dur\u00e1n"
     },
     {
@@ -657,42 +656,42 @@
     },
     {
         "index": 132,
-        "path": require("../../contributors/Renato Fernandes - Computer Science Student.jpg"),
+        "path": require("../../contributors/Renato Fernandes - Computer Science Student.png"),
         "name": "Renato Fernandes"
     },
     {
         "index": 133,
-        "path": require("../../contributors/Ricardo Zaponi - FACENS University.jpg"),
+        "path": require("../../contributors/Ricardo Zaponi - FACENS University.png"),
         "name": "Ricardo Zaponi"
     },
     {
         "index": 134,
-        "path": require("../../contributors/Richard Botez - GCI Student.jpg"),
+        "path": require("../../contributors/Richard Botez - GCI Student.png"),
         "name": "Richard Botez"
     },
     {
         "index": 135,
-        "path": require("../../contributors/Robert Gabriel - lIerna.jpg"),
+        "path": require("../../contributors/Robert Gabriel - lIerna.png"),
         "name": "Robert Gabriel"
     },
     {
         "index": 136,
-        "path": require("../../contributors/Roger Artero - Lleida Drone.jpg"),
+        "path": require("../../contributors/Roger Artero - Lleida Drone.png"),
         "name": "Roger Artero"
     },
     {
         "index": 137,
-        "path": require("../../contributors/Ruben Serrano - Flutter and Fuchsia specialist.jpg"),
+        "path": require("../../contributors/Ruben Serrano - Flutter and Fuchsia specialist.png"),
         "name": "Ruben Serrano"
     },
     {
         "index": 138,
-        "path": require("../../contributors/R\u00e1polas Lisboa - Facens University.jpg"),
+        "path": require("../../contributors/R\u00e1polas Lisboa - Facens University.png"),
         "name": "R\u00e1polas Lisboa"
     },
     {
         "index": 139,
-        "path": require("../../contributors/Sachin Rammoorthy - GCI 2018.jpg"),
+        "path": require("../../contributors/Sachin Rammoorthy - GCI 2018.png"),
         "name": "Sachin Rammoorthy"
     },
     {
@@ -707,12 +706,12 @@
     },
     {
         "index": 142,
-        "path": require("../../contributors/Sara Emilly - Facens University.jpg"),
+        "path": require("../../contributors/Sara Emilly - Facens University.png"),
         "name": "Sara Emilly"
     },
     {
         "index": 143,
-        "path": require("../../contributors/Sergi Alba - GCI Student.jpg"),
+        "path": require("../../contributors/Sergi Alba - GCI Student.png"),
         "name": "Sergi Alba"
     },
     {
@@ -727,7 +726,7 @@
     },
     {
         "index": 146,
-        "path": require("../../contributors/Sofia Lu Xia - Tenerife Designer.jpg"),
+        "path": require("../../contributors/Sofia Lu Xia - Tenerife Designer.png"),
         "name": "Sofia Lu Xia"
     },
     {
@@ -737,12 +736,12 @@
     },
     {
         "index": 148,
-        "path": require("../../contributors/Somya Agrawal - GCI Student.jpg"),
+        "path": require("../../contributors/Somya Agrawal - GCI Student.png"),
         "name": "Somya Agrawal"
     },
     {
         "index": 149,
-        "path": require("../../contributors/Sreays Ravichandran - Computer Science Student.jpg"),
+        "path": require("../../contributors/Sreays Ravichandran - Computer Science Student.png"),
         "name": "Sreays Ravichandran"
     },
     {
@@ -752,22 +751,22 @@
     },
     {
         "index": 151,
-        "path": require("../../contributors/Taha Skaf - INS Alcarras.jpg"),
+        "path": require("../../contributors/Taha Skaf - INS Alcarras.png"),
         "name": "Taha Skaf"
     },
     {
         "index": 152,
-        "path": require("../../contributors/Tapaswini Kodavanti - GCI Student.jpg"),
+        "path": require("../../contributors/Tapaswini Kodavanti - GCI Student.png"),
         "name": "Tapaswini Kodavanti"
     },
     {
         "index": 153,
-        "path": require("../../contributors/Tarun Ravi - Former GCI Winner.jpg"),
+        "path": require("../../contributors/Tarun Ravi - Former GCI Winner.png"),
         "name": "Tarun Ravi"
     },
     {
         "index": 154,
-        "path": require("../../contributors/Tom\u00e1s Gonz\u00e1lez - GDG Tarragona.jpg"),
+        "path": require("../../contributors/Tom\u00e1s Gonz\u00e1lez - GDG Tarragona.png"),
         "name": "Tom\u00e1s Gonz\u00e1lez"
     },
     {
@@ -777,7 +776,7 @@
     },
     {
         "index": 156,
-        "path": require("../../contributors/Vanessa Galcer\u00e0 - GDG Tarragona.jpg"),
+        "path": require("../../contributors/Vanessa Galcer\u00e0 - GDG Tarragona.png"),
         "name": "Vanessa Galcer\u00e0"
     },
     {
@@ -807,13 +806,13 @@
     },
     {
         "index": 162,
-        "path": require("../../contributors/Xavi Cobos - Former EPS Student.jpg"),
+        "path": require("../../contributors/Xavi Cobos - Former EPS Student.png"),
         "name": "Xavi Cobos"
     },
     {
         "index": 163,
-        "path": require("../../contributors/Xavier Qui - Master Designer.jpg"),
+        "path": require("../../contributors/Xavier Qui - Master Designer.png"),
         "name": "Xavier Qui"
     }
-]
-export default contributer;
+];
+export default contributors;

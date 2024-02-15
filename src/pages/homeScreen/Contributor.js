@@ -1,18 +1,17 @@
 import "./Contributor.css";
-import contributer from "./ImageList.js";
+import contributors from "./ImageList.js";
 
 export default function Contributor() {
   return (
     <div className="pic-gallery">
       <label className="font-semibold mb-16 block text-3xl capitalize">
         {" "}
-        contributor
+        contributors
       </label>
 
       <div className="pic">
-        {/* mapping the data from file  */}
 
-        {contributer.map((item) => {
+        {contributors.map((item) => {
           return (
             <div className="img-container " key={item.index}>
               <img

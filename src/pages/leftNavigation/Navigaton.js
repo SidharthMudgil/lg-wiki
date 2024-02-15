@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Navigaton() {
 
-  
+
   // function for ctrl k feature
 
   const inputRef = useRef(null);
@@ -13,7 +13,7 @@ export default function Navigaton() {
       if (e.ctrlKey && e.key === "k") {
         e.preventDefault();
         inputRef.current.focus();
-      
+
         //   document.getElementById("iconsub").style.display = "none";
         // document.getElementById("iconsubk").style.display = "none";
       }
@@ -53,7 +53,7 @@ export default function Navigaton() {
                 className="  search menu-search focus:outline-none  "
                 ref={inputRef}
                 onFocus={() => {
-         
+
                   // document.getElementById("iconsub").style.display = "none"; 
                   // document.getElementById("iconsubk").style.display = "none";
                 }}

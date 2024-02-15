@@ -16,7 +16,7 @@
 .home-logo {
   width: 30rem;
   height: 16.375rem;
-  margin:  5rem 0  1rem;
+  margin: 5rem 0 1rem;
 
   display: inline-flex;
   flex-basis: 100%;
@@ -37,7 +37,6 @@
 
 /* search div */
 
-
 .search-main {
   /* max-height: 2.7rem !important; */
   padding: 1.563rem;
@@ -45,27 +44,27 @@
 
   display: flex;
   position: relative;
-  
+
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
-.search-box{
+.search-box {
   flex-basis: 50%;
   position: relative;
   display: flex;
   border-radius: 45;
   justify-content: center;
-  align-items: center;}
+  align-items: center;
+}
 .search {
- flex-basis: 10%;
- flex-grow: 1;
+  flex-basis: 10%;
+  flex-grow: 1;
   border-radius: 30px;
   padding: 1rem 3.4rem 1rem 3rem !important;
   background-color: #1e2524;
   align-items: center;
   border-radius: 45;
-  
 }
 
 .search-icon {
@@ -74,8 +73,9 @@
 }
 
 .search-img-icon {
-  box-shadow:  -1px 0px 0px rgba(209,202,209,1), inset 2px -2px 0 0 rgba(209,202,209,1);
-  background-color:var(--backgroud);
+  box-shadow: -1px 0px 0px rgba(209, 202, 209, 1),
+    inset 2px -2px 0 0 rgba(209, 202, 209, 1);
+  background-color: var(--backgroud);
   display: flex;
   height: 40px;
   width: 50px;
@@ -85,17 +85,17 @@
   padding: 5px 3.5px;
   align-items: center;
   text-align: center;
-  text-transform: capitalize  ;
+  text-transform: capitalize;
 }
-.ctrl-key{
-  border-bottom-left-radius:20px; 
+.ctrl-key {
+  border-bottom-left-radius: 20px;
 
-border-top-left-radius: 20px;
+  border-top-left-radius: 20px;
 }
-.k-key{
-  border-bottom-right-radius:20px; 
+.k-key {
+  border-bottom-right-radius: 20px;
 
-border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .search-img {
@@ -105,20 +105,17 @@ border-top-right-radius: 20px;
   gap: 5px;
 }
 
-.suggestion{
-  display: flex ;
- position: absolute; 
- top: 3rem;
-width: 95%;
-background-color:#1e2524;
- flex-direction: column;
- border-bottom-left-radius: 1rem;
- border-bottom-right-radius: 1rem;
-}
-.suggestion-item{
+.suggestion {
   display: flex;
-  padding: 0.5rem 1rem ;
-  
-
-
+  position: absolute;
+  top: 3rem;
+  width: 95%;
+  background-color: #1e2524;
+  flex-direction: column;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.suggestion-item {
+  display: flex;
+  padding: 0.5rem 1rem;
 }
