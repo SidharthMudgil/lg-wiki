@@ -1,0 +1,19 @@
+{
+    "steps": [
+      {
+        "title": "Step 1",
+        "content": "Lorem ipsum dolor sit amet consectetur. Sagittis non pharetra felis sodales nulla odio aliquet ut dui. Viverra faucibus faucibus nulla ullamcorper congue ultricies eget orci arcu. Id luctus mollis venenatis lectus in sed. Eu in ultrices ullamcorper ultricies. Sagittis posuere ut praesent risus ultrices nisl proin mauris sed."
+      },
+      {
+        "title": "Step 2",
+        "content": "Lorem ipsum dolor sit amet consectetur. Sagittis non pharetra felis sodales nulla odio aliquet ut dui. Viverra faucibus faucibus nulla ullamcorper congue ultricies eget orci arcu. Id luctus mollis venenatis lectus in sed. Eu in ultrices ullamcorper ultricies. Sagittis posuere ut praesent risus ultrices nisl proin mauris sed."
+      },
+      {
+        "title": "Step 3",
+        "content": "Lorem ipsum dolor sit amet consectetur. Sagittis non pharetra felis sodales nulla odio aliquet ut dui. Viverra faucibus faucibus nulla ullamcorper congue ultricies eget orci arcu. Id luctus mollis venenatis lectus in sed. Eu in ultrices ullamcorper ultricies. Sagittis posuere ut praesent risus ultrices nisl proin mauris sed."
+      }
+    ],
+    "kotlinCode": "Your Kotlin code here",
+    "javaCode": "Your Java code here"
+  }
+  
