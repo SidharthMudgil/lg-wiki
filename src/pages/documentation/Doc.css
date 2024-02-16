@@ -1,3 +1,15 @@
+
+.whole{
+    overflow: auto;
+    display: FLEX;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-right: 80px;
+    
+
+
+}
+
 .dod{
     display: flex;
     color: white;
@@ -39,13 +51,7 @@
 
 }
 
-.whole{
-    display: block;
-    padding-right: 80px;
-    overflow: -moz-hidden-unscrollable;
 
-
-}
 
 .j{
     
