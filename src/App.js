@@ -18,10 +18,9 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<NavigatorHeader />}>
         <Route path="" element={<MainContent />} />
-        <Route path="arc" element={<Architecture />} />
 
         <Route path="docs" element={<Layout />}>
-        {/* <Route path="title" element={<Doc />} /> */}
+        <Route path="arc" element={<Architecture />} />
      
        
      

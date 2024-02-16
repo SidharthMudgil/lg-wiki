@@ -2,8 +2,8 @@
   import master from "../../assets/master-slave.svg";
   export default function Architecture() {
     return (
-      <div className="background p-14">
-        <div className="flex flex-wrap text-left text-lg">
+     <>
+        <div className="flex flex-wrap text-left text-lg text-white ">
           <h1 className=" flex py-10 md:text-2xl lg:text-3xl"> Overview </h1>
           <p>
             Liquid Galaxy is a remarkable panoramic system that is tremendously
@@ -64,6 +64,6 @@
             database.
           </h2>{" "}
         </div>
-      </div>
+</> 
     );
   }

@@ -38,7 +38,7 @@ export default function Navigaton() {
     }
   }
   return (
-    <div>
+    <>
       <div className="left float-left h-screen ">
         <ul className="menu ">
           <li>
@@ -117,23 +117,21 @@ export default function Navigaton() {
               let id = 3;
               menubar(id);
             }}
-            className="py-1 menu-ul "
+            className="py-1  menu-ul "
           >
-            Quickstart
+           architecture
             <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
             <ul id="3" className="menuex">
               <li className="menutab">
-                <Link to="">demo text</Link>{" "}
+                <Link to="/docs/arc">demo text</Link>
               </li>
-
               <li className="menutab">
-                {" "}
-                <Link to="">demo text</Link>{" "}
+                <Link to="">demo text</Link>
               </li>
             </ul>
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 }

@@ -4,8 +4,12 @@
   background-size: 100% 100%;
 
   text-align: center;
+  overflow: hidden;
+  scrollbar-width:none
 }
-
+.background::-webkit-scrollbar{
+  display: none;
+}
 /* logo and basic info div */
 .home {
   display: flex;
