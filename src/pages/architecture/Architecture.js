@@ -49,7 +49,7 @@
             devices; in a database system, a primary server managing replicas.
           </p>{" "}
           <div className=" flex flex-col gap-6 p-14 w-full">
-            <img src={master} alt="master-slave" className="bg-white mx-auto " />
+            <img src={master} alt="master-slave" className="mx-auto " />
           </div>
           <h1 className=" flex py-10 md:text-xl lg:text-2xl ">Slave</h1>
           <h2 className="items-center flex basis-full">

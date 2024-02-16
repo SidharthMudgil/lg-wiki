@@ -3,10 +3,9 @@ import lg from "../../assets/lg-logo.svg";
 import Contributor from "./Contributor";
 import "./MainContent.css";
 import InfoOverview from "./InfoOverview";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 export default function MainContent() {
-
   // ctrl k feature
 
   const inputRef = useRef(null);
@@ -26,37 +25,67 @@ export default function MainContent() {
     };
   }, []);
 
+  //tempory data for search
+  const data = [
+    "Installation",
+    "LG Commands",
+    "Set Slave",
+    "Clean KMLs and Logo",
+    "Reboot Liquid Galaxy",
+    "Relaunch Liquid Galaxy",
+    "Send KMLs",
+  ];
+
+  //seach suggestion function
+  const [Suggest, setSuggest] = useState([]);
+  const handleSearch = (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+
+    // Filter the data based on the search term
+    const filteredData = data.filter((item) =>
+      item.toLowerCase().includes(searchTerm)
+    );
+
+    // Perform any action with filteredData (e.g., display it)
+    if (searchTerm !== "") {
+      setSuggest(filteredData);
+    } else {
+      setSuggest([]);
+    }
+  };
+
   return (
     <>
       <div className="background">
         <div className="home  ">
-           {/* main logo */}
+          {/* main logo */}
           <div className=" basis-[100%] ">
             <img src={lg} alt="liquild GALAXY" className="home-logo   " />
           </div>
         </div>
         <div className=" search-main w-full">
           <div className="search-box">
-          <span className="search-icon  " id="icon">
-            {" "}
-            <i className="fas fa-search"></i>{" "}
-          </span>
-          <input
-            type="search "
-            placeholder="Search..."
-            className="  search focus:outline-none "
-            ref={inputRef}
-          />
-         {/* <span className="search-img">
+            <span className="search-icon  " id="icon">
+              {" "}
+              <i className="fas fa-search"></i>{" "}
+            </span>
+            <input
+              type="search "
+              placeholder="Search..."
+              className="  search focus:outline-none "
+              ref={inputRef}
+              onChange={handleSearch}
+            />
 
-             svg for ctrl and k keys  
-            <span className="search-img-icon ctrl-key ">ctrl</span>
-       
+            <div className="suggestion">
+              {Suggest.map((item, index) => {
+                return (<div className="suggestion-item">{item}</div>);
+              })}
 
-            <span className="search-img-icon k-key">k</span>
-          </span>
-*/}
-        </div>
+            </div>
+
+          </div>
+
         </div>
 
         <p className=" basic-info">

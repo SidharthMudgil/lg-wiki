@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import MainContent from "./pages/homeScreen/MainContent";
-import Docs from "./pages/leftNavigation/Docs";
+// import Doc from "./pages/documentation/Doc";
 import Layout from "./pages/leftNavigation/Layout";
 import NavigatorHeader from "./pages/navigationHeader/NavigationHeader";
 import Architecture from "./pages/architecture/Architecture";
@@ -21,7 +21,7 @@ function App() {
         <Route path="arc" element={<Architecture />} />
 
         <Route path="docs" element={<Layout />}>
-        <Route path="title" element={<Docs />} />
+        {/* <Route path="title" element={<Doc />} /> */}
      
        
      

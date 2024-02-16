@@ -1,12 +1,7 @@
-/* sub-title  menu div */
-
 .menuex {
   display: none;
-  color: #f5a942;
+  color: var(--text-color);
 }
-
-/* title menu div */
-
 
 .menu-ul {
   padding-top: 0.938rem;
@@ -18,12 +13,10 @@
 }
 
 .menutab:hover {
-  color: aquamarine;
+  color: #f5a942;
   border-radius: 1.25rem;
-  background-color: rgba(127, 255, 212, 0.2);
 }
 
-/* search div css */
 .menu-search-div {
   padding: 0 !important;
   display: flex;
@@ -32,11 +25,13 @@
   align-items: center;
   margin: 0 auto;
 }
+
 .menu-search {
   padding: 0.5rem 1rem 0.5rem 2.5rem !important;
 }
-.nav-search{
-  height: 30px!important;
+
+.nav-search {
+  height: 30px !important;
 }
 
 .menu-search-icon {
@@ -52,13 +47,9 @@
   color: var(--text-color);
 }
 
-/* background in layout div  */
-
 .main {
   background-color: var(--backgroud);
 }
-
-/* left align css */
 
 .left {
   display: block;
@@ -70,5 +61,3 @@
   text-transform: capitalize;
   background-color: var(--l-nav);
 }
-
-
