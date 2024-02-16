@@ -15,7 +15,8 @@
   display: flex;
   cursor: pointer;
   transition: 0.2s ease-in;
-  margin: 0 62px;
+  margin: 0 20px;
+  font-size: 18px;
 }
 
 .nav-li {
@@ -46,13 +47,13 @@
 }
 
 .nav-ul {
-  margin-left: -5rem;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
   height: 4rem;
+  margin-right: 12px;
 }
 
 .footer {

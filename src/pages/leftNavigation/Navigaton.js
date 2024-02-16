@@ -90,7 +90,7 @@ export default function Navigaton() {
                 <Link to="/docs/title" className="menutab-link">demo text</Link>
               </li>
               <li className="menutab">
-                <Link to="/" className="menutab-link">demo text</Link>
+                <Link to="/docs/input" className="menutab-link">demo text</Link>
               </li>
             </ul>
           </li>
