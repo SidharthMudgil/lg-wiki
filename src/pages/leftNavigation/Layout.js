@@ -2,9 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navigaton from "./Navigaton";
 
-import Doc from "../documentation/Doc";
-
-
 export default function Layout() {
   return (
     <>
