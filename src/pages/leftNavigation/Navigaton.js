@@ -1,18 +1,17 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 
 export default function Navigaton() {
 
-  // function for ctrl k feature
+  const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.key === "k") {
         e.preventDefault();
         inputRef.current.focus();
-        //   document.getElementById("iconsub").style.display = "none";
-        // document.getElementById("iconsubk").style.display = "none";
       }
     };
 
@@ -23,17 +22,23 @@ export default function Navigaton() {
     };
   }, []);
 
-  //li closing open function
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+    menubar();
+  };
 
-  function menubar(x) {
-    let id = document.getElementById(x);
-    let dis = getComputedStyle(id);
-    if (dis.display === "none") {
-      document.getElementById(x).style.display = "block";
-    } else {
-      document.getElementById(x).style.display = "none";
-    }
+  function menubar() {
+    const items = document.querySelectorAll(".menu-ul");
+    items.forEach((item) => {
+      const linkText = item.textContent.toLowerCase();
+      if (linkText.includes(inputValue.toLowerCase())) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
   }
+
   return (
     <>
       <div className="left float-left h-screen">
@@ -43,8 +48,7 @@ export default function Navigaton() {
             placeholder="Search..."
             className="search menu-search focus:outline-none"
             ref={inputRef}
-            onFocus={() => {
-            }}
+            onChange={handleChange}
             id="search"
           />
         </div>
@@ -61,7 +65,6 @@ export default function Navigaton() {
           <li className="py-1  menu-ul">
             <Link to="/input">Control Commands</Link>
           </li>
-
         </ul>
       </div>
     </>

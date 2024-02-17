@@ -3,9 +3,16 @@
   color: var(--text-color);
 }
 
+.menu {
+  margin: 1rem 1rem 1rem 1rem;
+}
+
 .menu-ul {
-  padding-top: 0.938rem;
+  padding-top: 0.5rem;
   color: var(--white-color);
+}
+.menu-ul:hover {
+  color: var(--selected-color);
 }
 
 .menutab {
