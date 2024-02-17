@@ -36,97 +36,37 @@ export default function Navigaton() {
   }
   return (
     <>
-      <div className="left float-left h-screen ">
-        <ul className="menu ">
-          <li>
-            <div className=" menu-search-div">
-              <span className="menu-search-icon" id="icon">
-                {" "}
-                <i className="fas fa-search"></i>{" "}
-              </span>
-              <input
-                type="search "
-                placeholder="Search..."
-                className="  search menu-search focus:outline-none  "
-                ref={inputRef}
-                onFocus={() => {
-
-                  // document.getElementById("iconsub").style.display = "none"; 
-                  // document.getElementById("iconsubk").style.display = "none";
-                }}
-                id="search"
-              />
-              {/*<span className="search-img">
-              <span className="search-img-icon  nav-search ctrl-key" id="iconsub">
-                  ctrl
-                </span>
-
-                <span className="search-img-icon nav-search k-key" id="iconsubk">
-                  k
-                </span>
-              </span>
-*/}
-            </div>
-          </li>
-
-
-          {/* content title and subtitle to written here  */}
-
-          <li
-            onClick={() => {
-              let id = 1;
-              menubar(id);
+      <div className="left float-left h-screen">
+        <div className="menu-search-div mb-3">
+          <span className="menu-search-icon" id="icon">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+          </span>
+          <input
+            type="search"
+            placeholder="Search..."
+            className="search menu-search focus:outline-none"
+            ref={inputRef}
+            onFocus={() => {
             }}
-            className="py-1 menu-ul "
-          >
-            installation
-            <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
-            <ul id="1" className="menuex">
-              <li className="menutab" >
-                {" "}
-                <Link to="/docs/title" className="menutab-link">demo text</Link>
-              </li>
-              <li className="menutab">
-                <Link to="/docs/input" className="menutab-link">demo text</Link>
-              </li>
-            </ul>
+            id="search"
+          />
+        </div>
+
+        <ul className="menu">
+          <li className="py-1  menu-ul">
+            <Link to="/docs/arc">architecture</Link>
           </li>
-          <li
-            onClick={() => {
-              let id = 2;
-              menubar(id);
-            }}
-            className="py-1  menu-ul "
-          >
-            LG Commands
-            <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
-            <ul id="2" className="menuex">
-              <li className="menutab">
-                <Link to="">demo text</Link>
-              </li>
-              <li className="menutab">
-                <Link to="">demo text</Link>
-              </li>
-            </ul>
+
+          <li className="py-1 menu-ul">
+            <Link to="/input">rig installation</Link>
           </li>
-          <li
-            onClick={() => {
-              let id = 3;
-              menubar(id);
-            }}
-            className="py-1  menu-ul "
-          >
-            architecture
-            <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
-            <ul id="3" className="menuex">
-              <li className="menutab">
-                <Link to="/docs/arc">demo text</Link>
-              </li>
-              <li className="menutab">
-                <Link to="">demo text</Link>
-              </li>
-            </ul>
+
+          <li className="py-1  menu-ul">
+            <Link to="/input">Control Commands</Link>
           </li>
+
         </ul>
       </div>
     </>

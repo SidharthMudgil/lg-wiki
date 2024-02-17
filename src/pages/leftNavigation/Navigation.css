@@ -43,7 +43,6 @@
 .search::placeholder,
 .search:focus {
   outline: none;
-
   color: var(--text-color);
 }
 
