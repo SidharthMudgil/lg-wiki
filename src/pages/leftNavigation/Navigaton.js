@@ -1,9 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Navigation.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navigaton() {
-
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
 
@@ -55,15 +54,40 @@ export default function Navigaton() {
 
         <ul className="menu">
           <li className="py-1  menu-ul">
-            <Link to="/docs/arc">architecture</Link>
+            <NavLink
+              to="/docs/arc"
+            
+              style={({ isActive }) => ({
+                color : isActive ? "#f5a942" : "",
+           
+              })}
+            >
+              architecture
+            </NavLink>
           </li>
-
-          <li className="py-1 menu-ul">
-            <Link to="/input">rig installation</Link>
-          </li>
-
           <li className="py-1  menu-ul">
-            <Link to="/input">Control Commands</Link>
+            <NavLink
+              to="/docs/rig"
+            
+              style={({ isActive }) => ({
+                color : isActive ? "#f5a942" : "",
+            
+              })}
+            >
+              rig installation
+            </NavLink>
+          </li>
+          <li className="py-1  menu-ul">
+            <NavLink
+              to="/docs/control"
+            
+              style={({ isActive }) => ({
+                color : isActive ? "#f5a942" : "",
+               
+              })}
+            >
+              Control Commands
+            </NavLink>
           </li>
         </ul>
       </div>

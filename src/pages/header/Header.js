@@ -25,7 +25,7 @@ export default function Header() {
             home
           </NavLink>
           <NavLink
-            to="/docs"
+            to="/docs/arc"
             className="nav-li"
             style={({ isActive }) => ({
               pointerEvents: isActive ? "none" : "",
