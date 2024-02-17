@@ -84,8 +84,7 @@ export default function ControlCommand() {
   
   
   **Note:** These commands are implemented using the JSch library. It is assumed that there is a successful SSH connection established with the Liquid Galaxy rig prior to executing these commands.
-  
-`;
+  `;
   return (
     <div className=" rig ">
       <Markdown
