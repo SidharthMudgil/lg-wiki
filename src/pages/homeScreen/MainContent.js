@@ -53,10 +53,13 @@ export default function MainContent() {
       setSuggest([]);
     }
   };
+  
+
 
   return (
     <>
-      <div className="background">
+      <div className="background  " >
+        
         <div className="home  ">
           {/* main logo */}
           <div className=" basis-[100%] ">

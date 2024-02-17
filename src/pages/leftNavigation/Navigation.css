@@ -49,6 +49,7 @@
 
 .main {
   background-color: var(--backgroud);
+  overflow: hidden;
 }
 
 .left {
