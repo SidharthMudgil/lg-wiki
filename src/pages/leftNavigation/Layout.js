@@ -8,7 +8,7 @@ export default function Layout() {
       <div className="main h-screen ">
         <Navigaton />
         <div className="h-screen overflow-auto p-12">
-        <Outlet />
+          <Outlet />
         </div>
       </div>
     </>

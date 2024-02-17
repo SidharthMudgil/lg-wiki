@@ -4,16 +4,13 @@ import { Link } from "react-router-dom";
 
 export default function Navigaton() {
 
-
   // function for ctrl k feature
-
   const inputRef = useRef(null);
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.key === "k") {
         e.preventDefault();
         inputRef.current.focus();
-
         //   document.getElementById("iconsub").style.display = "none";
         // document.getElementById("iconsubk").style.display = "none";
       }
@@ -119,7 +116,7 @@ export default function Navigaton() {
             }}
             className="py-1  menu-ul "
           >
-           architecture
+            architecture
             <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
             <ul id="3" className="menuex">
               <li className="menutab">

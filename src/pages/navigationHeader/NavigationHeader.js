@@ -7,11 +7,10 @@ import Footer from '../footer/Footer'
 export default function NavigatorHeader() {
   return (
     <>
-    <Header/>
-    <Outlet/>
-    <Footer/>
-</>
-
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
   )
 }
 
