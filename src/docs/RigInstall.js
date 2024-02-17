@@ -6,7 +6,8 @@ import remarkGfm from "remark-gfm";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function RigInstall() {
-  const data = ` # Installation Guide for Liquid Galaxy Software
+  const data = ` 
+  # Installation Guide for Liquid Galaxy Software
   
   This manual is a guide on how to install Liquid Galaxy software. We recommend installing it on brand new machines. We also provide instructions on how to install an Ubuntu system.
   
