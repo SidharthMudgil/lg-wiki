@@ -22,11 +22,7 @@ function App() {
         <Route path="/input" element={<UserInput />} />
 
         <Route path="docs" element={<Layout />}>
-        <Route path="arc" element={<Architecture />} />
-     
-       
-     
-
+          <Route path="arc" element={<Architecture />} />
         </Route>
       </Route>
     )
