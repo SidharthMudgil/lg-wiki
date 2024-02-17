@@ -7,7 +7,7 @@ import {
 import "./App.css";
 import MainContent from "./pages/homeScreen/MainContent";
 // import Doc from "./pages/documentation/Doc";
-import UserInput from "./userContribution/UserInput";
+import UserInput from "./appWrite/userContribution/UserInput";
 import Layout from "./pages/leftNavigation/Layout";
 import NavigatorHeader from "./pages/navigationHeader/NavigationHeader";
 import Architecture from "./pages/architecture/Architecture";

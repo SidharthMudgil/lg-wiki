@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import Markdown from 'react-markdown'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import '../userContribution/UserInput.css'
+import './UserInput.css'
 import remarkGfm from 'remark-gfm'
 
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -11,6 +11,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 export default function UserInput() {
 
     const [text,setText] =useState('hi');
+   // eslint-disable-next-line
     const [serializedContent, setSerializedContent] = useState('');
 
   // Function to serialize the content of a DOM element
