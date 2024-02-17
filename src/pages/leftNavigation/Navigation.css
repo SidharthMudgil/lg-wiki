@@ -11,18 +11,18 @@
   padding-top: 0.5rem;
   color: var(--white-color);
 }
-.menu-ul:hover {
+/* .menu-ul:hover {
   color: var(--selected-color);
-}
+} */
 
 .menutab {
   padding: 0.313rem 0.625rem;
 }
-
+/* 
 .menutab:hover {
   color: #f5a942;
   border-radius: 1.25rem;
-}
+} */
 
 .menu-search-div {
   padding: 0 !important;

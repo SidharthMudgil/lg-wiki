@@ -11,6 +11,8 @@ import UserInput from "./userContribution/UserInput";
 import Layout from "./pages/leftNavigation/Layout";
 import NavigatorHeader from "./pages/navigationHeader/NavigationHeader";
 import Architecture from "./pages/architecture/Architecture";
+import RigInstall from "./docs/RigInstall";
+import ControlCommand from "./docs/ControlCommand";
 
 // All Routes for browsing in webpage
 
@@ -23,6 +25,9 @@ function App() {
 
         <Route path="docs" element={<Layout />}>
           <Route path="arc" element={<Architecture />} />
+        <Route path="rig" element={<RigInstall />} />
+        <Route path="control" element={<ControlCommand />} />
+
         </Route>
       </Route>
     )

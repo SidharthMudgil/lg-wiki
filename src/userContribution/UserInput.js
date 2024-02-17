@@ -14,7 +14,7 @@ export default function UserInput() {
     <div className='markdown-input'>
       <textarea width="1000px" className='textinput-markdown ' placeholder='Write Your Text here' onChange={(e) => { setText(String(e.target.value)) }} />
     </div>
-    <div className="markdown-container">
+    <div className="markdown-container text-white">
       <Markdown
         children={text}
         remarkPlugins={[remarkGfm]}
