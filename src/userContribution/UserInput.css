@@ -16,8 +16,9 @@
 .textinput-markdown {
   background-color: inherit;
   width: 100%;
-  height: 100%;
+  height: 85vh;
   color: var(--text-color);
+  resize: none;
 }
 textarea:focus {
   outline: none;
@@ -30,7 +31,31 @@ textarea:focus {
   flex-direction: column;
 }
 .markdown-output {
+  flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+.code {
+  margin: 10px;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 10px;
+background-color: #2f3232;
+}
+.blockquote {
+  padding: 10px 14px 10px;
+  background: #535457;
+  border-left: 3px solid #06fff1;
+  color: #ffffff;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+
+.unordered-list .orderded-list{
+list-style: square;
+  }
+ .anchor{
+  border-bottom: blue solid 3px;
+ }

@@ -34,11 +34,24 @@ export default function UserInput() {
                 wrapLines={true}
               />
             ) : (
-              <code {...rest} className={className} >
+              <code {...rest} className={`code`} >
                 {children}
               </code>
             )
+          },
+          blockquote(props) {
+            return <blockquote {...props} className="blockquote" />
+          },
+          ul(props) {
+            return <ul {...props} className="unordered-list" />
+          },
+          ol(props) {
+            return <ol {...props} className="ordered-list" />
+          },
+          a(props){
+            return <a {...props} className='anchor'/>
           }
+          
         }}
       />
     </div>

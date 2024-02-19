@@ -39,6 +39,12 @@ h1 {
     border-radius: 10px;
   background-color: #2f3232;
   }
+.blockquote{
+  padding: 10px 14px 10px;
+  background: #535457;
+  border-left: 3px solid #06fff1;
+  color: #ffffff;
+  font-style: italic;
+  letter-spacing: 0.1em;
 
-
-/* Specificity increased for targeting list items within ordered lists */
+}
