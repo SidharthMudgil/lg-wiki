@@ -6,48 +6,77 @@ import remarkGfm from 'remark-gfm'
 
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
+import Auth from '../services/auth'
+
+
 
 
 export default function UserInput() {
 
+const title = 'first data';
+
+  const featuredaimage=null;
+  
+
+
+
     const [text,setText] =useState('hi');
+
+      const content= String(text)
+
    // eslint-disable-next-line
-    const [serializedContent, setSerializedContent] = useState('');
+//     const [serializedContent, setSerializedContent] = useState('');
 
-  // Function to serialize the content of a DOM element
-  function serializeElement(element) {
-    let serialized = '<' + element.tagName.toLowerCase();
+//   // Function to serialize the content of a DOM element
+//   function serializeElement(element) {
+//     let serialized = '<' + element.tagName.toLowerCase();
 
-    // Serialize attributes
-    for (let attr of element.attributes) {
-      serialized += ' ' + attr.name + '="' + attr.value + '"';
-    }
+//     // Serialize attributes
+//     for (let attr of element.attributes) {
+//       serialized += ' ' + attr.name + '="' + attr.value + '"';
+//     }
 
-    serialized += '>';
+//     serialized += '>';
 
-    // Serialize children recursively
-    for (let child of element.childNodes) {
-      if (child.nodeType === Node.TEXT_NODE) {
-        serialized += child.textContent;
-      } else if (child.nodeType === Node.ELEMENT_NODE) {
-        serialized += serializeElement(child);
-      }
-    }
+//     // Serialize children recursively
+//     for (let child of element.childNodes) {
+//       if (child.nodeType === Node.TEXT_NODE) {
+//         serialized += child.textContent;
+//       } else if (child.nodeType === Node.ELEMENT_NODE) {
+//         serialized += serializeElement(child);
+//       }
+//     }
 
-    serialized += '</' + element.tagName.toLowerCase() + '>';
-    return serialized;
-  }
+//     serialized += '</' + element.tagName.toLowerCase() + '>';
+//     return serialized;
+//   }
 
-// Function to handle submit button click
-function handleSubmit() {
-  const divElement = document.getElementById('output');
-  if (divElement) {
-    const serializedContent = serializeElement(divElement);
-    setSerializedContent(serializedContent);
-    console.log(serializedContent)
-  }
-}
-  return (<div className='markdown h-s'>
+// // Function to handle submit button click
+// function handleSubmit() {
+//   const divElement = document.getElementById('output');
+//   if (divElement) {
+//     const serializedContent = serializeElement(divElement);
+//     setSerializedContent(serializedContent);
+//     console.log(serializedContent)
+//   }
+// }
+
+function handleSubmit(e) {
+  e.preventDefault();
+  try {
+    Auth.createPost({title,content,featuredaimage}).then(console.log("updated"))    
+
+  
+  } catch (error) {
+    throw error;
+    
+  }   
+  
+  
+
+
+  return (
+  <div className='markdown h-s'>
     <div className='markdown-input'>
 <textarea  width="1000px" className='textinput-markdown ' placeholder='Write Your Text here'onChange={(e)=> {setText(String(e.target.value))}}/>
 </div>
@@ -79,12 +108,12 @@ function handleSubmit() {
             }
           }}
         />
-         <div>    <button onClick={handleSubmit}>Submit</button>
-         <div>{}</div>
+         <div>    <button  className="text-white bg-red-300 p-2 rounded-lg" onClick={()=>{handleSubmit()}} > Submit</button>
+         <div>{text}</div>
       </div>
      
         </div>
         </div>
   )
 }
-
+}

@@ -1,4 +1,4 @@
-import { equal } from "assert";
+
 import config from "../database/config";
 import { Client, Databases, ID, Query } from "appwrite";
 
@@ -14,12 +14,12 @@ export class upload {
     this.bucket = new Storage(this.client);
   }
 
-  async createPost({ title, content, featuredaimage, status, userId, id }) {
+  async createPost(id,{ title, content, featuredaimage, status, userId }) {
     try {
       return await this.createDocument(
         config.databases,
         config.collectionId,
-        slug,
+        id,
         {
           id,
           title,
@@ -102,9 +102,10 @@ export class upload {
   }
 
   getfilePreview(fileId) {
-    return this.bucketId.getfilePreview(config.bucketId, fileId);
+    return this.bucket.getfilePreview(config.bucketId, fileId);
   }
 }
+
 
 const Upload = new Upload();
 export default Upload;
