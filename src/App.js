@@ -17,6 +17,7 @@ import { Provider } from "react-redux";
 import React from "react";
 import store from "./appWrite/store/store";
 import Signup from "./appWrite/login/signup";
+import Login from "./appWrite/login/Login";
 // import Delete from "./appWrite/database/Delete";
 
 // All Routes for browsing in webpage
@@ -26,8 +27,9 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<NavigatorHeader />}>
         <Route path="" element={<MainContent />} />
-        <Route path="/input" element={<UserInput />} />
         <Route path="signup" element={<Signup />} />
+        <Route path="login" element={<Login />} />
+        <Route path="input" element={<UserInput />} />
         {/* <Route path="/delete" element={<Delete />} /> */}
 
         <Route path="docs" element={<Layout />}>
