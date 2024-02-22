@@ -47,7 +47,7 @@ export default function Admin() {
 
   const remove = async(id)=>{
 
-    //TODO:delete
+   
 try {
   const deleteDoc =await uploadService.deleteDocument(id)
   if (deleteDoc != null) {
@@ -66,9 +66,7 @@ try {
 
   return (
     <>
-      {/* {Fetch.map((item) => {
-      item.map((innerpart) => console.log(innerpart));
-    })} */}
+      
       <div className="admin-nav">
         <div className="left-nav h-screen w-52  flex float-left text-left  px-2 flex-col bg-emerald-700  bg-gradient-to-b">
           {" "}
@@ -108,7 +106,7 @@ try {
                   </th>
                   <th className="px-4 py-3 text-left text-xl font-medium text-gray-50 uppercase ">
                     image
-                  </th>{" "}
+                  </th>
                   <th className="px-4 py-3 text-left text-xl font-medium text-gray-50 uppercase ">
                     Status
                   </th>
@@ -146,7 +144,7 @@ try {
                         {post.status}</p>
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap items-center text-red-600" onClick={()=>{remove(post.$id)}}>
-                       <i class="fa-solid fa-trash "></i>
+                       <i className="fa-solid fa-trash "></i>
                         </td>
                       </tr>
                     );

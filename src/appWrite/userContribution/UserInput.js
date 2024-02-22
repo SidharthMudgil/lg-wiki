@@ -18,11 +18,22 @@ export default function UserInput() {
   const featuredaimage = "null";
 
 
-  const [text, setText] = useState("hi");
-  const [title, settitle] = useState("hi");
-
+  const [text, setText] = useState();
+  const [title, settitle] = useState();
+  const [ImageUrl, setImageUrl] = useState("");
+console.log(ImageUrl);
 
   const content = String(text);
+  const extractImageUrl = (markdownText) => {
+    const imageRegex = /!\[.*?\]\((.*?)\)/;
+    const match = markdownText.match(imageRegex);
+    if (match && match.length > 1) {
+      const url = match[1];
+      setImageUrl(url);
+      console.log("Image URL:", url);
+    }
+  };
+
 
 
  
@@ -45,10 +56,12 @@ export default function UserInput() {
 
   };
 
-  return (
+  return (<>
+   
     <div className="markdown h-s">
-      <input type="text"  onChange={(e)=>settitle} />
+ 
       <div className="markdown-input">
+      <input type="text "  className="title-input" placeholder="Add your title here only " onChange={(e)=>settitle(String(e.target.value))}  />
         <textarea
           width="1000px"
           className="textinput-markdown "
@@ -83,21 +96,39 @@ export default function UserInput() {
                 </code>
               );
             },
+            ul({ node, ...props }) {
+              return <ul {...props} />;
+            },
+            img: ({ node, ...props }) => {
+              extractImageUrl(props.alt);
+              return <img {...props} />;
+            },
+            li({ node, ...props }) {
+              return <li {...props} />;
+            },
           }}
         />
+        {/* <input 
+        type="file" 
+        onChange={(e) => {
+          const imagePath = URL.createObjectURL(e.target.files[0]); // Get the image path
+          setImagePath(imagePath); // Update the state with image path
+        }} 
+      /> */}
         <div>
-          {" "}
+
           <button
-            className="text-white bg-red-300 p-2 rounded-lg"
+            className="submit-button "
             onClick={onSubmit}
            
           >
-            {" "}
+           
             Submit
           </button>
      
         </div>
       </div>
     </div>
+    </>
   );
 }

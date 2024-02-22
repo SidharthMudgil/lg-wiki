@@ -86,7 +86,7 @@ export class Upload {
   async deleteDocument(id) {
    
       try {
-        return await this.database.updateDocument(
+        return await this.database.deleteDocument(
           config.databases,
           config.collectionId,
           id
