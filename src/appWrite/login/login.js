@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import Auth from "../services/auth";
 import { login, logout } from "../store/authSlice";
 export default function Login() {
@@ -20,9 +20,11 @@ export default function Login() {
     .finally(()=>setLoading(false));
   }, []);
 
-
   
-  return !loading?<p>  u are login</p>  :null;
+  const userData = useSelector((state) => state.userData  );
+
+
+  return !loading?<p> {userData}</p>  :null;
 
 }
 

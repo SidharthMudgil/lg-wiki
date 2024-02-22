@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "./UserInput.css";
@@ -8,33 +8,52 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import Auth from "../services/auth";
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
+import Upload from "../services/uplaod";
+import uploadService from "../services/uplaod";
+
 
 export default function UserInput() {
-  const { register, handleSubmit } = useForm();
 
-  const title = "first data";
+  const featuredaimage = "null";
 
-  const featuredaimage = null;
 
   const [text, setText] = useState("hi");
+  const [title, settitle] = useState("hi");
+
 
   const content = String(text);
 
+
+ 
   
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
+    const userData =  await Auth.getCurrentUser()
+    const userID=userData.$id
     try {
-      const data = await Auth.createPost(data).then(console.log("updated"));
-    } catch (error) {}
+      console.log("Submitting:", title, text);
+      await uploadService.createPost({ title, markdown: text, userID });
+      
+      console.log("Submitted successfully");
+    } catch (error) {
+      console.error("Error submitting:", error);
+    }
+
+    // const fetch = await uploadService.getPosts();
+    // const data = await fetch.json(); // Parse JSON if applicable
+    // console.log(data.map((item) => item));
+
   };
 
   return (
     <div className="markdown h-s">
+      <input type="text"  onChange={(e)=>settitle} />
       <div className="markdown-input">
         <textarea
           width="1000px"
           className="textinput-markdown "
           placeholder="Write Your Text here "
-          {...register("data")}
+  
           onChange={(e) => {
             setText(String(e.target.value));
           }}
@@ -70,8 +89,8 @@ export default function UserInput() {
           {" "}
           <button
             className="text-white bg-red-300 p-2 rounded-lg"
-            onClick={handleSubmit(onSubmit)}
-            type="submit"
+            onClick={onSubmit}
+           
           >
             {" "}
             Submit

@@ -69,7 +69,7 @@ export default function Footer() {
                 Dev gadani
               </a>
             </p>
-            <p className="py-2">
+            {/* <p className="py-2">
               {" "}
               <a
                 href="https://github.com/akoolarni"
@@ -78,7 +78,7 @@ export default function Footer() {
               >
                 arin kulkarni
               </a>
-            </p>
+            </p> */}
             <p className="py-2">
               {" "}
               <a

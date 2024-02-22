@@ -10,13 +10,16 @@ export default function Signup() {
 
   const onSubmit = async (data) => {
     try {
-      const userData = await Auth.createAccount(data);
-      dispatch(login(userData));
-      console.log("User created:", userData);
-    } catch (error) {
-      console.error("Error creating user account:", error);
-    }
-  };
+      const userData = await Auth.createAccount(data)
+      if (userData) {
+          const userData = await Auth.getCurrentUser()
+          if(userData) dispatch(login(userData));
+         
+      }
+  } catch (error) {
+      throw error;
+  }
+}
 
   return (
     <div>
