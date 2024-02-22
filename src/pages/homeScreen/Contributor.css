@@ -23,10 +23,13 @@
 
   flex-basis: 5.33rem;
 }
+/* animation hover effect  */
 
 .img-contributor:only-child,
 .label:hover {
   animation: moveInBottom 0.2s forwards;
+  /* another timing effect */
+  /* cubic-bezier(0.65, 0.05, 0.36, 1) */
   opacity: 1;
 }
 .img-contributor {
@@ -37,12 +40,15 @@
   opacity: 1;
 }
 
+/* adding image hover  via label div  */
+
 .label {
   position: absolute;
   top: 0;
   display: flex;
   border-radius: 10rem;
   color: white;
+
   width: 3.75rem;
   height: 3.75rem;
   opacity: 0;
@@ -53,6 +59,7 @@
   position: absolute;
   display: flex;
   font-family: Montserrat;
+
   text-align: center;
   background-color: var(--l-nav);
   bottom: -1.8rem;
@@ -62,6 +69,8 @@
   justify-content: center;
   width: 10rem;
 }
+
+/* animation hover effect on the img keyframes */
 
 @keyframes moveInBottom {
   0% {
