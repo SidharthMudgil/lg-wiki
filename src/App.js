@@ -13,6 +13,8 @@ import Layout from "./pages/leftNavigation/Layout";
 import NavigatorHeader from "./pages/navigationHeader/NavigationHeader";
 import Architecture from "./pages/architecture/Architecture";
 import { Provider } from "react-redux";
+import RigInstall from './docs/RigInstall'
+import ControlCommand from './docs/ControlCommand'
 
 import React from "react";
 import store from "./appWrite/store/store";

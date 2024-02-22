@@ -48,3 +48,19 @@ h1 {
   letter-spacing: 0.1em;
 
 }
+.markdown-output-rig ul {
+  list-style-type: disc;
+  padding-left: 0;
+}
+ .markdown-output-rig ol {
+  list-style-type: decimal;
+  padding-left: 0;
+}
+.markdown-container-input .markdown-output-input ul {
+  list-style-type: disc !important;
+  padding-left: 0;
+}
+.markdown-container-input .markdown-output-input ol {
+  list-style-type: decimal !important;
+  padding-left: 0;
+}

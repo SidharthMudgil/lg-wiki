@@ -103,7 +103,7 @@ export default function RigInstall() {
       <Markdown
         children={data}
         remarkPlugins={[remarkGfm]}
-        className="markdown-output"
+        className="markdown-output-rig "
         components={{
           code(props) {
             const { children, className, node, ...rest } = props;
@@ -122,6 +122,15 @@ export default function RigInstall() {
                 {children}
               </code>
             );
+          },ul({ node, ...props }) {
+            return <ul {...props} />;
+          },
+          img: ({ node, ...props }) => {
+            
+            return <img {...props} />;
+          },
+          li({ node, ...props }) {
+            return <li {...props} />;
           },
         }}
       />

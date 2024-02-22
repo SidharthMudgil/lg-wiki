@@ -72,11 +72,11 @@ console.log(ImageUrl);
           }}
         />
       </div>
-      <div className="markdown-container" id="output">
+      <div className="markdown-container-input" id="output">
         <Markdown
           children={text}
           remarkPlugins={[remarkGfm]}
-          className="markdown-output text-white"
+          className="markdown-output-input text-white"
           components={{
             code(props) {
               const { children, className, node, ...rest } = props;
@@ -91,17 +91,13 @@ console.log(ImageUrl);
                   wrapLines={true}
                 />
               ) : (
-                <code {...rest} className={className}>
+                <code {...rest} className={`code`}>
                   {children}
                 </code>
               );
             },
             ul({ node, ...props }) {
               return <ul {...props} />;
-            },
-            img: ({ node, ...props }) => {
-              extractImageUrl(props.alt);
-              return <img {...props} />;
             },
             li({ node, ...props }) {
               return <li {...props} />;
