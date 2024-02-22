@@ -1,10 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Navigation.css";
 import { NavLink } from "react-router-dom";
+import { Query } from "appwrite";
+import uploadService from "../../appWrite/services/uplaod";
 
 export default function Navigaton() {
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
+  const [fetchTitle, setfetchTitle] = useState([]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -20,6 +23,21 @@ export default function Navigaton() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+  useEffect(() => {
+    fetchContent();
+  }, []);
+
+  const fetchContent = async () => {
+    try {
+      const queries = [Query.equal("status", "active")];
+      setfetchTitle([]);
+      const response = await uploadService.getPosts(queries);
+      const document = response.documents;
+      setfetchTitle(document);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -56,10 +74,8 @@ export default function Navigaton() {
           <li className="py-1  menu-ul">
             <NavLink
               to="/docs/arc"
-            
               style={({ isActive }) => ({
-                color : isActive ? "#f5a942" : "",
-           
+                color: isActive ? "#f5a942" : "",
               })}
             >
               architecture
@@ -68,10 +84,8 @@ export default function Navigaton() {
           <li className="py-1  menu-ul">
             <NavLink
               to="/docs/rig"
-            
               style={({ isActive }) => ({
-                color : isActive ? "#f5a942" : "",
-            
+                color: isActive ? "#f5a942" : "",
               })}
             >
               rig installation
@@ -80,15 +94,29 @@ export default function Navigaton() {
           <li className="py-1  menu-ul">
             <NavLink
               to="/docs/control"
-            
               style={({ isActive }) => ({
-                color : isActive ? "#f5a942" : "",
-               
+                color: isActive ? "#f5a942" : "",
               })}
             >
               Control Commands
             </NavLink>
+
+         
           </li>
+          {fetchTitle.map((title) => {
+            return (
+              <li className="py-1  menu-ul">
+                <NavLink key={fetchTitle.id}
+                  to="/docs/dynamic"
+                  style={({ isActive }) => ({
+                    color: isActive ? "#f5a942" : "",
+                  })}
+                >
+                 {title.title}
+                </NavLink>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>

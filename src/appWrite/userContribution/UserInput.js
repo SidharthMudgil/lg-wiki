@@ -11,28 +11,22 @@ import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import Upload from "../services/uplaod";
 import uploadService from "../services/uplaod";
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function UserInput() {
 
   const featuredaimage = "null";
 
-
+  const navigate = useNavigate();
   const [text, setText] = useState();
   const [title, settitle] = useState();
   const [ImageUrl, setImageUrl] = useState("");
-console.log(ImageUrl);
+
 
   const content = String(text);
-  const extractImageUrl = (markdownText) => {
-    const imageRegex = /!\[.*?\]\((.*?)\)/;
-    const match = markdownText.match(imageRegex);
-    if (match && match.length > 1) {
-      const url = match[1];
-      setImageUrl(url);
-      console.log("Image URL:", url);
-    }
-  };
+
 
 
 
@@ -40,20 +34,30 @@ console.log(ImageUrl);
   
   const onSubmit = async () => {
     const userData =  await Auth.getCurrentUser()
+    if( userData!=null){
     const userID=userData.$id
+    if(content!=null && title!=null ){
+
     try {
-      console.log("Submitting:", title, text);
-      await uploadService.createPost({ title, markdown: text, userID });
       
-      console.log("Submitted successfully");
+         await uploadService.createPost({ title, markdown: text, userID }).then() ;
+      
+      alert("Submitted successfully");
     } catch (error) {
+      alert(" Error submitting")
       console.error("Error submitting:", error);
     }
 
     // const fetch = await uploadService.getPosts();
     // const data = await fetch.json(); // Parse JSON if applicable
     // console.log(data.map((item) => item));
-
+  }else{
+    alert("fill the title and content filed ");
+  }}
+  else {
+    alert("you are redirected to signup")
+    navigate('/signup')
+  }
   };
 
   return (<>
@@ -61,7 +65,7 @@ console.log(ImageUrl);
     <div className="markdown h-s">
  
       <div className="markdown-input">
-      <input type="text "  className="title-input" placeholder="Add your title here only " onChange={(e)=>settitle(String(e.target.value))}  />
+      <input type="text "  className="title-input" placeholder="Add your title here only " onChange={(e)=>settitle(String(e.target.value))} required  />
         <textarea
           width="1000px"
           className="textinput-markdown "
@@ -72,11 +76,11 @@ console.log(ImageUrl);
           }}
         />
       </div>
-      <div className="markdown-container-input" id="output">
+      <div className="markdown-container" id="output">
         <Markdown
           children={text}
           remarkPlugins={[remarkGfm]}
-          className="markdown-output-input text-white"
+          className="markdown-output text-white"
           components={{
             code(props) {
               const { children, className, node, ...rest } = props;
@@ -91,13 +95,17 @@ console.log(ImageUrl);
                   wrapLines={true}
                 />
               ) : (
-                <code {...rest} className={`code`}>
+                <code {...rest} className={className}>
                   {children}
                 </code>
               );
             },
             ul({ node, ...props }) {
               return <ul {...props} />;
+            },
+            img: ({ node, ...props }) => {
+           
+              return <img {...props} />;
             },
             li({ node, ...props }) {
               return <li {...props} />;

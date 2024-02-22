@@ -15,29 +15,30 @@ export default function RigInstall() {
   
   The recommended Ubuntu version for this installation is 16.04. You can download it from [here](link). Follow the steps below to install Ubuntu:
   
-  1. &#x21A0;  Create a bootable USB with Rufus. Ensure the USB has a minimum capacity of 4GB. Refer to [this video](link) for instructions.
+  1.   Create a bootable USB with Rufus. Ensure the USB has a minimum capacity of 4GB. Refer to [this video](link) for instructions.
   
-  2. &#x21A0;  Connect the USB to the PC and turn it on. Select the boot device (e.g., F8) or adjust boot priorities in BIOS.
+  2.   Connect the USB to the PC and turn it on. Select the boot device (e.g., F8) or adjust boot priorities in BIOS.
   
-  3. &#x21A0; Select "Install Ubuntu" and choose English (English US) as the language.
+  3.  Select "Install Ubuntu" and choose English (English US) as the language.
   
-  4. &#x21A0; Skip downloading updates and installing additional software. Select "Erase disk and install Ubuntu" in the installation type window.
+  4.  Skip downloading updates and installing additional software. Select "Erase disk and install Ubuntu" in the installation type window.
   
-  5. &#x21A0; Select time zone and keyboard layout.
+  5.  Select time zone and keyboard layout.
   
-  6. &#x21A0; For user creation, set the name and username as "lg" and the computer’s name as "lgX" (X represents the machine number).
+  6.  For user creation, set the name and username as "lg" and the computer’s name as "lgX" (X represents the machine number).
   
-  7. &#x21A0; Use the password "lqgalaxy" for all PCs.
+  7.  Use the password "lqgalaxy" for all PCs.
   
-  8. &#x21A0; Wait for the installation to complete and restart the system.
+  8.  Wait for the installation to complete and restart the system.
   
  \`Important: Avoid upgrading the system to newer versions.\`
 
-  **Liquid Galaxy Installation**
+  ### **Liquid Galaxy Installation**
   
   Ensure all PCs are on the same network before starting the Liquid Galaxy installation. Follow these steps:
    
-  1. 1 . Open a terminal (Ctrl+T) and run the following commands:
+  1.Open a terminal (Ctrl+T) and run the following commands:
+  
       ~~~bash
       sudo apt upgrade -f
       sudo apt update
@@ -45,57 +46,58 @@ export default function RigInstall() {
       sudo apt install lsb lsb-core
       ~~~
    
-   2. 2 . **Master Installation**:
-      - &bull; Run:
+   2. **Master Installation**:
+      -   Run:
           ~~~bash
           bash <(curl -s https://raw.githubusercontent.com/LiquidGalaxyLAB/liquid-galaxy/master/install.sh)
           ~~~
-      - &bull; During installation, provide the following parameters:
-          - &bull; Machine id: Number identifying the machine.
-          - &bull; Total machines count: Number of machines.
-          - &bull; Unique number (octet): Unique installation identifier.
-          - &bull; Extra drivers: n
-          - &bull; Confirm settings.
+      -   During installation, provide the following parameters:
+          -   Machine id: Number identifying the machine.
+          -   Total machines count: Number of machines.
+          -   Unique number (octet): Unique installation identifier.
+          -   Extra drivers: n
+          -   Confirm settings.
    
-   3. 3 . **Slaves Installation**:
-      &bull;Run the installation script.
-      - &bull; Provide machine id, master machine ip, master local user password, total machines count, and unique number.
-      - &bull; Confirm settings.
+   3. **Slaves Installation**:
+       Run the installation script.
+      -   Provide machine id, master machine ip, master local user password, total machines count, and unique number.
+      -   Confirm settings.
    
-  4. 4 . After installation, reboot the machines.
+  4.  After installation, reboot the machines.
    
   **Drivers.ini Configuration**
    
   Edit the drivers.ini file to ensure screen synchronization. Follow the instructions below:
    
-  -  &#x21A0;  **Master Configuration**:
-      ~~~bash
-      ViewSync/send = true;
-      ViewSync/receive = false;
-      ViewSync/hostname = BROADCAST_ADDRESS
-       ~~~
+  -    **Master Configuration**:
+            
+        ~~~bash
+        ViewSync/send = true;
+        ViewSync/receive = false;
+        ViewSync/hostname = BROADCAST_ADDRESS
+        ~~~
    
-  -  &#x21A0; **Slaves Configuration**:
+  -   **Slaves Configuration**:
   
       ~~~bash
       ViewSync/send = false;
       ViewSync/receive = true;
       ViewSync/hostname = BROADCAST_ADDRESS
-       ~~~
+      ~~~
    
    **Note**: Adjust the yawOffset for slaves accordingly.
    
    **Additional Configurations**
-   - &bull; Full Screen Mode: Run\` /'~/tools/earth-fullscreen.sh && sudo reboot/'\` for complete full screen. Use ['F11'] to toggle menu bar.
-   - &bull; Screen Rotation: Use the provided commands to rotate or disable screen rotation.
-   - &bull; Google Earth 7.1 Bug: Install required libraries or switch to Google Earth Pro 7.1 if needed.
+   -   Full Screen Mode: Run\` /'~/tools/earth-fullscreen.sh && sudo reboot/'\` for complete full screen. Use ['F11'] to toggle menu bar.
+   -   Screen Rotation: Use the provided commands to rotate or disable screen rotation.
+   -   Google Earth 7.1 Bug: Install required libraries or switch to Google Earth Pro 7.1 if needed.
    
   **List of Commands**
   
-  - &bull; \`lg-poweroff\`: Turns off all connected PCs.
-  - &bull; \`lg-reboot\`: Reboots all connected PCs.
-  - &bull; \`lg-relaunch\`: Restarts all connected PCs.
-  - &bull; \`ifconfig\`: Displays network configuration.
+  -   \`lg-poweroff\`: Turns off all connected PCs.
+  -   \`lg-reboot\`: Reboots all connected PCs.
+  -   \`lg-relaunch\`: Restarts all connected PCs.
+  -   \`ifconfig\`: Displays network configuration.
    
 `;
   return (

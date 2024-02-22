@@ -1,18 +1,24 @@
-.rig{
+.dynamic-container{
     color: white;
     overflow: hidden;
 }
-.rig ul li ol{
+.dynamic-container ul li ol{
     list-style: decimal;
 
 }
-
+.dynamic-output{
+    margin-top: 12px;
+}
 div {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll; 
   }
-  
+  .dynamic-title{
+    font-size: 2rem;
+    padding: 10px 0;
+    border-bottom: rgba(255, 255, 255, 0.668) solid 1px;
+  }
   div::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
   }
@@ -48,11 +54,11 @@ h1 {
   letter-spacing: 0.1em;
 
 }
-.markdown-output-rig ul li{
+.dynamic-output ul li{
   list-style-type: disc;
   margin-left: 1.5em; 
 }
-.markdown-output-rig  ol li{
+.dynamic-output  ol li{
   list-style-type: decimal;
   margin-left: 1.5em;  
 }

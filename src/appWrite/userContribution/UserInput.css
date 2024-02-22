@@ -28,9 +28,10 @@ textarea:focus, input:focus {
 .markdown-container {
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 50%;
+  flex-basis: 50%;  
   padding: 1rem;
   flex-direction: column;
+  position: relative;
 }
 .markdown-output{
   display: flex;
@@ -61,19 +62,16 @@ textarea:focus, input:focus {
   font-size: 25px;
 
   
-}
-.markdown-container-input .markdown-output-input ul {
-  list-style-type: disc !important;
-  padding-left: 0;
-}
-.markdown-container-input .markdown-output-input ol {
-  list-style-type: decimal !important;
-  padding-left: 0;
+
 }
 
-
-.markdown-container-input .markdown-output-input .markdown-list {
-  list-style-type: disc !important; /* or your preferred list style */
-  padding-left: 0;
+.markdown-output ul li
+ {
+  list-style-type: disc; /* or your preferred list style */
+  margin-left: 1.5em; /* Adjust the margin as needed */
 }
-/* ![Image] (D:\chrome download file\Pictures\IMG_20230115_134053.jpg) */
+.markdown-output ol li{
+  list-style-type: decimal; /* or your preferred list style */
+  margin-left: 1.5em; /* Adjust the margin as needed */
+}
+
