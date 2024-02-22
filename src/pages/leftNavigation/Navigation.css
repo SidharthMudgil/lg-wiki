@@ -3,19 +3,26 @@
   color: var(--text-color);
 }
 
+.menu {
+  margin: 1rem 1rem 1rem 1rem;
+}
+
 .menu-ul {
-  padding-top: 0.938rem;
+  padding-top: 0.5rem;
   color: var(--white-color);
 }
+/* .menu-ul:hover {
+  color: var(--selected-color);
+} */
 
 .menutab {
   padding: 0.313rem 0.625rem;
 }
-
+/* 
 .menutab:hover {
   color: #f5a942;
   border-radius: 1.25rem;
-}
+} */
 
 .menu-search-div {
   padding: 0 !important;
@@ -27,7 +34,7 @@
 }
 
 .menu-search {
-  padding: 0.5rem 1rem 0.5rem 2.5rem !important;
+  padding: 0.5rem 1rem 0.5rem 1.5rem !important;
 }
 
 .nav-search {
@@ -43,7 +50,6 @@
 .search::placeholder,
 .search:focus {
   outline: none;
-
   color: var(--text-color);
 }
 

@@ -1,0 +1,50 @@
+.rig{
+    color: white;
+    overflow: hidden;
+}
+.rig ul li ol{
+    list-style: decimal;
+
+}
+
+div {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+  }
+  
+  div::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+  
+h1 {
+    font-size: 2rem; /* 2 times the base font size */
+  }
+  
+  h2 {
+    font-size: 1.5rem; /* 1.5 times the base font size */
+  }
+  
+  h3 {
+    font-size: 1.2rem; /* 1.2 times the base font size */
+  }
+
+  h1,h2,h3,h4,h5,h6,p{
+    margin-bottom: 10px;
+  }
+  .code {
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 10px;
+  background-color: #2f3232;
+  }
+.blockquote{
+  padding: 10px 14px 10px;
+  background: #535457;
+  border-left: 3px solid #06fff1;
+  color: #ffffff;
+  font-style: italic;
+  letter-spacing: 0.1em;
+
+}

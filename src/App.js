@@ -35,10 +35,9 @@ function App() {
         <Route path="/admin" element={<Admin />} />
 
         <Route path="docs" element={<Layout />}>
-        <Route path="arc" element={<Architecture />} />
-     
-       
-     
+          <Route path="arc" element={<Architecture />} />
+        <Route path="rig" element={<RigInstall />} />
+        <Route path="control" element={<ControlCommand />} />
 
         </Route>
       </Route>

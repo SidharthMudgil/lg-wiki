@@ -1,21 +1,16 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Navigation.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navigaton() {
-
-
-  // function for ctrl k feature
-
+  const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.key === "k") {
         e.preventDefault();
         inputRef.current.focus();
-
-        //   document.getElementById("iconsub").style.display = "none";
-        // document.getElementById("iconsubk").style.display = "none";
       }
     };
 
@@ -26,109 +21,73 @@ export default function Navigaton() {
     };
   }, []);
 
-  //li closing open function
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+    menubar();
+  };
 
-  function menubar(x) {
-    let id = document.getElementById(x);
-    let dis = getComputedStyle(id);
-    if (dis.display === "none") {
-      document.getElementById(x).style.display = "block";
-    } else {
-      document.getElementById(x).style.display = "none";
-    }
+  function menubar() {
+    const items = document.querySelectorAll(".menu-ul");
+    items.forEach((item) => {
+      const linkText = item.textContent.toLowerCase();
+      if (linkText.includes(inputValue.toLowerCase())) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
   }
+
   return (
     <>
-      <div className="left float-left h-screen ">
-        <ul className="menu ">
-          <li>
-            <div className=" menu-search-div">
-              <span className="menu-search-icon" id="icon">
-                {" "}
-                <i className="fas fa-search"></i>{" "}
-              </span>
-              <input
-                type="search "
-                placeholder="Search..."
-                className="  search menu-search focus:outline-none  "
-                ref={inputRef}
-                onFocus={() => {
+      <div className="left float-left h-screen">
+        <div className="menu-search-div">
+          <input
+            type="search"
+            placeholder="Search..."
+            className="search menu-search focus:outline-none"
+            ref={inputRef}
+            onChange={handleChange}
+            id="search"
+          />
+        </div>
 
-                  // document.getElementById("iconsub").style.display = "none"; 
-                  // document.getElementById("iconsubk").style.display = "none";
-                }}
-                id="search"
-              />
-              {/*<span className="search-img">
-              <span className="search-img-icon  nav-search ctrl-key" id="iconsub">
-                  ctrl
-                </span>
-
-                <span className="search-img-icon nav-search k-key" id="iconsubk">
-                  k
-                </span>
-              </span>
-*/}
-            </div>
+        <ul className="menu">
+          <li className="py-1  menu-ul">
+            <NavLink
+              to="/docs/arc"
+            
+              style={({ isActive }) => ({
+                color : isActive ? "#f5a942" : "",
+           
+              })}
+            >
+              architecture
+            </NavLink>
           </li>
-
-
-          {/* content title and subtitle to written here  */}
-
-          <li
-            onClick={() => {
-              let id = 1;
-              menubar(id);
-            }}
-            className="py-1 menu-ul "
-          >
-            installation
-            <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
-            <ul id="1" className="menuex">
-              <li className="menutab" >
-                {" "}
-                <Link to="/docs/title" className="menutab-link">demo text</Link>
-              </li>
-              <li className="menutab">
-                <Link to="/docs/input" className="menutab-link">demo text</Link>
-              </li>
-            </ul>
+          <li className="py-1  menu-ul">
+            <NavLink
+              to="/docs/rig"
+            
+              style={({ isActive }) => ({
+                color : isActive ? "#f5a942" : "",
+            
+              })}
+            >
+              rig installation
+            </NavLink>
           </li>
-          <li
-            onClick={() => {
-              let id = 2;
-              menubar(id);
-            }}
-            className="py-1  menu-ul "
-          >
-            LG Commands
-            <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
-            <ul id="2" className="menuex">
-              <li className="menutab">
-                <Link to="">demo text</Link>
-              </li>
-              <li className="menutab">
-                <Link to="">demo text</Link>
-              </li>
-            </ul>
-          </li>
-          <li
-            onClick={() => {
-              let id = 3;
-              menubar(id);
-            }}
-            className="py-1  menu-ul "
-          >
-           architecture
-            <i className="fa fa-caret-down px-3" aria-hidden="true"></i>
-            <ul id="3" className="menuex">
-              <li className="menutab">
-                <Link to="/docs/arc">demo text</Link>
-              </li>
-              <li className="menutab">
-                <Link to="">demo text</Link>
-              </li>
-            </ul>
+          <li className="py-1  menu-ul">
+            <NavLink
+              to="/docs/control"
+            
+              style={({ isActive }) => ({
+                color : isActive ? "#f5a942" : "",
+               
+              })}
+            >
+              Control Commands
+            </NavLink>
           </li>
         </ul>
       </div>

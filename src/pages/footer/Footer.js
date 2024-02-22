@@ -3,28 +3,26 @@ import React from "react";
 export default function Footer() {
   return (
     <>
-      <div className="w-full  bottom-0 footer  ">
-        <label className="mx-auto  block text-center p-8 font-bold text-2xl capitalize">
+      <div className="w-full  bottom-0 footer">
+        <label className="mx-auto  block text-center p-5 font-bold text-2xl capitalize">
           contact us
         </label>
 
-        <div className=" flex  flex-wrap ">
-          <div className=" block mx-auto">
+        <div className="flex flex-wrap">
+          <div className="block mx-auto">
 
-            {/* all link for liquid galaxy  */}
-
-            <a href="mailto:liquildgalaxylab@gmail.com" className="block py-4 ">
+            <a href="mailto:liquildgalaxylab@gmail.com" className="block py-4">
               <i className="fa fa-envelope px-4 "></i>liquidgalaxylab@gmail.com
             </a>
             <a
               href="https://liquidgalaxy.eu"
               target="_blank"
-              className="block  py-4  "
+              className="block py-4"
               rel="noreferrer"
             >
-              <i className="fa fa-globe px-4 "></i>www.liquidgalaxy.eu
+              <i className="fa fa-globe px-4"></i>www.liquidgalaxy.eu
             </a>
-            <div className="icon flex px-4 py-4 space-x-4 ">
+            <div className="icon flex px-4 py-4 space-x-7">
               <a href="https://www.instagram.com/_liquidgalaxy" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-instagram fa-xl"></i>
               </a>
@@ -45,8 +43,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          {/* link for contributor in Lg-Wiki */}
 
           <div className="capitalize block mx-auto">
             <p className="py-2">
@@ -91,7 +87,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <label className=" mx-auto  block text-center p-8 font-bold text-xl capitalize">
+        <label className="mx-auto  block text-center p-8 font-bold text-xl capitalize">
           contribute to <a
             href="https://github.com/SidharthMudgil/lg-wiki"
             target="_blank"
