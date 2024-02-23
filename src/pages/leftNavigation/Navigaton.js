@@ -103,7 +103,7 @@ export default function Navigaton() {
 
          
           </li>
-          {fetchTitle.map((title) => {
+          {fetchTitle && fetchTitle.map((title) => {
             return (
               <li className="py-1  menu-ul">
                 <NavLink key={fetchTitle.id}

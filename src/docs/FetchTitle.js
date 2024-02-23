@@ -25,7 +25,7 @@ export default function FetchTitle() {
 
     return (
         <>
-            {fetchTitle.map((item) => (
+            {fetchTitle && fetchTitle.map((item) => (
                 <DynamicTitle conTitle={item.title} data={item.markdown} />
             ))}
         </>
