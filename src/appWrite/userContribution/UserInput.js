@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react";
-import Markdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// import Markdown from "react-markdown";
+// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "./UserInput.css";
-import remarkGfm from "remark-gfm";
+// import remarkGfm from "remark-gfm";
 
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+// import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import rehypeSanitize from "rehype-sanitize";
+import MarkdownPreview from '@uiw/react-markdown-preview';
 
 import Auth from "../services/auth";
-import { useForm } from "react-hook-form";
-import { useSelector } from "react-redux";
-import Upload from "../services/uplaod";
+// import { useForm } from "react-hook-form";
+// import { useSelector } from "react-redux";
+// import Upload from "../services/uplaod";
 import uploadService from "../services/uplaod";
 import { useNavigate } from "react-router-dom";
 
 
-
+const rehypePlugins = [rehypeSanitize];
 export default function UserInput() {
 
   const featuredaimage = "null";
@@ -77,7 +79,8 @@ export default function UserInput() {
         />
       </div>
       <div className="markdown-container" id="output">
-        <Markdown
+      <MarkdownPreview source={text} rehypePlugins={rehypePlugins}  className="markdown-output text-white" />
+        {/* <Markdown
           children={text}
           remarkPlugins={[remarkGfm]}
           className="markdown-output text-white"
@@ -111,7 +114,7 @@ export default function UserInput() {
               return <li {...props} />;
             },
           }}
-        />
+        /> */}
         {/* <input 
         type="file" 
         onChange={(e) => {
