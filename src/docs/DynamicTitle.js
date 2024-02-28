@@ -9,7 +9,7 @@ export default function DynamicTitle(props) {
     const title=props.conTitle;
   const content =props.data;
   return (
-    <div className="dynamic-container">
+    <div className="dynamic-container" id={title}>
         <div className="dynamic-title" >{title}</div>
       <Markdown
         children={content}

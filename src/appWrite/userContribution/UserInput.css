@@ -13,13 +13,14 @@
   flex-basis: 50%;
   border-right-width: 10px solid var(--text-color);
   position: relative;
+  flex-direction: column;
 }
 
 .textinput-markdown{
   background-color: inherit;
   width: 100%;
   height: 100%;
-  padding-top: 35px;
+  padding-top: 10px;
   color:var(--text-color)
 }
 textarea:focus, input:focus {
@@ -40,15 +41,24 @@ textarea:focus, input:focus {
 
 }
 .title-input{
+ background-color: inherit;
+
+padding-top: 10px;
+  color:var(--text-color)
+  
+
+}
+
+.title-email{
   position: absolute;
-  top:10;
+  top:25px;
   left:10;
   width: 100%;
   background-color: inherit;
   color:var(--text-color)
   
 
-}
+} */
 
 .submit-button{
   position: absolute;
@@ -64,6 +74,14 @@ textarea:focus, input:focus {
   
 
 }
+
+.blockquote{
+  padding: 10px 14px 10px;
+  background: #535457;
+  border-left: 3px solid #06fff1;
+  color: #ffffff;
+  font-style: italic;
+  letter-spacing: 0.1em;}
 
 .markdown-output ul li
  {

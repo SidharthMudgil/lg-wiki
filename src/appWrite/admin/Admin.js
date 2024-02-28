@@ -93,42 +93,16 @@ try {
           {/* <p className="text-white font-mono capitalize  text-xl m-3"></p>{" "} */}
         </div>
         <div className="right-nav h-screen justify-center flex  bg-[#121615]">
-          <div className="container max-w-6xl  px-25 mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Posts</h2>
-            <table className=" w-full bg-[#696f6e] divide-y divide-gray-200">
-              <thead className="bg-[#696f6e] divide-y divide-gray-200">
-                <tr>
-                  {/* <th className="px-4 py-3 text-left text-xl font-medium text-gray-50 uppercase ">
-                    User ID
-                  </th> */}
-                  <th className="px-4 py-3 text-left text-xl font-medium text-gray-50 uppercase ">
-                    Title
-                  </th>
-                  <th className=" w-1/4  px-4 py-3 text-left text-xl font-medium text-gray-50  uppercase ">
-                    Content
-                  </th>
-                  <th className="px-4 py-3 text-left text-xl font-medium text-gray-50 uppercase ">
-                    image
-                  </th>
-                  <th className="px-4 py-3 text-left text-xl font-medium text-gray-50 uppercase ">
-                    Status
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-[#696f6e] divide-y divide-gray-200 text-white">
-                {fetchData &&
-                  fetchData.map((post) => {
-                   
-                    return (
-                      <tr key={post.id}>
-                        {/* <td className="px-4 py-4 whitespace-nowrap" >
-                          {post.userID}
-                        </td> */}
-                        <td className="px-4 py-4 ">
-                          {post.title}
-                        </td>
-                        <td className="px-4 py-4   ">
-                        <Markdown
+
+          <div className="container flex flex-col p-12 pb-0">
+          <div className="bg-[#696f6e] divide-y  divide-gray-200 text-white">
+          {fetchData &&
+                  fetchData.map((post) => {return (
+                    
+           <div className="px-20" key={post.id}>
+              <div className="text-xl  py-10 border-b-2 border-white"> {post.title}</div> 
+               {/* <div className="text-lg  py-10 border-b-2 border-white"> {post.userId} </div> */}
+                <div> <Markdown
         children={post.markdown}
         remarkPlugins={[remarkGfm]}
         className="dynamic-output  w-[43rem]"
@@ -161,14 +135,9 @@ try {
             return <li {...props} />;
           },
         }}
-      />
-                  
-                        </td>
-                        <td className="px-4 py-4 whitespace-nowrap">
-                          {post.imageDocs}
-                        </td>
-                        <td
-                        className="px-4 py-4 whitespace-nowrap"
+      /></div>
+            
+<div  className="px-4 py-4 whitespace-nowrap"
                         onClick={() => {
                           post.status = post.status === "active" ? null : approved(post.$id);
                         }}
@@ -179,17 +148,14 @@ try {
                           : "p-3 w-min bg-red-400 text-white rounded-2xl"
                       }>{ post.status === "active" ? "approved" : "approve"}
                         </p>
-                      </td>
-                      <td className="px-4 py-4 whitespace-nowrap items-center text-red-600" onClick={()=>{remove(post.$id)}}>
-                       <i className="fa-solid fa-trash "></i>
-                        </td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
-          </div>
-        </div>
+
+                       <i className="fa-solid fa-trash px-4 py-4 whitespace-nowrap items-center text-red-600" onClick={()=>{remove(post.$id)}}  ></i>
+        </div>        </div>     
+)})}
+
+</div></div>
+               
+                 </div>  
       </div>
     </>
   );

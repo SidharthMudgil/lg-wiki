@@ -39,12 +39,11 @@ export default function RigInstall() {
    
   1.Open a terminal (Ctrl+T) and run the following commands:
   
-      ~~~bash
-      sudo apt upgrade -f
-      sudo apt update
-      sudo apt install curl
-      sudo apt install lsb lsb-core
-      ~~~
+  ~~~bash  sudo apt upgrade -f
+  sudo apt update
+  sudo apt install curl
+  sudo apt install lsb lsb-core
+  ~~~
    
    2. **Master Installation**:
       -   Run:
@@ -71,7 +70,7 @@ export default function RigInstall() {
    
   -    **Master Configuration**:
             
-        ~~~bash
+       ~~~bash
         ViewSync/send = true;
         ViewSync/receive = false;
         ViewSync/hostname = BROADCAST_ADDRESS
@@ -124,7 +123,12 @@ export default function RigInstall() {
                 {children}
               </code>
             );
-          },ul({ node, ...props }) {
+          },
+          blockquote(props) {
+            return <blockquote {...props} className="blockquote" />
+          },
+          
+          ul({ node, ...props }) {
             return <ul {...props} />;
           },
           img: ({ node, ...props }) => {

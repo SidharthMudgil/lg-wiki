@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-// import Markdown from "react-markdown";
-// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Markdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "./UserInput.css";
-// import remarkGfm from "remark-gfm";
+import remarkGfm from "remark-gfm";
+import axios from "axios";
 
-// import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import rehypeSanitize from "rehype-sanitize";
 import MarkdownPreview from '@uiw/react-markdown-preview';
 
@@ -24,43 +26,47 @@ export default function UserInput() {
   const navigate = useNavigate();
   const [text, setText] = useState();
   const [title, settitle] = useState();
+  const [email, setEmail] = useState();
   const [ImageUrl, setImageUrl] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [response, setResponse] = useState(null); // Stores server response or error message
+
 
 
   const content = String(text);
 
-
-
-
  
   
   const onSubmit = async () => {
-    const userData =  await Auth.getCurrentUser()
-    if( userData!=null){
-    const userID=userData.$id
-    if(content!=null && title!=null ){
+  
+    if(content!=null && title!=null && email!=null){
 
     try {
       
-         await uploadService.createPost({ title, markdown: text, userID }).then() ;
-      
-      alert("Submitted successfully");
+         await uploadService.createPost({ title, markdown: text, userID:email }).then() ;
+         const data = { email };
+         const response = await axios.post("http://localhost:3001/api/email", data);
+         setResponse(response.data); // Set success message
+       alert("Submitted successfully");
+       setEmail(null);
+       setText(null);
+       settitle(null);
+
     } catch (error) {
-      alert(" Error submitting")
+      setResponse({ error: error.message }); 
+      alert(" Error submitting");
       console.error("Error submitting:", error);
     }
+    finally {
+      setIsSubmitting(false); // Reset loading state
+    }
 
-    // const fetch = await uploadService.getPosts();
-    // const data = await fetch.json(); // Parse JSON if applicable
-    // console.log(data.map((item) => item));
+  
   }else{
     alert("fill the title and content filed ");
-  }}
-  else {
-    alert("you are redirected to signup")
-    navigate('/signup')
   }
-  };
+};
+
 
   return (<>
    
@@ -68,6 +74,8 @@ export default function UserInput() {
  
       <div className="markdown-input">
       <input type="text "  className="title-input" placeholder="Add your title here only " onChange={(e)=>settitle(String(e.target.value))} required  />
+
+      <input type="text "  className="title-input" placeholder="Add your email here only " onChange={(e)=>setEmail(String(e.target.value))} required  />
         <textarea
           width="1000px"
           className="textinput-markdown "
@@ -79,8 +87,8 @@ export default function UserInput() {
         />
       </div>
       <div className="markdown-container" id="output">
-      <MarkdownPreview source={text} rehypePlugins={rehypePlugins}  className="markdown-output text-white" />
-        {/* <Markdown
+      {/* <MarkdownPreview source={text} rehypePlugins={rehypePlugins}  className="markdown-output text-white" /> */}
+        <Markdown
           children={text}
           remarkPlugins={[remarkGfm]}
           className="markdown-output text-white"
@@ -114,7 +122,7 @@ export default function UserInput() {
               return <li {...props} />;
             },
           }}
-        /> */}
+        />
         {/* <input 
         type="file" 
         onChange={(e) => {

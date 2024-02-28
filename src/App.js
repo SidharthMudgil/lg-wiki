@@ -22,6 +22,7 @@ import Signup from "./appWrite/login/signup";
 import Login from "./appWrite/login/login";
 import Admin from "./appWrite/admin/Admin";
 import FetchTitle from "./docs/FetchTitle";
+import Mailjs from "./appWrite/login/Mailjs";
 
 // All Routes for browsing in webpage
 
@@ -33,8 +34,9 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
         <Route path="input" element={<UserInput />} />
-        {/* <Route path="/delete" element={<Delete />} /> */}
+        <Route path="/delete" element={<Mailjs />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/mailjs" element={<Mailjs />} />
 
         <Route path="docs" element={<Layout />}>
           <Route path="arc" element={<Architecture />} />

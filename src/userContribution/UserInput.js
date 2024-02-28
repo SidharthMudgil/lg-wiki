@@ -12,6 +12,8 @@ export default function UserInput() {
 
   return (<div className='markdown h-s'>
     <div className='markdown-input'>
+    {/* <input type="text " class="" placeholder="Add your title here only " required="" fdprocessedid="lx3nnp"/> */}
+    <input type="text " class="title-input" placeholder="Add your email here only " required="" fdprocessedid="o6gr84"/>
       <textarea width="1000px" className='textinput-markdown ' placeholder='Write Your Text here' onChange={(e) => { setText(String(e.target.value)) }} />
     </div>
     <div className="markdown-container text-white">

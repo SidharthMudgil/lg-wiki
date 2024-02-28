@@ -1,13 +1,17 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Navigation.css";
 import { NavLink } from "react-router-dom";
+
 import { Query } from "appwrite";
 import uploadService from "../../appWrite/services/uplaod";
+import { HashLink as Link, NavHashLink } from "react-router-hash-link";
+import { colorBrewer } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export default function Navigaton() {
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
   const [fetchTitle, setfetchTitle] = useState([]);
+  const [active ,setactive]=useState(true);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -47,14 +51,22 @@ export default function Navigaton() {
   function menubar() {
     const items = document.querySelectorAll(".menu-ul");
     items.forEach((item) => {
-      const linkText = item.textContent.toLowerCase();
-      if (linkText.includes(inputValue.toLowerCase())) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
+        const linkText = item.textContent.toLowerCase();
+        if (inputValue !== "") {
+            if (linkText.includes(inputValue.toLowerCase())) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        } else {
+            item.style.display = "block"; // Display all items when inputValue is empty
+        }
     });
-  }
+}
+  // const  isactive =(id) =>{
+  //   active ? (document.getElementById(id).style.color = "green",setactive(false))
+  //   :(document.getElementById(id).style.color = "white")}
+  
 
   return (
     <>
@@ -105,15 +117,21 @@ export default function Navigaton() {
           </li>
           {fetchTitle && fetchTitle.map((title) => {
             return (
-              <li className="py-1  menu-ul">
-                <NavLink key={fetchTitle.id}
-                  to="/docs/dynamic"
-                  style={({ isActive }) => ({
-                    color: isActive ? "#f5a942" : "",
-                  })}
+              <li className="py-1  menu-ul"  key={fetchTitle.id}>
+                <NavHashLink  key={fetchTitle.id}
+                     to={`/docs/dynamic#${title.title}`}
+                     id={`nav${title.title}`}
+                    //  onClick={(title.title) => { isactive(`nav${title.title}`) }}
+
+                smooth
+
+
+
+
+
                 >
                  {title.title}
-                </NavLink>
+                </NavHashLink>
               </li>
             );
           })}

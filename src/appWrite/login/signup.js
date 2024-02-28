@@ -3,13 +3,16 @@ import { useDispatch } from "react-redux";
 import Auth from "../services/auth";
 import { login } from "../store/authSlice";
 import { useForm } from "react-hook-form";
+ 
+
 import { useNavigate } from "react-router-dom";
 
+ ;
 
 export default function Signup() {
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm();
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const onSubmit = async (data) => {
     try {
       const userData = await Auth.createAccount(data)
@@ -17,7 +20,7 @@ export default function Signup() {
           const userData = await Auth.getCurrentUser()
           if(userData) {
             dispatch(login(userData));
-            navigate('/input')
+            navigate('/signup')
           }
          
       }

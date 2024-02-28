@@ -47,6 +47,7 @@
   color: var(--text-color);
 }
 
+
 .search::placeholder,
 .search:focus {
   outline: none;
@@ -67,4 +68,8 @@
   padding: 1.125rem 1.125rem;
   text-transform: capitalize;
   background-color: var(--l-nav);
+}
+
+.title{
+  color:red
 }
