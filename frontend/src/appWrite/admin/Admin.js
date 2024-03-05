@@ -48,18 +48,23 @@ export default function Admin() {
   };
 
 
+// TODO:"MAKE THAT USER ADMIN CNA DELETE"
+
+
+
   const remove = async(id)=>{
 
    
 try {
   const deleteDoc =await uploadService.deleteDocument(id)
   if (deleteDoc != null) {
-    // console.log("deleted");
+    console.log("deleted");
     fetchContent();
   }
   
 } catch (error) {
   console.log(error);
+
   
 }
 
@@ -73,7 +78,7 @@ try {
       <div className="admin-nav">
         <div className="left-nav h-screen w-52  flex float-left text-left  px-2 flex-col bg-emerald-700  bg-gradient-to-b">
           {" "}
-          <p className="text-white font-mono capitalize  text-xl m-3  hover:cursor-pointer ">
+          <p className="text-white font-mono capitalize  text-xl m-3   ">
             {" "}
             welcome andreu
           </p>{" "}

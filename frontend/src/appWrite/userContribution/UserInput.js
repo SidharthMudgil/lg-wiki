@@ -4,8 +4,8 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "./UserInput.css";
 import remarkGfm from "remark-gfm";
 import axios from "axios";
-
-
+import TurndownService from 'turndown';
+import { marked } from 'marked';
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import rehypeSanitize from "rehype-sanitize";
 import MarkdownPreview from '@uiw/react-markdown-preview';
@@ -16,7 +16,7 @@ import Auth from "../services/auth";
 // import Upload from "../services/uplaod";
 import uploadService from "../services/uplaod";
 import { useNavigate } from "react-router-dom";
-
+import markdownit from 'markdown-it'
 
 const rehypePlugins = [rehypeSanitize];
 export default function UserInput() {
@@ -31,20 +31,78 @@ export default function UserInput() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [response, setResponse] = useState(null); // Stores server response or error message
 
+  const fileurl = async (content, file, email) => {
+    const md = markdownit();
+   
+    const htmlContent = md.render(content);
+    const imageRegex = /<img src="([^"]+)"[^>]*>/g;
+    const imageUrls = [];
+    
+    let match;
+    while ((match = imageRegex.exec(htmlContent))) {
+      imageUrls.push(match[1]);
+    }
+  
+    return await processContent(htmlContent, imageUrls, file);
+  };
+  
+  const processContent = async (htmlContent, imageUrls, file) => {
+    let processedContent = htmlContent;
+  
+    for (let i = 0; i < file.files.length; i++) {
+      const uploadedFile = await uploadService.uploadFile(file.files[i]);
+      console.log(uploadedFile.$id);
+  
+      if (uploadedFile !== null) {
+        const result = await uploadService.filepreview(uploadedFile.$id);
+        processedContent = processedContent.replace(imageUrls[i], result);
+      }
+    }
+  
+    return processedContent;
+  };
 
+  const backToMarkdown = (htmldata)=>{
+    const turndown = new TurndownService();
 
-  const content = String(text);
+    // Add the GFM plugin to support code language blocks
+    turndown.addRule('codeBlock', {
+      filter: ['pre'],
+      replacement: function (content, node) {
+        const className = node.firstChild && node.firstChild.className;
+        if (className && className.startsWith('language-')) {
+          const language = className.replace('language-', '');
+          return '```' + language + '\n' + content + '```';
+        }
+        return '\n```\n' + content + '\n```\n';
+      }
+    });
+      const backMarkdown  = turndown.turndown(htmldata);
+    return backMarkdown;
+  }
 
- 
   
   const onSubmit = async () => {
-  
+    const content = String(text);
     if(content!=null && title!=null && email!=null){
+    
+     
 
     try {
+          const file=document.getElementById("file");
+           const replacemarkdown = await fileurl(content,file,email);
+
+            const markdownContent = backToMarkdown(replacemarkdown);
+
+
+ console.log(markdownContent);
+          // const formData = new FormData();
+          // formData.append("email", email);
+          // formData.append("text", markdownContent);
       
-         await uploadService.createPost({ title, markdown: text, userID:email }).then() ;
-         const data = { email };
+          // debugging console.log(...formData);
+         await uploadService.createPost({ title, markdown: markdownContent, userID:email }).then() ;
+         const data = { email,text:markdownContent };
          const response = await axios.post("http://localhost:3001/api/email", data);
          setResponse(response.data); // Set success message
        alert("Submitted successfully");
@@ -69,12 +127,12 @@ export default function UserInput() {
 
 
   return (<>
-   
+
     <div className="markdown h-s">
- 
+    
       <div className="markdown-input">
       <input type="text "  className="title-input" placeholder="Add your title here only " onChange={(e)=>settitle(String(e.target.value))} required  />
-
+      <input type="file" id="file" multiple/>
       <input type="text "  className="title-input" placeholder="Add your email here only " onChange={(e)=>setEmail(String(e.target.value))} required  />
         <textarea
           width="1000px"
@@ -106,10 +164,13 @@ export default function UserInput() {
                   wrapLines={true}
                 />
               ) : (
-                <code {...rest} className={className}>
+                <code {...rest} className={`code`}>
                   {children}
                 </code>
               );
+            },
+            blockquote(props) {
+              return <blockquote {...props} className="blockquote" />
             },
             ul({ node, ...props }) {
               return <ul {...props} />;

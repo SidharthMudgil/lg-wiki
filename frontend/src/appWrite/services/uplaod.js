@@ -83,6 +83,14 @@ export class Upload {
       return null;
     }
   }
+  async filepreview(fileId) {
+    try {
+      return this.bucket.getFilePreview(config.bucketId,  fileId );
+    } catch (error) {
+      console.log("appwrite service ::uploadFile::error", error);
+      return null;
+    }
+  }
   async deleteDocument(id) {
    
       try {
@@ -106,6 +114,9 @@ export class Upload {
       return false;
     }
   }
+
+
+
 }
 
 const uploadService = new Upload();

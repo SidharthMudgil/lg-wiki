@@ -48,6 +48,13 @@ padding-top: 10px;
   
 
 }
+.code {
+  margin: 10px;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 10px;
+background-color: #2f3232;
+}
 
 .title-email{
   position: absolute;
@@ -58,7 +65,7 @@ padding-top: 10px;
   color:var(--text-color)
   
 
-} */
+}
 
 .submit-button{
   position: absolute;
