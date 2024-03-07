@@ -9,7 +9,7 @@
 .dynamic-output{
     margin-top: 12px;
 }
-div {
+.dynamic-container > div  {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
     overflow-y: scroll; 
@@ -19,7 +19,7 @@ div {
     padding: 10px 0;
     border-bottom: rgba(255, 255, 255, 0.668) solid 1px;
   }
-  div::-webkit-scrollbar {
+  .dynamic-container > div::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
   }
   

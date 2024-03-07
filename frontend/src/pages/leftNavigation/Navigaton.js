@@ -44,22 +44,25 @@ export default function Navigaton() {
   };
 
   const handleChange = (e) => {
-    setInputValue(e.target.value);
-    menubar();
+    console.log(inputValue)
+    setInputValue(e.target.value.toLowerCase());
+    menubar(inputValue);
   };
 
-  function menubar() {
+
+  function menubar(inputValue) {
     const items = document.querySelectorAll(".menu-ul");
+
     items.forEach((item) => {
         const linkText = item.textContent.toLowerCase();
-        if (inputValue !== "") {
+        if (inputValue.trim() === "") {
+            item.style.display = "block"; // Display all items when inputValue is empty
+        } else {
             if (linkText.includes(inputValue.toLowerCase())) {
                 item.style.display = "block";
             } else {
                 item.style.display = "none";
             }
-        } else {
-            item.style.display = "block"; // Display all items when inputValue is empty
         }
     });
 }
@@ -77,7 +80,7 @@ export default function Navigaton() {
             placeholder="Search..."
             className="search menu-search focus:outline-none"
             ref={inputRef}
-            onChange={handleChange}
+            onChange={event =>handleChange(event)}
             id="search"
           />
         </div>

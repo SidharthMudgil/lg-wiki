@@ -51,7 +51,7 @@ export default function UserInput() {
   
     for (let i = 0; i < file.files.length; i++) {
       const uploadedFile = await uploadService.uploadFile(file.files[i]);
-      console.log(uploadedFile.$id);
+      
   
       if (uploadedFile !== null) {
         const result = await uploadService.filepreview(uploadedFile.$id);
@@ -95,12 +95,8 @@ export default function UserInput() {
             const markdownContent = backToMarkdown(replacemarkdown);
 
 
- console.log(markdownContent);
-          // const formData = new FormData();
-          // formData.append("email", email);
-          // formData.append("text", markdownContent);
-      
-          // debugging console.log(...formData);
+//  console.log(markdownContent); debugging
+         
          await uploadService.createPost({ title, markdown: markdownContent, userID:email }).then() ;
          const data = { email,text:markdownContent };
          const response = await axios.post("http://localhost:3001/api/email", data);
