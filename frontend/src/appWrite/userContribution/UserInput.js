@@ -251,7 +251,7 @@ newImages.forEach((newImage, index) => {
             .then();
           const data = { email, title: title };
           const response = await axios.post(
-            "http://localhost:3001/api/email",
+            "https://lg-wiki-back.onrender.com/api/email",
             data
           );
           setResponse(response.data); // Set success message
