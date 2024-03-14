@@ -69,8 +69,14 @@
   padding: 1.125rem 1.125rem;
   text-transform: capitalize;
   background-color: var(--l-nav);
+  text-wrap:nowrap;
+  overflow: hidden;
 }
 
 .title{
   color:red
+}
+.active-link {
+  color: #f5a942;
+
 }

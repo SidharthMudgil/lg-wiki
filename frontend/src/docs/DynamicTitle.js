@@ -7,9 +7,10 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function DynamicTitle(props) {
     const title=props.conTitle;
+    const id =props.conid
   const content =props.data;
   return (
-    <div className="dynamic-container" id={title}>
+    <div className="dynamic-container" id={id}>
         <div className="dynamic-title" >{title}</div>
       <Markdown
         children={content}

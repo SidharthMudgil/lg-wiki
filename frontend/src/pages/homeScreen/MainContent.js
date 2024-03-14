@@ -101,7 +101,7 @@ export default function MainContent() {
 
             <div className="suggestion">
               {suggestions.map((item, index) => { 
-                return (<div className="suggestion-item" > <Link to={`/docs/dynamic#${item.title}`}>{item.title}</Link></div>);
+                return (<div className="suggestion-item" > <Link to={`/docs/dynamic#${item.$id}`}>{item.title}</Link></div>);
               })}
 
             </div>
