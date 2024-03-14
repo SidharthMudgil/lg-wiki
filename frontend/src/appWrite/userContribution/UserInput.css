@@ -40,6 +40,10 @@ textarea:focus, input:focus {
   width: 100%;
 
 }
+.markdown-output img {
+  width: 200px;
+  height: 200px;
+}
 .title-input{
  background-color: inherit;
 

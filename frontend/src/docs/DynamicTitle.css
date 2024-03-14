@@ -10,6 +10,11 @@
 .dynamic-output{
     margin-top: 12px;
 }
+.dynamic-output img {
+  width: 500px;
+
+  height: 300px;
+}
 .dynamic-container > div  {
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
