@@ -1,5 +1,5 @@
 import React from "react";
-import master from "../../assets/master-slave.svg";
+import master from "../../assets/master-slave.png";
 export default function Architecture() {
   return (
     <>
@@ -49,7 +49,7 @@ export default function Architecture() {
           devices; in a database system, a primary server managing replicas.
         </p>{" "}
         <div className=" flex flex-col gap-6 p-14 w-full">
-          <img src={master} alt="master-slave" className="mx-auto " />
+          <img src={master} alt="master-slave" className="mx-auto max-h-96 max-w-95" />
         </div>
         <h1 className=" flex py-10 md:text-xl lg:text-2xl ">Slave</h1>
         <h2 className="items-center flex basis-full">

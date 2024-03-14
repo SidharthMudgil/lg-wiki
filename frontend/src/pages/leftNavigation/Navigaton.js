@@ -10,7 +10,7 @@ export default function Navigation() {
   const inputRef = useRef(null);
   const [fetchTitle, setFetchTitle] = useState([]);
   const location = useLocation();
-
+  const [clickedLinkId, setClickedLinkId] = useState(null); 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.key === "k") {
@@ -30,19 +30,6 @@ export default function Navigation() {
     fetchContent();
   }, []);
 
-  useEffect(() => {
-    // Programmatic scroll on initial render and after redirection
-    const targetHash = location.hash;
-    if (targetHash) {
-      const targetSection = document.getElementById(targetHash.substring(1));
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }
-  }, [location]);
 
   const fetchContent = async () => {
     try {
@@ -60,7 +47,7 @@ export default function Navigation() {
   };
 
   const handleNavClick = (id) => {
-    // Handle navigation click if needed
+    setClickedLinkId(id); 
   };
 
   return (
@@ -80,9 +67,11 @@ export default function Navigation() {
         <li className="py-1 menu-ul">
           <NavLink
             to="/docs/arc"
-            style={({ isActive }) => ({
-              color: isActive ? "#f5a942" : "",
-            })}
+            id="arc"
+            onClick={() => handleNavClick(`arc`)}
+
+            className={clickedLinkId === "arc" ? "active-link" : ""} 
+        
           >
             architecture
           </NavLink>
@@ -90,9 +79,10 @@ export default function Navigation() {
         <li className="py-1  menu-ul">
           <NavLink
             to="/docs/rig"
-            style={({ isActive }) => ({
-              color: isActive ? "#f5a942" : "",
-            })}
+            id="rig"
+            onClick={() => handleNavClick(`rig`)}
+            className={clickedLinkId === "rig" ? "active-link" : ""} 
+        
           >
             rig installation
           </NavLink>
@@ -100,9 +90,10 @@ export default function Navigation() {
         <li className="py-1  menu-ul">
           <NavLink
             to="/docs/control"
-            style={({ isActive }) => ({
-              color: isActive ? "#f5a942" : "",
-            })}
+            id="control"
+            onClick={() => handleNavClick(`control`)}
+            className={clickedLinkId === "control" ? "active-link" : ""} // Apply active class based on clicked link
+        
           >
             Control Commands
           </NavLink>
@@ -116,8 +107,8 @@ export default function Navigation() {
                 to={`/docs/dynamic#${title.$id}`}
                 id={`nav${title.$id}`}
                 onClick={() => handleNavClick(`${title.$id}`)}
-                activeClassName="active-link"
-                activeStyle={{ color: "red" }}
+                className={clickedLinkId === title.$id ? "active-link" : ""} 
+            
               >
                 {title.title}
               </Link>

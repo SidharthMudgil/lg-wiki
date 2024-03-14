@@ -48,16 +48,6 @@ export default function Footer() {
             <p className="py-2">
               {" "}
               <a
-                href="https://github.com/SidharthMudgil"
-                target="_blank"
-                rel="noreferrer"
-              >
-                sidharth mudgil
-              </a>
-            </p>
-            <p className="py-2">
-              {" "}
-              <a
                 href="https://github.com/devtgadani"
                 target="_blank"
                 rel="noreferrer"
@@ -65,16 +55,17 @@ export default function Footer() {
                 Dev gadani
               </a>
             </p>
-            {/* <p className="py-2">
+            <p className="py-2">
               {" "}
               <a
-                href="https://github.com/akoolarni"
+                href="https://github.com/SidharthMudgil"
                 target="_blank"
                 rel="noreferrer"
               >
-                arin kulkarni
+                sidharth mudgil
               </a>
-            </p> */}
+            </p>
+      
             <p className="py-2">
               {" "}
               <a

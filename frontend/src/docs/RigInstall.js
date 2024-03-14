@@ -101,6 +101,7 @@ export default function RigInstall() {
 `;
   return (
     <div className=" rig ">
+      <div>
       <Markdown
         children={data}
         remarkPlugins={[remarkGfm]}
@@ -140,6 +141,7 @@ export default function RigInstall() {
           },
         }}
       />
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function Admin() {
   const [query, setQuery] = useState(true);
   const [loading, setLoading] = useState("true");
   const dispatch = useDispatch();
-  const[color, setcolor]=useState("#f5a942");
+  const[color, setcolor]=useState();
   const [userdata,setuserdata]=useState();
   useEffect( () => {
   
@@ -41,20 +41,14 @@ export default function Admin() {
     }
   };
 
-  const colorchange=(name)=>{
 
-  }
   const handleUnapprovedClick = () => {
-    colorchange(unapproved);
-    
-   var unapproved="unapproved";
+   setcolor(false);
     setQuery(false);
   };
   const approved = async (id) => {
     const Active = await uploadService.updatePost(id, { status: "active" });
-    if (color==true)
-    document.getElementById("approved").style.color=color;
-    setcolor("")
+   
     if (Active != null) {
       console.log("update");
       alert("updated to approved")
@@ -63,8 +57,9 @@ export default function Admin() {
   };
 
   const handleApprovedClick = () => {
-    document.getElementById("approved").style.color=color;
-    setcolor("white");
+    setcolor(true);
+
+    
     setQuery(true);
   };
 
@@ -99,30 +94,27 @@ const remove = async (id) => {
     <>
       
       <div className="admin-nav">
-        <div className="left-nav h-screen w-52  flex float-left text-left  px-2 flex-col bg-emerald-700  bg-gradient-to-b">
+        <div className="left-nav h-screen w-52  flex float-left text-left  px-2 flex-col  bg-[#293130]  bg-gradient-to-b">
           {" "}
           <p className="text-white font-mono capitalize  text-xl m-3   ">
             {" "}
             welcome admin
           </p>{" "}
           <NavLink 
-             style={({ isActive }) => ({
-              color: isActive ? "#f5a942" : "",
-            })}
+           
             className="text-white font-mono capitalize  text-xl m-3  hover:cursor-pointer "
             onClick={handleApprovedClick}
             id="approved"
+            style={{ color: color ? "#f5a942" : "#ffffff" }}
           >
             approved{" "}
           </NavLink>
           <NavLink
-           style={({ isActive }) => ({
-            color: isActive ? "#f5a942" : "",
-          })}
+       
             className="text-white font-mono capitalize  text-xl m-3  hover:cursor-pointer "
             onClick={handleUnapprovedClick}
             id="unapproved"
-
+            style={{ color: color ? "#ffffff" : "#f5a942" }}
           >
             unapproved
           </NavLink>
@@ -133,7 +125,8 @@ const remove = async (id) => {
 
           <div className="container flex flex-col p-12 pb-0">
           <div className={" divide-y divide-gray-200 text-white"}>
-          {fetchData &&
+          {console.log(fetchData.length==0? "hello" : "jhjhjh q")}
+          {fetchData.length!==0? fetchData &&
                   fetchData.map((post,index) => { 
                     return (
                    
@@ -184,20 +177,20 @@ const remove = async (id) => {
 <div className="text-lg  py-10  flex "> Email :  {post.userID} </div>   
   <div className="text-lg  py-10 flex "> Name : {post.userName} </div>
   </div>
-  <div className="flex  flex-row w-full justify-between p-10">
+  <div className="flex  flex-row w-full justify-between p-10 hover:cursor-pointer">
 
                         <p  className={
                         post.status === "active"
-                          ? "p-3 w-min bg-green-400 text-white rounded-2xl "
-                          : "p-3 w-min bg-red-400 text-white rounded-2xl"
+                          ? "p-3 w-min bg-green-400 text-white rounded-2xl hover:cursor-pointer"
+                          : "p-3 w-min bg-red-400 text-white rounded-2xl hover:cursor-pointer"
                       }  onClick={() => {
                         post.status = post.status === "active" ? null : approved(post.$id);
-                      }}>{ post.status === "active" ? "approved" : "approve"}
+                      }} >{ post.status === "active" ? "approved" : "approve"}
                         </p>
 
-                       <i className="fa-solid fa-trash px-4 py-4 whitespace-nowrap items-center text-red-600" onClick={()=>{remove(post.$id)}}  ></i>
+                       <i className="fa-solid fa-trash px-4 py-4 whitespace-nowrap hover:cursor-pointer items-center text-red-600" onClick={()=>{remove(post.$id)}}  ></i>
       </div>  </div>        </div>     </div>
-)})}
+)}):<p className="text-center capitalize" > nothing to approve</p>}
 
 </div></div>
                

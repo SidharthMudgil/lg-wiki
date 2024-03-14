@@ -77,8 +77,9 @@ export default function MainContent() {
 
   return (
     <>
+   
       <div className="background  " >
-        
+      <div >
         <div className="home  ">
           {/* main logo */}
           <div className=" basis-[100%] ">
@@ -125,6 +126,7 @@ export default function MainContent() {
 
         {/* contributer card info  */}
         <Contributor />
+      </div>
       </div>
     </>
   );
