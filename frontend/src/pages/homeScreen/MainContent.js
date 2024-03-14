@@ -4,8 +4,15 @@ import Contributor from "./Contributor";
 import "./MainContent.css";
 import InfoOverview from "./InfoOverview";
 import React, { useRef, useEffect, useState } from "react";
+import uploadService from "../../appWrite/services/uplaod";
+import { Query } from "appwrite";
+import { Link } from "react-router-dom";
 
 export default function MainContent() {
+  const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+
   // ctrl k feature
 
   const inputRef = useRef(null);
@@ -24,35 +31,47 @@ export default function MainContent() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
 
   //tempory data for search
-  const data = [
-    "Installation",
-    "LG Commands",
-    "Set Slave",
-    "Clean KMLs and Logo",
-    "Reboot Liquid Galaxy",
-    "Relaunch Liquid Galaxy",
-    "Send KMLs",
-  ];
 
-  //seach suggestion function
-  const [Suggest, setSuggest] = useState([]);
-  const handleSearch = (event) => {
-    const searchTerm = event.target.value.toLowerCase();
-
-    // Filter the data based on the search term
-    const filteredData = data.filter((item) =>
-      item.toLowerCase().includes(searchTerm)
-    );
-
-    // Perform any action with filteredData (e.g., display it)
-    if (searchTerm !== "") {
-      setSuggest(filteredData);
-    } else {
-      setSuggest([]);
+  const fetchData = async () => {
+    try {
+      const queries = [Query.equal("status","active" )];
+      // Assuming uploadService is defined elsewhere
+      const response = await uploadService.getPosts(queries);
+      const document = response.documents;
+      setData(document);
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const handleSearch = (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
+  
+    // Check if data exists before filtering
+    if (data) {
+      const filteredData = data.filter((item) =>
+        item.title.toLowerCase().includes(searchTerm)
+      );
+  
+      // Set suggestions based on filtered data
+      if (searchTerm !== "") {
+        setSuggestions(filteredData);
+      } else {
+        setSuggestions([]);
+      }
+    }
+  };
+  
   
 
 
@@ -81,8 +100,8 @@ export default function MainContent() {
             />
 
             <div className="suggestion">
-              {Suggest.map((item, index) => {
-                return (<div className="suggestion-item">{item}</div>);
+              {suggestions.map((item, index) => { 
+                return (<div className="suggestion-item" > <Link to={`/docs/dynamic#${item.title}`}>{item.title}</Link></div>);
               })}
 
             </div>

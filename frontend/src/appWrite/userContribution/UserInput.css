@@ -66,22 +66,50 @@ background-color: #2f3232;
   
 
 }
+.file-icon{
+  position: absolute;
+
+  top:15px;
+  right: 10px ;
+
+  font-size: 25px;
+
+  background-color: inherit;
+  color:whitesmoke
+}
 
 .submit-button{
   position: absolute;
-  bottom: 0;
+  bottom:60px;
   right: 0;
-  background-color:blueviolet;
+  background-color:var(--selected-color);
   padding: 10px;
+  font-weight: 500;
+  font-size: 18px ;
   text-transform: capitalize;
   color: var(--text-color);
-  border-radius: 25px;
-  font-size: 25px;
+  border-radius: 08px;
+
 
   
 
 }
+.preview-button{
+  position: absolute;
+  bottom:60px;
+  left: 0;
+  background-color:var(--selected-color);
+  padding: 10px;
+  font-weight: 500;
+  font-size: 18px ;
+  text-transform: capitalize;
+  color: var(--text-color);
+  border-radius: 8px;
 
+
+  
+
+}
 .blockquote{
   padding: 10px 14px 10px;
   background: #535457;
@@ -99,4 +127,51 @@ background-color: #2f3232;
   list-style-type: decimal; /* or your preferred list style */
   margin-left: 1.5em; /* Adjust the margin as needed */
 }
+.preview {
+  width: 100%;
+  display: none;
+  background-color: var(--l-nav);
+  justify-content: center;
+  height: 100vh;
+  z-index: 1;
+
+  position: absolute;
+}
+
+.pop-up {
+  flex-direction: column;
+  background-color: var(--backgroud);
+  margin: 2rem auto;
+  width: 50%;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+  padding: 5rem;
+  color: var(--text-color);
+  
+}
+
+.close-button {
+  padding: 10px;
+  text-transform: capitalize;
+  background-color: red;
+  color: white;
+  border-radius: 25px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+.text-preview{
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.close-button:hover {
+  color: var(--kPrimaryColor);
+  cursor: pointer;
+}
+
 

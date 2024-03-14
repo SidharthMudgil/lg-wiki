@@ -26,16 +26,19 @@ const transporter = nodemailer.createTransport({
 
 app.post('/api/email', async (req, res) => {
   try {
-    const { email , text } = req.body; // Destructure email from request body
+    const { email , title } = req.body; // Destructure email from request body
     console.log(`Received email: ${email}`);
-    console.log(`Received email: ${text}`);
+    console.log(`Received email: ${title}`);
 
     const mailOptions = {
       from: 'devgsoc24@gmail.com',
       to: 'devgadani43@gmail.com', // Replace with the recipient's email
       subject: 'LG-WIKI entry ',
-      text: `made by : ${email}\n`,
-      html: `<b>made by email: ${email}</b><br>`
+      // text: `made by : ${email}\n`,
+      html: `<h2> new entry add by <b> ${email}<b> </h2>\n<br>
+           <h3> TItle : <b> ${title}</b> </h3>'\n'<br><br>
+           <a href="http://localhost:3000/admin" style="padding :20px ;background-color:green; color:white ; border-radius: 25px ; margin:20px;">go and check now </a>
+  `
     };
 
     await transporter.sendMail(mailOptions);

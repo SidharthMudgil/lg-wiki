@@ -20,7 +20,7 @@ export default function Signup() {
           const userData = await Auth.getCurrentUser()
           if(userData) {
             dispatch(login(userData));
-            navigate('/signup')
+            navigate('/admin')
           }
          
       }

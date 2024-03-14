@@ -65,6 +65,7 @@
   font-size: 1.25rem;
   padding: 0.313rem;
   justify-content: space-evenly;
+  width:20rem;
   padding: 1.125rem 1.125rem;
   text-transform: capitalize;
   background-color: var(--l-nav);

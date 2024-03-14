@@ -7,43 +7,64 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "../../docs/DynamicTitle.css";
 import remarkGfm from "remark-gfm";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-
+import { NavLink } from "react-router-dom";
+import Auth from "../services/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Admin() {
+  
+  const navigate = useNavigate();
   const [fetchData, setFetchData] = useState([]);
   const [query, setQuery] = useState(true);
   const [loading, setLoading] = useState("true");
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    
+  const[color, setcolor]=useState("#f5a942");
+  const [userdata,setuserdata]=useState();
+  useEffect( () => {
+  
+  
     fetchContent();
   }, [query]);
 
   const fetchContent = async () => {
     try {
+      const  fliedata = await Auth.getCurrentUser()
+    
+      setuserdata(fliedata)
       const queries = [Query.equal("status", query ? "active" : "deactive")];
       setFetchData([]);
       const response = await uploadService.getPosts(queries);
       const document = response.documents;
       setFetchData(document);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error fetching data:  ", error);
     }
   };
+
+  const colorchange=(name)=>{
+
+  }
   const handleUnapprovedClick = () => {
+    colorchange(unapproved);
+    
+   var unapproved="unapproved";
     setQuery(false);
   };
   const approved = async (id) => {
     const Active = await uploadService.updatePost(id, { status: "active" });
-
+    if (color==true)
+    document.getElementById("approved").style.color=color;
+    setcolor("")
     if (Active != null) {
       console.log("update");
+      alert("updated to approved")
       fetchContent();
     }
   };
 
   const handleApprovedClick = () => {
+    document.getElementById("approved").style.color=color;
+    setcolor("white");
     setQuery(true);
   };
 
@@ -51,28 +72,30 @@ export default function Admin() {
 // TODO:"MAKE THAT USER ADMIN CNA DELETE"
 
 
-
-  const remove = async(id)=>{
+const remove = async (id) => {
+  try {
+    const post = await uploadService.getPost(id);
+    let imgdel=post.imageID;
+    await uploadService.deleteDocument(id);
 
    
-try {
-  const deleteDoc =await uploadService.deleteDocument(id)
-  if (deleteDoc != null) {
-    console.log("deleted");
-    fetchContent();
-  }
-  
-} catch (error) {
-  console.log(error);
 
-  
+
+  for (const item of imgdel) {
+    await uploadService.deleteFile(item);
+  }
+  fetchContent();
+
+   alert("deleted succesfully")
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-  }
 
+// remove user create  , premission 
 
-
-  return (
+  return userdata?(
     <>
       
       <div className="admin-nav">
@@ -80,34 +103,45 @@ try {
           {" "}
           <p className="text-white font-mono capitalize  text-xl m-3   ">
             {" "}
-            welcome andreu
+            welcome admin
           </p>{" "}
-          <p
+          <NavLink 
+             style={({ isActive }) => ({
+              color: isActive ? "#f5a942" : "",
+            })}
             className="text-white font-mono capitalize  text-xl m-3  hover:cursor-pointer "
             onClick={handleApprovedClick}
+            id="approved"
           >
             approved{" "}
-          </p>
-          <p
+          </NavLink>
+          <NavLink
+           style={({ isActive }) => ({
+            color: isActive ? "#f5a942" : "",
+          })}
             className="text-white font-mono capitalize  text-xl m-3  hover:cursor-pointer "
             onClick={handleUnapprovedClick}
+            id="unapproved"
+
           >
             unapproved
-          </p>
+          </NavLink>
           {/* <p className="text-white font-mono capitalize  text-xl m-3  hover:  ">user</p> */}
           {/* <p className="text-white font-mono capitalize  text-xl m-3"></p>{" "} */}
         </div>
-        <div className="right-nav h-screen justify-center flex  bg-[#121615]">
+        <div className="right-nav h-screen justify-center flex  bg-[#121615] text-lg font-bold">
 
           <div className="container flex flex-col p-12 pb-0">
-          <div className="bg-[#696f6e] divide-y  divide-gray-200 text-white">
+          <div className={" divide-y divide-gray-200 text-white"}>
           {fetchData &&
-                  fetchData.map((post) => {return (
-                    
+                  fetchData.map((post,index) => { 
+                    return (
+                   
+                      <div className={"bg-[#" + (index % 2 === 0 ? "121615" : "1e2524") + "]"}>
            <div className="px-20" key={post.id}>
-              <div className="text-xl  py-10 border-b-2 border-white"> {post.title}</div> 
-               {/* <div className="text-lg  py-10 border-b-2 border-white"> {post.userId} </div> */}
-                <div> <Markdown
+              <div className="text-xl  py-10 border-b-2 border-white"> Title :  {post.title}</div> 
+          
+                <div className="py-5"> Content  : <Markdown
         children={post.markdown}
         remarkPlugins={[remarkGfm]}
         className="dynamic-output  w-[43rem]"
@@ -143,19 +177,26 @@ try {
       /></div>
             
 <div  className="px-4 py-4 whitespace-nowrap"
-                        onClick={() => {
-                          post.status = post.status === "active" ? null : approved(post.$id);
-                        }}
+                       
                       >
+                        <div className="flex  flex-row w-full justify-between border-t-2 border-b-2 border-white">
+
+<div className="text-lg  py-10  flex "> Email :  {post.userID} </div>   
+  <div className="text-lg  py-10 flex "> Name : {post.userName} </div>
+  </div>
+  <div className="flex  flex-row w-full justify-between p-10">
+
                         <p  className={
                         post.status === "active"
                           ? "p-3 w-min bg-green-400 text-white rounded-2xl "
                           : "p-3 w-min bg-red-400 text-white rounded-2xl"
-                      }>{ post.status === "active" ? "approved" : "approve"}
+                      }  onClick={() => {
+                        post.status = post.status === "active" ? null : approved(post.$id);
+                      }}>{ post.status === "active" ? "approved" : "approve"}
                         </p>
 
                        <i className="fa-solid fa-trash px-4 py-4 whitespace-nowrap items-center text-red-600" onClick={()=>{remove(post.$id)}}  ></i>
-        </div>        </div>     
+      </div>  </div>        </div>     </div>
 )})}
 
 </div></div>
@@ -163,5 +204,5 @@ try {
                  </div>  
       </div>
     </>
-  );
+  ):navigate('/login');
 }

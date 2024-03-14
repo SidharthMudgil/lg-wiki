@@ -1,32 +1,34 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
-import { login as authLogin } from '../store/authSlice';
+
 
 import {useDispatch} from "react-redux";
 
 import {useForm} from "react-hook-form";
-import Auth from '../services/auth';
+import Auth from '../appWrite/services/auth';
 
 
-function Login() {
+export default function ForgotPassword() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {register, handleSubmit} = useForm()
     const [error, setError] = useState("")
 
-    const login = async(data) => {
+    const updatepass = async(data) => {
         setError("")
-        try {
-            const session = await Auth.userlogin(data)
-            if (session) {
-                const userData = await Auth.getCurrentUser()
-                if(userData) dispatch(authLogin(userData));
-                navigate("/admin")
-            }
-        } catch (error) {
-            setError(error.message)
-        }
-    }
+ 
+            const session = 
+            console.log(data);
+            try {
+                // Request a password reset for the user
+                await Auth.updatePass(data.email)
+    
+                setError('Password reset email sent. Check your inbox for further instructions.');
+            } catch (error) {
+                // Handle errors
+                setError('Error sending password reset email. Please try again.');
+                console.error('Error sending password reset email:', error);
+            }}
 
   return (
     <div
@@ -38,18 +40,10 @@ function Login() {
                      
                     </span> */}
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">Sign into  LG-WIKI</h2>
-        <p className="mt-2 text-center text-base text-black/60">
-                    Don&apos;t have any account?&nbsp;
-                    <Link
-                        to="/signup"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
-                    >
-                        Sign Up
-                    </Link>
-        </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        <form onSubmit={handleSubmit(login)} className='mt-8'>
+        <h2 className="text-center text-2xl font-bold leading-tight">change password into  LG-WIKI</h2>
+           {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+
+        <form onSubmit={handleSubmit(updatepass)} className='mt-8'>
             <div className='flex flex-col gap-4  '>
                 <input 
                               placeholder="Enter your email"
@@ -64,15 +58,7 @@ function Login() {
                     }
                 })}
                 />
-                <input 
-                
-                type="password"
-                className='p-5'
-                placeholder="Enter your password"
-                {...register("password", {
-                    required: true,
-                })}
-                />
+             
                 <button
                 type="submit"
                 className="w-full text-xl p-5 font-semibold rounded-full hover:text-[#f5a942] hover:bg-[#1e2524]"
@@ -84,4 +70,3 @@ function Login() {
   )
 }
 
-export default Login

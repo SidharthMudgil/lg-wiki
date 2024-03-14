@@ -22,8 +22,11 @@ import Signup from "./appWrite/login/signup";
 import Login from "./appWrite/login/login";
 import Admin from "./appWrite/admin/Admin";
 import FetchTitle from "./docs/FetchTitle";
-import Mailjs from "./appWrite/login/Mailjs";
-import Filejs from "./Filejs";
+import ImageUploader from "./pages/delete";
+import ForgotPassword from "./pages/delete";
+import ResetPassword from "./appWrite/ResetPassword";
+
+
 
 
 // All Routes for browsing in webpage
@@ -36,9 +39,11 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
         <Route path="input" element={<UserInput />} />
-        <Route path="/delete" element={<Filejs />} />
+        <Route path="verfiy" element={<ForgotPassword />} />
+        <Route path="newpass" element={<ResetPassword />} />
+     
         <Route path="/admin" element={<Admin />} />
-        <Route path="/mailjs" element={<Mailjs />} />
+ 
         
 
         <Route path="docs" element={<Layout />}>

@@ -15,8 +15,9 @@ export class Upload {
   async createPost({
     title,
     markdown,
-    featuredImage,
+    userName,
     status = "deactive",
+    imageID,
     userID,
   }) {
     try {
@@ -25,7 +26,7 @@ export class Upload {
         config.collectionId,
 
         ID.unique(),
-        { title, markdown, featuredImage,status ,userID}
+        { title, markdown, status ,userID,userName,imageID}
       );
     } catch (error) {
       console.log("appwrite service ::createPost::error", error);
@@ -69,6 +70,7 @@ export class Upload {
       );
     } catch (error) {
       console.log("appwrite service ::getPosts::error", error);
+      console.log("not authorise user")
       return [];
     }
   }

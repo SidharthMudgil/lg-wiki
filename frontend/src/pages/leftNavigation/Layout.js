@@ -12,7 +12,7 @@ export default function Layout() {
             
        
         </div>
-        <button className="absolute text-white bottom-[-41px] right-5  p-5 rounded-2xl bg-[blueviolet] uppercase"><Link to="/input">add</Link></button>
+        <button className="absolute text-white font-semibold bottom-[5px] right-5  p-5 rounded-2xl bg-[#f5a942] uppercase"><Link to="/input">add</Link></button>
       </div>
     </>
   );

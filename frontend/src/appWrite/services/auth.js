@@ -13,7 +13,7 @@ export class auth {
 
   async createAccount({ email, password, name }) {
     try {
-      const userAccount = await this.account.create(
+      const userAccount = await this.account.create(  
         ID.unique(),
         email,
         password,
@@ -32,6 +32,25 @@ export class auth {
     
     }
   }
+  async updatePass( email,password) {
+    try {
+   
+      await this.account.createRecovery(email, 'http://localhost:3000/newpass');
+
+      
+  } catch (error) {
+     
+      throw error;
+  }
+  }
+async recoverpass(userId, secret, password) {
+    try {
+        await this.account.updateRecovery(userId, secret, password, password);
+    } catch (error) {
+        throw error;
+    }
+}
+
   async userlogin({ email, password }) {
     try {
       return await this.account.createEmailSession(email, password);

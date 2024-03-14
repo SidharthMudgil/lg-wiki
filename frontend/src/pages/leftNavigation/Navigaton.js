@@ -4,14 +4,12 @@ import { NavLink } from "react-router-dom";
 
 import { Query } from "appwrite";
 import uploadService from "../../appWrite/services/uplaod";
-import { HashLink as Link, NavHashLink } from "react-router-hash-link";
-import { colorBrewer } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { NavHashLink } from "react-router-hash-link";
 
 export default function Navigaton() {
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
   const [fetchTitle, setfetchTitle] = useState([]);
-  const [active ,setactive]=useState(true);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -31,6 +29,7 @@ export default function Navigaton() {
     fetchContent();
   }, []);
 
+
   const fetchContent = async () => {
     try {
       const queries = [Query.equal("status", "active")];
@@ -44,32 +43,35 @@ export default function Navigaton() {
   };
 
   const handleChange = (e) => {
-    console.log(inputValue)
+    console.log(inputValue);
     setInputValue(e.target.value.toLowerCase());
     menubar(inputValue);
   };
-
 
   function menubar(inputValue) {
     const items = document.querySelectorAll(".menu-ul");
 
     items.forEach((item) => {
-        const linkText = item.textContent.toLowerCase();
-        if (inputValue.trim() === "") {
-            item.style.display = "block"; // Display all items when inputValue is empty
+      const linkText = item.textContent.toLowerCase();
+      if (inputValue.trim() === "") {
+        item.style.display = "block"; // Display all items when inputValue is empty
+      } else {
+        if (linkText.includes(inputValue.toLowerCase())) {
+          item.style.display = "block";
         } else {
-            if (linkText.includes(inputValue.toLowerCase())) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
-            }
+          item.style.display = "none";
         }
+      }
     });
-}
-  // const  isactive =(id) =>{
-  //   active ? (document.getElementById(id).style.color = "green",setactive(false))
-  //   :(document.getElementById(id).style.color = "white")}
-  
+  }
+
+  const [activeLink, setActiveLink] = useState(null);
+  const [previousLink, setPreviousLink] = useState(null);
+
+  const handleNavClick = (id) => {
+    setPreviousLink(activeLink); // Store the previous active link
+    setActiveLink(id); // Set the new active link
+  };
 
   return (
     <>
@@ -80,7 +82,7 @@ export default function Navigaton() {
             placeholder="Search..."
             className="search menu-search focus:outline-none"
             ref={inputRef}
-            onChange={event =>handleChange(event)}
+            onChange={(event) => handleChange(event)}
             id="search"
           />
         </div>
@@ -115,29 +117,39 @@ export default function Navigaton() {
             >
               Control Commands
             </NavLink>
-
-         
           </li>
-          {fetchTitle && fetchTitle.map((title) => {
-            return (
-              <li className="py-1  menu-ul"  key={fetchTitle.id}>
-                <NavHashLink  key={fetchTitle.id}
-                     to={`/docs/dynamic#${title.title}`}
-                     id={`nav${title.title}`}
-                    //  onClick={(title.title) => { isactive(`nav${title.title}`) }}
+          {fetchTitle &&
+            fetchTitle.map((title) => {
+              return (
+                <li className="py-1  menu-ul" key={fetchTitle.id}>
+                  {/* <Link
+                    key={fetchTitle.id}
+                    to={`/docs/dynamic#${title.title}`}
+                    id={`nav${title.title}`}
+                    onClick={() => handleNavClick(`nav${title.title}`)}
+                    smooth
+                    style={{
+                      color:
+                        activeLink === `nav${title.title}` ? '#f5a942' : // Apply red if it's active
+                        previousLink === `nav${title.title}` ? '' : '' // Apply black if it was previously active, otherwise blue
+                    }}
 
-                smooth
-
-
-
-
-
-                >
-                 {title.title}
-                </NavHashLink>
-              </li>
-            );
-          })}
+                  >
+                    {title.title}
+                  </Link> */}
+                    <NavHashLink
+                    key={title.id}
+                    to={`/docs/dynamic#${title.title}`}
+                    id={`nav${title.title}`}
+                    onClick={() => console.log("Clicked:", title.title)}
+                    style={{ color: inputValue ? (title.title.toLowerCase().includes(inputValue) ? "#f5a942" : "") : "" }}
+                  >
+                    {title.title}
+                  </NavHashLink>
+                </li>
+              );
+            }
+            )}
         </ul>
       </div>
     </>
