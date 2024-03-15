@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "../docs/RigInstall.css";

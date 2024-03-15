@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, } from "react-router-dom";
 import { Query } from "appwrite";
 import "./Navigation.css";
 import uploadService from "../../appWrite/services/uplaod";
@@ -9,7 +9,7 @@ export default function Navigation() {
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
   const [fetchTitle, setFetchTitle] = useState([]);
-  const location = useLocation();
+
   const [clickedLinkId, setClickedLinkId] = useState(null); 
   useEffect(() => {
     const handleKeyDown = (e) => {

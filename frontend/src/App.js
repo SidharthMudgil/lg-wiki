@@ -22,8 +22,8 @@ import Signup from "./appWrite/login/signup";
 import Login from "./appWrite/login/login";
 import Admin from "./appWrite/admin/Admin";
 import FetchTitle from "./docs/FetchTitle";
-import ImageUploader from "./pages/delete";
-import ForgotPassword from "./pages/delete";
+// import ImageUploader from "./pages/delete";
+import ForgotPassword from "./appWrite/login/ForgotPassword";
 import ResetPassword from "./appWrite/ResetPassword";
 
 

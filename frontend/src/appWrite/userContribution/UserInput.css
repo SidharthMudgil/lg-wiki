@@ -82,6 +82,23 @@ background-color: #2f3232;
   color:whitesmoke
 }
 
+
+ 
+.markdown-output h1{
+  font-size: 1.8rem; /* 2 times the base font size */
+}
+
+.markdown-output h2 {
+  font-size: 1.5rem; /* 1.5 times the base font size */
+}
+
+.markdown-output h3 {
+  font-size: 1.2rem; /* 1.2 times the base font size */
+}
+
+.markdown-output h1,h2,h3,h4,h5,h6,p{
+  margin-bottom: 10px;
+}
 .submit-button{
   position: absolute;
   bottom:60px;

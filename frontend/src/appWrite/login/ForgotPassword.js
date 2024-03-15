@@ -5,7 +5,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import {useDispatch} from "react-redux";
 
 import {useForm} from "react-hook-form";
-import Auth from '../appWrite/services/auth';
+import Auth from '../services/auth';
 
 
 export default function ForgotPassword() {
@@ -32,22 +32,25 @@ export default function ForgotPassword() {
 
   return (
     <div
-    className='flex items-center justify-center w-full p-20 bg-[#121615]'
+    className='flex   p-20 text-white bg-[#121615]'
     >
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-        <div className="mb-2 flex justify-center">
+        <div className={`mx-auto  max-w-lg bg-[#293130] rounded-xl p-10 border border-black/10`}>
+        <div className="mb-2 flex ">
                     {/* <span className="inline-block w-full max-w-[100px]">
                      
                     </span> */}
         </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">change password into  LG-WIKI</h2>
+        <h2 className=" text-2xl font-bold leading-tight">Change password into  LG-WIKI</h2>
            {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-        <form onSubmit={handleSubmit(updatepass)} className='mt-8'>
+        <form onSubmit={handleSubmit(updatepass)}>
             <div className='flex flex-col gap-4  '>
+    <label for="username" className="block text-white font-bold mb-2">Email</label>
+
                 <input 
                               placeholder="Enter your email"
-                              className='p-5'
+                              className='w-full border rounded py-2 px-3 text-gray-900 focus:outline-none focus:border-blue-500'
+
                 type="email"
                 {...register("email", {
                     required: true,
@@ -59,10 +62,8 @@ export default function ForgotPassword() {
                 })}
                 />
              
-                <button
-                type="submit"
-                className="w-full text-xl p-5 font-semibold rounded-full hover:text-[#f5a942] hover:bg-[#1e2524]"
-                >Sign in</button>
+             <button type="submit" class= "bg-blue500  text-left hover:bg-amber-400 hover:text-black text-white font-bold py-2 w-20 px-4 rounded focus:outline-none focus:shadow-outline">Verify</button>
+
             </div>
         </form>
         </div>

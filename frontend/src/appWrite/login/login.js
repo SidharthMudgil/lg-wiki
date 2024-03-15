@@ -29,58 +29,57 @@ function Login() {
     }
 
   return (
-    <div
-    className='flex items-center justify-center w-full p-20 bg-[#121615]'
-    >
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-        <div className="mb-2 flex justify-center">
-                    {/* <span className="inline-block w-full max-w-[100px]">
-                     
-                    </span> */}
-        </div>
-        <h2 className="text-center text-2xl font-bold leading-tight">Sign into  LG-WIKI</h2>
-        <p className="mt-2 text-center text-base text-black/60">
-                    Don&apos;t have any account?&nbsp;
-                    <Link
-                        to="/signup"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
-                    >
-                        Sign Up
-                    </Link>
-        </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        <form onSubmit={handleSubmit(login)} className='mt-8'>
-            <div className='flex flex-col gap-4  '>
-                <input 
-                              placeholder="Enter your email"
-                              className='p-5'
-                type="email"
-                {...register("email", {
-                    required: true,
-                   
-                    validate: {
-                        matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                        "Email address must be a valid address",
-                    }
-                })}
-                />
-                <input 
-                
-                type="password"
-                className='p-5'
-                placeholder="Enter your password"
-                {...register("password", {
-                    required: true,
-                })}
-                />
-                <button
-                type="submit"
-                className="w-full text-xl p-5 font-semibold rounded-full hover:text-[#f5a942] hover:bg-[#1e2524]"
-                >Sign in</button>
+    <div className="bg-[#121615] p-20">
+    <div class="max-w-md mx-auto m-4 p-8 bg-[#293130] rounded shadow-md">
+<h2 class="text-2xl text-white font-bold mb-4">Sign IN TO LG-WIKI</h2>
+
+{error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+    <form onSubmit={handleSubmit(login)} >
+  <div class="mb-4">
+    <label for="username" class="block text-white font-bold mb-2">Email</label>
+    <input 
+                          placeholder="Enter your email"
+                          className='w-full border rounded py-2 px-3 text-gray-900 focus:outline-none focus:border-blue-500'
+            type="email"
+            {...register("email", {
+                required: true,
+               
+                validate: {
+                    matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                    "Email address must be a valid address",
+                }
+            })}
+            />  </div>
+
+  <div class="mb-6">
+    <label for="password" class="block text-white font-bold mb-2">Password</label>
+    <input 
+            
+            type="password"
+            className='w-full border rounded py-2 px-3 text-gray-900 focus:outline-none focus:border-blue-500'
+
+            placeholder="Enter your password"
+            {...register("password", {
+                required: true,
+            })}
+            />  
             </div>
-        </form>
-        </div>
-    </div>
+            <p className="mt-2 text-base text-white/60">
+{/* Don&apos;t have any account?&nbsp; */}
+<Link
+    to="/verfiy"
+    className="font-medium text-primary transition-all duration-200 hover:underline"
+>
+    forgot password
+</Link>
+</p>
+  <button type="submit" class= "bg-blue500 hover:bg-amber-400 hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign Up</button>
+
+</form>
+
+</div>
+  </div>
+ 
   )
 }
 

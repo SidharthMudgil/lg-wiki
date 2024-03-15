@@ -180,7 +180,7 @@ newImages.forEach((newImage, index) => {
       var textPreview = document.createElement("div");
       textPreview.classList.add("text-preview");
 
-      textPreview.innerHTML = "only for preview to show how your image will  show ";
+      textPreview.innerHTML = "only for image preview";
       
    
       previewElement.appendChild(textPreview);
