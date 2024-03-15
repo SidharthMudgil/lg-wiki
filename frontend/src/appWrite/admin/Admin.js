@@ -125,7 +125,7 @@ const remove = async (id) => {
 
           <div className="container flex flex-col p-12 pb-0">
           <div className={" divide-y divide-gray-200 text-white"}>
-          {console.log(fetchData.length==0? "hello" : "jhjhjh q")}
+
           {fetchData.length!==0? fetchData &&
                   fetchData.map((post,index) => { 
                     return (
