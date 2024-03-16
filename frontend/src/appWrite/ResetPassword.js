@@ -39,15 +39,15 @@ export default function ResetPassword() {
   return (
     <div className="flex   p-20 text-white bg-[#121615]">
       <div
-        className={`mx-auto  max-w-lg bg-[#293130] rounded-xl p-10 border border-black/10`}
+        className={`mx-auto  max-w-xl bg-[#293130] rounded-xl p-10 border border-black/10`}
       >
         <div className="mb-2 flex ">
           {/* <span className="inline-block w-full max-w-[100px]">
                      
                     </span> */}
         </div>
-        <h2 className=" text-2xl font-bold leading-tight">
-          Change password into LG-WIKI
+        <h2 className=" text-2xl font-bold leading-tight mb-5">
+          New Password
         </h2>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
         <form onSubmit={handleSubmit(resetPassword)}>
@@ -58,7 +58,7 @@ export default function ResetPassword() {
               type="password"
               {...register("recoveryCode")}
               className="w-full border rounded py-2 px-3 text-gray-900 focus:outline-none focus:border-blue-500"
-              placeholder="Enter your new password"
+              placeholder="New password"
             />
 
             <button

@@ -31,7 +31,7 @@ function Login() {
   return (
     <div className="bg-[#121615] p-20">
     <div class="max-w-md mx-auto m-4 p-8 bg-[#293130] rounded shadow-md">
-<h2 class="text-2xl text-white font-bold mb-4">Sign IN TO LG-WIKI</h2>
+<h2 class="text-2xl text-white font-bold mb-4">Sign In </h2>
 
 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
     <form onSubmit={handleSubmit(login)} >
@@ -49,6 +49,7 @@ function Login() {
                     "Email address must be a valid address",
                 }
             })}
+            required
             />  </div>
 
   <div class="mb-6">
@@ -62,6 +63,7 @@ function Login() {
             {...register("password", {
                 required: true,
             })}
+            required
             />  
             </div>
             <p className="mt-2 text-base text-white/60">
@@ -70,10 +72,10 @@ function Login() {
     to="/verfiy"
     className="font-medium text-primary transition-all duration-200 hover:underline"
 >
-    forgot password
+    Forgot Password
 </Link>
 </p>
-  <button type="submit" class= "bg-blue500 hover:bg-amber-400 hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign Up</button>
+  <button type="submit" class= "bg-blue500 hover:bg-amber-400 hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Sign In</button>
 
 </form>
 

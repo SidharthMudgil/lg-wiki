@@ -195,4 +195,12 @@ background-color: #2f3232;
   cursor: pointer;
 }
 
-
+.alert {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: #06fff1;
+  width: auto;
+  height: auto;
+}

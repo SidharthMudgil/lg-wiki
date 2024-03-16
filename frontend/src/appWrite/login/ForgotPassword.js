@@ -40,7 +40,7 @@ export default function ForgotPassword() {
                      
                     </span> */}
         </div>
-        <h2 className=" text-2xl font-bold leading-tight">Change password into  LG-WIKI</h2>
+        <h2 className=" text-2xl font-bold leading-tight">Reset Password</h2>
            {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
         <form onSubmit={handleSubmit(updatepass)}>

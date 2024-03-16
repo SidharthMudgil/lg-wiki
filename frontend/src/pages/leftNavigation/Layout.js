@@ -13,7 +13,9 @@ export default function Layout() {
             
        
         </div>
-        <button className="absolute text-white font-semibold bottom-[5px] right-5  p-5 rounded-2xl bg-[#f5a942] uppercase"><Link to="/input">add</Link></button>
+        <Link to="/input">
+        <button className="absolute text-white font-semibold bottom-[5px] right-5  p-5 rounded-2xl bg-[#f5a942] uppercase">add</button>
+        </Link>
       </div>
      
     </>
