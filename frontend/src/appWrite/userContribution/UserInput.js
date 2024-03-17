@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "./UserInput.css";
@@ -8,29 +8,27 @@ import TurndownService from "turndown";
 
 import hljs from "highlight.js";
 import "highlight.js/styles/vs2015.css";
-import { marked } from "marked";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import rehypeSanitize from "rehype-sanitize";
-import MarkdownPreview from "@uiw/react-markdown-preview";
 
-import Auth from "../services/auth";
-// import { useForm } from "react-hook-form";
-// import { useSelector } from "react-redux";
-// import Upload from "../services/uplaod";
+// import MarkdownPreview from "@uiw/react-markdown-preview";
+
+
 import uploadService from "../services/uplaod";
 
 import markdownit from "markdown-it";
 
-const rehypePlugins = [rehypeSanitize];
+
 export default function UserInput() {
-  const featuredaimage = "null";
+
 
   const [text, setText] = useState();
   const [title, settitle] = useState();
   const [email, setEmail] = useState();
   const [userName, setuserName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+   // eslint-disable-next-line 
   const [response, setResponse] = useState(null); // Stores server response or error message
+   // eslint-disable-next-line 
   const [preview, setpreview] = useState();
   const imageID = [];
 
@@ -46,7 +44,7 @@ export default function UserInput() {
     while ((match = imageRegex.exec(htmlContent))) {
       imageUrls.push(match[1]);
     }
-if(imageUrls.length==0){
+if(imageUrls.length===0){
   console.log("not file");
   return await content;
   
@@ -101,16 +99,16 @@ if(imageUrls.length==0){
 
     return processedContent;
   };
-  const processImage = (imageUrls, newImages, htmlContent) => {
-    for (let j = 0; j < newImages.length; j++) {
-      htmlContent = htmlContent.replace(
-        new RegExp(`src=["']${imageUrls[j]}["']`, "g"),
-        `src="${newImages[j]}"`
-      );
-    }
-    const markdownContent = backToMarkdown(htmlContent);
-    setpreview(markdownContent); // Assuming setpreview is defined somewhere
-  };
+  // const processImage = (imageUrls, newImages, htmlContent) => {
+  //   for (let j = 0; j < newImages.length; j++) {
+  //     htmlContent = htmlContent.replace(
+  //       new RegExp(`src=["']${imageUrls[j]}["']`, "g"),
+  //       `src="${newImages[j]}"`
+  //     );
+  //   }
+  //   const markdownContent = backToMarkdown(htmlContent);
+  //   setpreview(markdownContent); // Assuming setpreview is defined somewhere
+  // };
 
   const loadImageAsync = (file) => {
     return new Promise((resolve, reject) => {
@@ -359,8 +357,8 @@ if(imageUrls.length==0){
                 return <ul {...props} />;
               },
               img: ({ node, ...props }) => {
-                return <img {...props} />;
-              },
+                return <img alt={node.alt} {...props} />;
+            },
               li({ node, ...props }) {
                 return <li {...props} />;
               },

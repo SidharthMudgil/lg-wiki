@@ -6,7 +6,6 @@ import uploadService from "../../appWrite/services/uplaod";
 import { HashLink as Link } from "react-router-hash-link";
 
 export default function Navigation() {
-  const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
   const [fetchTitle, setFetchTitle] = useState([]);
 
@@ -41,10 +40,28 @@ export default function Navigation() {
       console.error("Error fetching data:", error);
     }
   };
-
   const handleChange = (e) => {
-    setInputValue(e.target.value.toLowerCase());
-  };
+    menubar(e.target.value);
+};
+
+function menubar(inputValue) {
+    const items = document.querySelectorAll(".menu-ul");
+    items.forEach((item) => {
+        const linkText = item.textContent.toLowerCase();
+        if (inputValue.trim() === "") {
+            // If input value is empty or contains only whitespace characters, display all items
+            item.style.display = "block";
+        } else {
+            if (linkText.includes(inputValue.toLowerCase())) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        }
+    });
+}
+
+
 
   const handleNavClick = (id) => {
     setClickedLinkId(id); 

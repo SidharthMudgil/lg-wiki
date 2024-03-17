@@ -6,11 +6,9 @@ import InfoOverview from "./InfoOverview";
 import React, { useRef, useEffect, useState } from "react";
 import uploadService from "../../appWrite/services/uplaod";
 import { Query } from "appwrite";
-import { Link } from "react-router-dom";
-
+import { HashLink as Link } from "react-router-hash-link";
 export default function MainContent() {
   const [data, setData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
 
   // ctrl k feature
@@ -55,7 +53,6 @@ export default function MainContent() {
   }, []);
   const handleSearch = (event) => {
     const searchTerm = event.target.value.toLowerCase();
-    setSearchTerm(searchTerm);
   
     // Check if data exists before filtering
     if (data) {
@@ -102,7 +99,7 @@ export default function MainContent() {
 
             <div className="suggestion">
               {suggestions.map((item, index) => { 
-                return (<div className="suggestion-item" > <Link to={`/docs/dynamic#${item.$id}`}>{item.title}</Link></div>);
+                return (<Link to={`/docs/dynamic#${item.$id}`} key={item.$id}><div className="suggestion-item"  > {item.title}</div></Link>);
               })}
 
             </div>
