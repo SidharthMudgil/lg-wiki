@@ -11,8 +11,8 @@
     margin-top: 12px;
 }
 .dynamic-output img {
-  width: 500px;
-
+  width: auto;
+object-fit: contain;
   height: 300px;
 }
 .dynamic-container > div  {
