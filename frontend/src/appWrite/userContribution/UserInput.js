@@ -45,12 +45,12 @@ export default function UserInput() {
       imageUrls.push(match[1]);
     }
 if(imageUrls.length===0){
-  console.log("not file");
+  // console.log("not file");
   return await content;
   
     }
   else{
-    console.log("file");
+    // console.log("file");
     const markdownContent = backToMarkdown( await processContent(htmlContent, imageUrls, file));
     return markdownContent;
  
@@ -114,7 +114,7 @@ if(imageUrls.length===0){
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = (event) => {
-        console.log("File loaded:", file.name); // Debug
+        // console.log("File loaded:", file.name); // Debug
         resolve(event.target.result);
       };
       reader.onerror = (error) => reject(error);
@@ -230,17 +230,18 @@ if(imageUrls.length===0){
   };
 
   const onSubmit = async () => {
-    setIsSubmitting(true);
+   
     const content = String(text);
     if (content != null && title != null && email != null && userName != null) {
       try {
+        setIsSubmitting(true);
         const file = document.getElementById("file");
         const markdownContent = await fileurl(content, file, email);
         // console.log(replacemarkdown);  debugging
 
    
 
-         console.log(markdownContent);// debugging
+        //  console.log(markdownContent);// debugging
 
         await uploadService
           .createPost({
@@ -258,9 +259,9 @@ if(imageUrls.length===0){
         );
         setResponse(response.data); // Set success message
         alert("Submitted successfully");
-        setEmail(null);
-        setText(null);
-        settitle(null);
+        setEmail("");
+        setText("");
+        settitle("");
         setIsSubmitting(false);
       } catch (error) {
         if (error.response && error.response.status) {
