@@ -41,7 +41,7 @@ textarea:focus, input:focus {
 
 }
 .markdown-output img {
-  width: 200px;
+  width: auto;
   height: 200px;
 }
 .title-input{
