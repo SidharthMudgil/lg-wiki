@@ -35,7 +35,7 @@ export class auth {
   async updatePass( email,password) {
     try {
    
-      await this.account.createRecovery(email, 'http://localhost:3000/newpass');
+      await this.account.createRecovery(email, 'https://lg-wiki-coral.vercel.app/newpass');
 
       
   } catch (error) {
