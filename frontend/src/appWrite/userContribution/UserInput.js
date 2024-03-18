@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import "./UserInput.css";
@@ -12,23 +12,22 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // import MarkdownPreview from "@uiw/react-markdown-preview";
 
-
 import uploadService from "../services/uplaod";
+import { useNavigate } from "react-router-dom";
 
 import markdownit from "markdown-it";
 
-
 export default function UserInput() {
-
+  const navigate = useNavigate();
 
   const [text, setText] = useState();
   const [title, settitle] = useState();
   const [email, setEmail] = useState();
   const [userName, setuserName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-   // eslint-disable-next-line 
+  // eslint-disable-next-line
   const [response, setResponse] = useState(null); // Stores server response or error message
-   // eslint-disable-next-line 
+  // eslint-disable-next-line
   const [preview, setpreview] = useState();
   const imageID = [];
 
@@ -44,18 +43,16 @@ export default function UserInput() {
     while ((match = imageRegex.exec(htmlContent))) {
       imageUrls.push(match[1]);
     }
-if(imageUrls.length===0){
-  // console.log("not file");
-  return await content;
-  
+    if (imageUrls.length === 0) {
+      // console.log("not file");
+      return await content;
+    } else {
+      // console.log("file");
+      const markdownContent = backToMarkdown(
+        await processContent(htmlContent, imageUrls, file)
+      );
+      return markdownContent;
     }
-  else{
-    // console.log("file");
-    const markdownContent = backToMarkdown( await processContent(htmlContent, imageUrls, file));
-    return markdownContent;
- 
-  }
-  
   };
 
   // getting file for upload to appwrite
@@ -230,7 +227,6 @@ if(imageUrls.length===0){
   };
 
   const onSubmit = async () => {
-   
     const content = String(text);
     if (content != null && title != null && email != null && userName != null) {
       try {
@@ -238,8 +234,6 @@ if(imageUrls.length===0){
         const file = document.getElementById("file");
         const markdownContent = await fileurl(content, file, email);
         // console.log(replacemarkdown);  debugging
-
-   
 
         //  console.log(markdownContent);// debugging
 
@@ -263,6 +257,7 @@ if(imageUrls.length===0){
         setText("");
         settitle("");
         setIsSubmitting(false);
+        navigate("/input");
       } catch (error) {
         if (error.response && error.response.status) {
           // If the error object contains a response with a status code
@@ -307,7 +302,13 @@ if(imageUrls.length===0){
 
           <label htmlFor="file" className="file-icon">
             <i className="fas fa-file"></i>
-            <input type="file" id="file" multiple style={{ display: "none" }} />
+            <input
+              type="file"
+              id="file"
+              multiple
+              accept=".jpg, .jpeg, .png"
+              style={{ display: "none" }}
+            />
           </label>
 
           <input
@@ -359,7 +360,7 @@ if(imageUrls.length===0){
               },
               img: ({ node, ...props }) => {
                 return <img alt={node.alt} {...props} />;
-            },
+              },
               li({ node, ...props }) {
                 return <li {...props} />;
               },

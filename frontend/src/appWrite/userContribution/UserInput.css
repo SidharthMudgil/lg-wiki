@@ -45,6 +45,9 @@ textarea:focus, input:focus {
   object-fit: contain;
   height: 200px;
 }
+.markdown-output a {
+  color:blue;
+ }
 .title-input{
  background-color: inherit;
 

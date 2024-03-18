@@ -18,7 +18,7 @@ export default function Admin() {
   const [query, setQuery] = useState(true);
   const [loading, setLoading] = useState("true");
   const dispatch = useDispatch();
-  const[color, setcolor]=useState();
+  const[color, setcolor]=useState("approved");
   const [userdata,setuserdata]=useState();
   useEffect( () => {
   
@@ -43,7 +43,7 @@ export default function Admin() {
 
 
   const handleUnapprovedClick = () => {
-   setcolor(false);
+   setcolor("unapproved");
     setQuery(false);
   };
   const approved = async (id) => {
@@ -57,7 +57,7 @@ export default function Admin() {
   };
 
   const handleApprovedClick = () => {
-    setcolor(true);
+    setcolor("approved");
 
     
     setQuery(true);
@@ -101,23 +101,21 @@ const remove = async (id) => {
             welcome admin
           </p>{" "}
           <NavLink 
-           
-            className="text-white font-mono capitalize  text-xl m-3  hover:cursor-pointer "
-            onClick={handleApprovedClick}
-            id="approved"
-            style={{ color: color ? "#f5a942" : "#ffffff" }}
-          >
-            approved{" "}
-          </NavLink>
-          <NavLink
-       
-            className="text-white font-mono capitalize  text-xl m-3  hover:cursor-pointer "
-            onClick={handleUnapprovedClick}
-            id="unapproved"
-            style={{ color: color ? "#ffffff" : "#f5a942" }}
-          >
-            unapproved
-          </NavLink>
+  className="text-white font-mono capitalize text-xl m-3 hover:cursor-pointer"
+  onClick={handleApprovedClick}
+  id="approved"
+  style={{ color: color === "approved" ? "#f5a942" : "#ffffff" }} // Adjusted style condition
+>
+  Approved
+</NavLink>
+<NavLink
+  className="text-white font-mono capitalize text-xl m-3 hover:cursor-pointer"
+  onClick={handleUnapprovedClick}
+  id="unapproved"
+  style={{ color: color === "unapproved" ? "#f5a942" : "#ffffff" }} // Adjusted style condition
+>
+  Unapproved
+</NavLink>
           {/* <p className="text-white font-mono capitalize  text-xl m-3  hover:  ">user</p> */}
           {/* <p className="text-white font-mono capitalize  text-xl m-3"></p>{" "} */}
         </div>
