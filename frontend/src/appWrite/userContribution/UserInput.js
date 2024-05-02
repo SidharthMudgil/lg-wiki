@@ -66,7 +66,7 @@ export default function UserInput() {
       const files = file.files[i];
       if (files.size > maxSize) {
         alert(
-          `File "${files.name}" exceeds the maximum size limit of 1MB. Please re-select files.`
+          `File "${files.name}" exceeds the maximum size limit of 1MB. Please re-select all files.`
         );
         return null; // Exit the function
       } else {
@@ -74,7 +74,7 @@ export default function UserInput() {
       }
     }
     if (filecheck !== null && file.files.length > 0) {
-      for (let i = 0; i < file.files.length; i++) {
+      for (let i = 0; i <imageUrls.length; i++) {
         try {
           const uploadedFile = await uploadService.uploadFile(file.files[i]);
 
