@@ -43,12 +43,10 @@ function App() {
       const res = window.innerWidth;
       if (res >= 320 && res <= 510) {
         setResolution(true);
-        console.log(res);
-        console.log(resolution);
+        
         
       } else if (res >= 768 && res <= 1930) {
-        console.log(resolution);
-        console.log(res+"d");
+      
         setResolution(false);
       }
     }
