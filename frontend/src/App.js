@@ -41,7 +41,7 @@ function App() {
     
 
       const res = window.innerWidth;
-      if (res >= 320 && res <= 510) {
+      if (res >= 320 && res <= 768) {
         setResolution(true);
         
         
