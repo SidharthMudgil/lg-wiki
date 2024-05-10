@@ -36,7 +36,7 @@ function App() {
   const [resolution, setResolution]=useState();
 
 
-
+// moblie function 
   function Resizewin(){
     
 
