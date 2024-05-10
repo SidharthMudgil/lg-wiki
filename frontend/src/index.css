@@ -31,3 +31,13 @@ body {
   --footer-color: #1e2524;
   --selected-color: #f5a942;
 }
+
+
+.no-moblie {
+  display: none;
+}
+@media only screen and (max-width: 380px) {
+  .no-moblie {
+    display: block;
+  }
+}

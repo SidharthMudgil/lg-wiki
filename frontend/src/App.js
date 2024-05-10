@@ -16,7 +16,7 @@ import { Provider } from "react-redux";
 import RigInstall from './docs/RigInstall'
 import ControlCommand from './docs/ControlCommand'
 
-import React from "react";
+import React, { useEffect } from "react";
 import store from "./appWrite/store/store";
 import Signup from "./appWrite/login/signup";
 import Login from "./appWrite/login/login";
@@ -25,6 +25,7 @@ import FetchTitle from "./docs/FetchTitle";
 // import ImageUploader from "./pages/delete";
 import ForgotPassword from "./appWrite/login/ForgotPassword";
 import ResetPassword from "./appWrite/ResetPassword";
+import { useState } from "react";
 
 
 
@@ -32,6 +33,32 @@ import ResetPassword from "./appWrite/ResetPassword";
 // All Routes for browsing in webpage
 
 function App() {
+  const [resolution, setResolution]=useState();
+
+
+
+  function Resizewin(){
+    
+
+      const res = window.innerWidth;
+      if (res >= 320 && res <= 510) {
+        setResolution(true);
+        console.log(res);
+        console.log(resolution);
+        
+      } else if (res >= 768 && res <= 1930) {
+        console.log(resolution);
+        console.log(res+"d");
+        setResolution(false);
+      }
+    }
+  
+    useEffect(() => {
+      Resizewin();
+      window.addEventListener('resize', Resizewin);
+  
+    });
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<NavigatorHeader />}>
@@ -57,14 +84,30 @@ function App() {
       </Route>
     )
   );
+const moblie=()=>{
+ return( <React.StrictMode>
+    
+  <Provider store={store}>
+          <RouterProvider router={router} />
+  </Provider>
+</React.StrictMode>);
 
-  return (
+}
+const desktop=()=>{
+  
+ return(
     <React.StrictMode>
-      <Provider store={store}>
-              <RouterProvider router={router} />
-      </Provider>
+       <div className="flex items-center justify-center w-screen h-screen bg-[#1e2524]">
+  < div className=
+  "relative flex w-full p-3 flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words overflow-y-auto subpixel-antialiased text-center text-white"><p>Please use a desktop or a laptop.<br/>We do not support mobile devices.</p>
+  </div>
+    </div>
     </React.StrictMode>
-  );
+);
 }
 
+
+  return  resolution?desktop():moblie();
+
+}
 export default App;
