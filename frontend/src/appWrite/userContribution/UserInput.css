@@ -72,8 +72,10 @@ background-color: #2f3232;
   background-color: inherit;
   color:var(--text-color)
   
-
 }
+
+/* here to change postion to inset in for file */
+
 .file-icon{
   position: absolute;
 
@@ -103,6 +105,9 @@ background-color: #2f3232;
 .markdown-output h1,h2,h3,h4,h5,h6,p{
   margin-bottom: 10px;
 }
+
+
+/*  and this button also change postion to inset   */
 .submit-button{
   position: absolute;
   bottom:60px;

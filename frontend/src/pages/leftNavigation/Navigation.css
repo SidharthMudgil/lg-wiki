@@ -24,6 +24,9 @@
   border-radius: 1.25rem;
 } */
 
+
+/* /search bar  */
+
 .menu-search-div {
   padding: 0 !important;
   display: flex;
@@ -35,23 +38,19 @@
 
 .menu-search {
   padding: 0.5rem 1rem 0.5rem 1.5rem !important;
+  width: 100%;
 }
 
 .nav-search {
   height: 30px !important;
 }
 
-.menu-search-icon {
-  position: absolute;
-  left: 10px;
-  color: var(--text-color);
-}
 
 
 .search::placeholder,
 .search:focus {
   outline: none;
-  color: var(--text-color);
+  color:rgba(255, 255, 255, 0.799);
 }
 
 .main {
@@ -59,10 +58,12 @@
   overflow: hidden;
 }
 
+ /* left navigation bar tab  */
+
 .left {
   display: block;
   font-family: "Montserrat";
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 0.96rem + 0.1333vw, 1.125rem);
   padding: 0.313rem;
   justify-content: space-evenly;
   max-width:20rem;

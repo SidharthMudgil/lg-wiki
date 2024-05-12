@@ -1,6 +1,5 @@
 import lg from "../../assets/lg-logo.svg";
 
-import Contributor from "./Contributor";
 import "./MainContent.css";
 import InfoOverview from "./InfoOverview";
 import React, { useRef, useEffect, useState } from "react";
@@ -79,7 +78,7 @@ export default function MainContent() {
       <div >
         <div className="home  ">
           {/* main logo */}
-          <div className=" basis-[100%] ">
+          <div className=" ">
             <img src={lg} alt="liquild GALAXY" className="home-logo   " />
           </div>
         </div>
@@ -92,7 +91,7 @@ export default function MainContent() {
             <input
               type="search "
               placeholder="Search..."
-              className="  search focus:outline-none "
+              className="  search focus:outline-none  "
               ref={inputRef}
               onChange={handleSearch}
             />
@@ -121,8 +120,7 @@ export default function MainContent() {
         {/* Informatio of liquidgalaxy   */}
         <InfoOverview />
 
-        {/* contributer card info  */}
-        <Contributor />
+      
       </div>
       </div>
     </>

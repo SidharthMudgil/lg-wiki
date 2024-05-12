@@ -3,6 +3,8 @@ import master from "../../assets/master-slave.png";
 export default function Architecture() {
   return (
     <>
+    // hole part made with tailwind no css used by own 
+    
       <div className="flex flex-wrap text-left text-lg text-white ">
         <h1 className=" flex py-10 md:text-2xl lg:text-3xl"> Overview </h1>
         <p>

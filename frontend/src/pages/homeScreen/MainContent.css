@@ -16,24 +16,31 @@
 .background > div::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
+
+/* image part of lg  */
 .home {
   display: flex;
   align-items: center;
   justify-content: center;
+
+
 }
 .home-logo {
-  width: 30rem;
+
+  width: 30rem; 
   height: 16.375rem;
   margin: 6rem 0 3rem;
   display: inline-flex;
   flex-basis: 100%;
 }
 
+
+/* content  written below the search bar part  */
 .basic-info {
   font-family: Montserrat;
-  font-size: 1.375rem;
+  font-size: clamp(1rem,5vw,1.375rem);
   font-weight: 400;
-  line-height: 1.75rem;
+  /* line-height: 1.75rem; */
   display: flex;
   max-width: 70rem;
   margin: 2rem auto;
@@ -41,6 +48,14 @@
   padding: 2rem 1px;
 }
 
+@media only screen and (max-width: 480px) {
+  .basic-info {
+    margin: 2rem 1rem ;
+  }
+}
+
+
+/* serach bar below logo part  */
 .search-main {
   padding: 1.563rem;
   display: flex;
@@ -67,7 +82,7 @@
   background-color: #1e2524;
   align-items: center;
   border-radius: 45;
-  font-family: "Montserrat";
+  font-family: "";
   z-index: 1;
   font-size: 1.3rem;
   overflow: unset;
@@ -109,6 +124,11 @@
   gap: 5px;
 }
 
+
+/* suggestion appear at time of searc part  */
+
+
+/* left top postion use here so need to change  */
 .suggestion {
   margin-top: 1.5rem;
   border-radius: 20px;

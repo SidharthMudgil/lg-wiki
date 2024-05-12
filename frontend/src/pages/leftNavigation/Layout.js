@@ -13,6 +13,7 @@ export default function Layout() {
             
        
         </div>
+        {/* button add  for user input  and hole css with tailwind use  */}
         <Link to="/input">
         <button className="absolute text-white font-semibold bottom-[5px] right-5  p-5 rounded-2xl bg-[#f5a942] uppercase">add</button>
         </Link>

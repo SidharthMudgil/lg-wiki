@@ -82,7 +82,7 @@ function App() {
       </Route>
     )
   );
-const moblie=()=>{
+
  return( <React.StrictMode>
     
   <Provider store={store}>
@@ -90,22 +90,7 @@ const moblie=()=>{
   </Provider>
 </React.StrictMode>);
 
-}
-const desktop=()=>{
-  
- return(
-    <React.StrictMode>
-       <div className="flex items-center justify-center w-screen h-screen bg-[#1e2524]">
-  < div className=
-  "relative flex w-full p-3 flex-auto flex-col place-content-inherit align-items-inherit h-auto break-words overflow-y-auto subpixel-antialiased text-center text-white"><p>Please use a desktop or a laptop.<br/>We do not support mobile devices.</p>
-  </div>
-    </div>
-    </React.StrictMode>
-);
-}
 
-
-  return  resolution?desktop():moblie();
 
 }
 export default App;

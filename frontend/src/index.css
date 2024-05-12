@@ -24,11 +24,11 @@ body {
 :root {
   --black-color: #272424cf;
   --white-color: #f5f5f5;
-  --backgroud: #121615;
-  --header-color: #1e2524;
-  --l-nav: #293130;
+  --backgroud: #0e1012;
+  --header-color: #1a171d;
+  --l-nav: #171a1db3;
   --text-color: #ffffff;
-  --footer-color: #1e2524;
+  --footer-color: #1a171d;
   --selected-color: #f5a942;
 }
 
