@@ -63,10 +63,11 @@
 .left {
   display: block;
   font-family: "Montserrat";
-  font-size: clamp(1rem, 0.96rem + 0.1333vw, 1.125rem);
+  font-size: clamp(1rem,  1.1333vw, 80rem);
   padding: 0.313rem;
   justify-content: space-evenly;
-  max-width:20rem;
+
+  max-width:calc(100% - 80%);
   padding: 1.125rem 1.125rem;
   text-transform: capitalize;
   background-color: var(--l-nav);
@@ -74,10 +75,45 @@
   overflow: hidden;
 }
 
+@media only screen and (max-width: 480px) {
+  .left {
+    display: none;
+    max-width: calc(100% - 20%);
+  }
+}
 .title{
   color:red
 }
 .active-link {
   color: #f5a942;
+
+}
+
+
+
+/* button add input css */
+.button-AddInput{
+  color: white;
+display: block;
+  font-weight: 600;
+  inset-block-end: 5px;
+  inset-inline-end:max(1.25rem) ;
+  padding:max(1.2rem);
+  border-radius: 1rem;
+  background-color: #34A853;
+  text-transform: capitalize;
+}
+.button-nav-add{
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .button-AddInput {
+    display: none;
+  
+  }
+  .button-nav-add{
+    display: block;
+  }
+
 
 }

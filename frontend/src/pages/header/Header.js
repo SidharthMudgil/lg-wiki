@@ -1,16 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/wiki-logo.png";
 
 import "./header.css";
 
 export default function Header() {
+  const [resolution, setResolution]=useState();
+
+
+  // moblie function 
+    function Resizewin(){
+      
+  
+        const res = window.innerWidth;
+        if (res >= 320 && res <= 768) {
+          setResolution(true);
+          
+          
+        } else if (res >= 768 && res <= 1930) {
+        
+          setResolution(false);
+        }
+      }
+    
+      useEffect(() => {
+        Resizewin();
+        window.addEventListener('resize', Resizewin);
+    
+      });
+  
   return (
     <>
       <nav className="nav">
         <div className="nav-logo">
           <img src={logo} alt="logo" className="h-10" />
         </div>
+        <i class="fa fa-bars toggle " aria-hidden="true"></i>
         <div className="nav-ul">
           {/* navbar items to show */}
 

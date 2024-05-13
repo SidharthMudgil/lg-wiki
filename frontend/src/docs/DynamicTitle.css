@@ -26,7 +26,7 @@ object-fit: contain;
 
   }
   .dynamic-title{
-    font-size: 2rem;
+    font-size:clamp(1.5rem, 2.5vw, 100rem);
     padding: 10px 0;
     border-bottom: rgba(255, 255, 255, 0.668) solid 1px;
   }
@@ -35,19 +35,23 @@ object-fit: contain;
   }
   
 h1 {
-    font-size: 1.8rem; /* 2 times the base font size */
+    font-size: clamp(1.3rem,1.8vw,100rem) /* 2 times the base font size */
   }
   
   h2 {
-    font-size: 1.5rem; /* 1.5 times the base font size */
+    font-size:clamp(1.2rem,1.3vw,70rem) /* 1.5 times the base font size */
   }
   
   h3 {
-    font-size: 1.2rem; /* 1.2 times the base font size */
+    font-size: clamp(1.1rem,1vw,60rem)  /* 1.2 times the base font size */
   }
 
   h1,h2,h3,h4,h5,h6,p{
     margin-bottom: 10px;
+  }
+  p{
+    font-size: clamp(1rem ,0.8vw,50rem) 
+
   }
   .code {
     margin: 10px;

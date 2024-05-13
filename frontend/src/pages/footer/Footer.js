@@ -8,7 +8,7 @@ export default function Footer() {
           our team
         </label>
 
-       <div className="capitalize  flex mx-auto">
+       <div className="capitalize  credit mx-auto">
             <p className="py-2  mx-auto">
               {" "}
               <a
@@ -38,6 +38,16 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 vedant singh
+              </a>
+            </p>
+             <p className="py-2  mx-auto">
+              {" "}
+              <a
+                href="https://github.com/vedantkingh"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Yash Raj
               </a>
             </p>
           </div>

@@ -29,7 +29,6 @@ export default function MainContent() {
     };
   }, []);
   useEffect(() => {
-    
     fetchData();
   }, []);
 
@@ -37,7 +36,7 @@ export default function MainContent() {
 
   const fetchData = async () => {
     try {
-      const queries = [Query.equal("status","active" )];
+      const queries = [Query.equal("status", "active")];
       // Assuming uploadService is defined elsewhere
       const response = await uploadService.getPosts(queries);
       const document = response.documents;
@@ -52,13 +51,13 @@ export default function MainContent() {
   }, []);
   const handleSearch = (event) => {
     const searchTerm = event.target.value.toLowerCase();
-  
+
     // Check if data exists before filtering
     if (data) {
       const filteredData = data.filter((item) =>
         item.title.toLowerCase().includes(searchTerm)
       );
-  
+
       // Set suggestions based on filtered data
       if (searchTerm !== "") {
         setSuggestions(filteredData);
@@ -67,61 +66,55 @@ export default function MainContent() {
       }
     }
   };
-  
-  
-
 
   return (
     <>
-   
-      <div className="background  " >
-      <div >
-        <div className="home  ">
-          {/* main logo */}
-          <div className=" ">
-            <img src={lg} alt="liquild GALAXY" className="home-logo   " />
-          </div>
-        </div>
-        <div className=" search-main w-full">
-          <div className="search-box">
-            <span className="search-icon  " id="icon">
-              {" "}
-              <i className="fas fa-search"></i>{" "}
-            </span>
-            <input
-              type="search "
-              placeholder="Search..."
-              className="  search focus:outline-none  "
-              ref={inputRef}
-              onChange={handleSearch}
-            />
-
-            <div className="suggestion">
-              {suggestions.map((item, index) => { 
-                return (<Link to={`/docs/dynamic#${item.$id}`} key={item.$id}><div className="suggestion-item"  > {item.title}</div></Link>);
-              })}
-
+      <div className="background  ">
+        <div>
+          <div className="home  ">
+            {/* main logo */}
+            <div className=" ">
+              <img src={lg} alt="liquild GALAXY" className="home-logo   " />
             </div>
-
+          </div>
+          <div className=" search-main w-full">
+            <div className="search-box">
+              <input
+                type="search "
+                placeholder="Search..."
+                className="  search focus:outline-none  "
+                ref={inputRef}
+                onChange={handleSearch}
+              />
+              <span className="search-icon  " id="icon">
+                {" "}
+                <i className="fas fa-search"></i>{" "}
+              </span>
+              <div className="suggestion">
+                {suggestions.map((item, index) => {
+                  return (
+                    <Link to={`/docs/dynamic#${item.$id}`} key={item.$id}>
+                      <div className="suggestion-item"> {item.title}</div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
+          <p className=" basic-info">
+            Welcome to LG Wiki, your one-stop web app for all things Liquid
+            Galaxy! Discover simplified information and documentation covering
+            the ins and outs of Liquid Galaxy. Find easy-to-follow guides on
+            implementing various functionalities and working seamlessly with
+            Liquid Galaxy technology. LG Wiki provides clear instructions and
+            insights into the architecture, making it your go-to resource for
+            both beginners and enthusiasts.
+          </p>
+
+          {/* Informatio of liquidgalaxy   */}
+          <InfoOverview />
         </div>
-
-        <p className=" basic-info">
-          Welcome to LG Wiki, your one-stop web app for all things Liquid
-          Galaxy! Discover simplified information and documentation covering the
-          ins and outs of Liquid Galaxy. Find easy-to-follow guides on
-          implementing various functionalities and working seamlessly with
-          Liquid Galaxy technology. LG Wiki provides clear instructions and
-          insights into the architecture, making it your go-to resource for both
-          beginners and enthusiasts.
-        </p>
-
-        {/* Informatio of liquidgalaxy   */}
-        <InfoOverview />
-
-      
-      </div>
       </div>
     </>
   );

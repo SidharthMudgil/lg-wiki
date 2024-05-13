@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import master from "../../assets/master-slave.png";
 export default function Architecture() {
+
   return (
     <>
-    // hole part made with tailwind no css used by own 
+    {/* // hole part made with tailwind no css used by own  */}
     
-      <div className="flex flex-wrap text-left text-lg text-white ">
-        <h1 className=" flex py-10 md:text-2xl lg:text-3xl"> Overview </h1>
+      <div className="flex flex-wrap text-left  text-white ">
+      <h1 className="flex py-10"  >
+        Overview
+      </h1>
         <p>
           Liquid Galaxy is a remarkable panoramic system that is tremendously
           compelling. It started off as a Google 20% project created by Google
@@ -28,7 +31,7 @@ export default function Architecture() {
           that content of various types can be displayed in the immersive
           panoramic environment.
         </p>
-        <h1 className=" flex py-10 md:text-2xl lg:text-3xl">
+        <h1 className=" flex py-10 ">
           Master Slave Architecture
         </h1>
         <p className="pb-9">
@@ -40,7 +43,7 @@ export default function Architecture() {
           processes respond to commands from the master.
         </p>
         <br />
-        <h1 className="  flex  p-y10 md:text-xl lg:text-2xl">Master</h1>
+        <h1 className="  flex  p-y10 ">Master</h1>
         <p className="items-center flex basis-full ">
           1. The central controlling entity that initiates commands and manages
           the overall operation.
@@ -53,7 +56,7 @@ export default function Architecture() {
         <div className=" flex flex-col gap-6 p-14 w-full">
           <img src={master} alt="master-slave" className="mx-auto max-h-96 max-w-95" />
         </div>
-        <h1 className=" flex py-10 md:text-xl lg:text-2xl ">Slave</h1>
+        <h1 className=" flex py-10 ">Slave</h1>
         <h2 className="items-center flex basis-full">
           1. Devices or processes that operate under the control and direction
           of the master.

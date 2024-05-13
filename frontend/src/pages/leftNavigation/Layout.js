@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Navigaton from "./Navigaton";
 
 export default function Layout() {
+  const [display, setDisplay] = useState('block');
+
+  const handleClick = () => {
+
+    setDisplay(display === 'block' ? 'none' : 'block');
+    document.getElementById('leftn').style.display=display;
+   
+
+  };
   return (
     <>
       <div className="main h-screen  ">
@@ -15,8 +24,9 @@ export default function Layout() {
         </div>
         {/* button add  for user input  and hole css with tailwind use  */}
         <Link to="/input">
-        <button className="absolute text-white font-semibold bottom-[5px] right-5  p-5 rounded-2xl bg-[#f5a942] uppercase">add</button>
+        <button className="absolute button-AddInput " >add</button>
         </Link>
+        <button className="absolute button-nav-add button-AddInput   " onClick={handleClick}>NAV</button>
       </div>
      
     </>

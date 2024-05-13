@@ -33,29 +33,6 @@ import { useState } from "react";
 // All Routes for browsing in webpage
 
 function App() {
-  const [resolution, setResolution]=useState();
-
-
-// moblie function 
-  function Resizewin(){
-    
-
-      const res = window.innerWidth;
-      if (res >= 320 && res <= 768) {
-        setResolution(true);
-        
-        
-      } else if (res >= 768 && res <= 1930) {
-      
-        setResolution(false);
-      }
-    }
-  
-    useEffect(() => {
-      Resizewin();
-      window.addEventListener('resize', Resizewin);
-  
-    });
 
   const router = createBrowserRouter(
     createRoutesFromElements(

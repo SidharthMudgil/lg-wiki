@@ -68,7 +68,7 @@ function menubar(inputValue) {
   };
 
   return (
-    <div className="left float-left h-screen">
+    <div className="left float-left h-screen ri "id="leftn">
       <div className="menu-search-div">
         <input
           type="search"
