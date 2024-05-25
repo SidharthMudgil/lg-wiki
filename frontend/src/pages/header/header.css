@@ -84,3 +84,30 @@ display: flex;
     }
 }
 
+
+.nav-ul-m{
+  width: calc(100% - 30%);
+  height: 4rem;
+  justify-content: end;
+  align-items: center;
+  display: flex;
+  position: relative; 
+  
+}
+.nav-ul-m:hover .moblie-ul{
+  display: block; 
+} 
+
+.moblie-ul{
+  display: none;
+  position: absolute;
+   inset-block-start: 50px;
+   z-index: 1;
+
+  background-color:var(--header-color); 
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.li-m{
+  padding: 1rem!important;
+justify-content: center!important;}

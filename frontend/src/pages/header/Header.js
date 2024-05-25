@@ -36,31 +36,70 @@ export default function Header() {
           <img src={logo} alt="logo" className="h-10" />
         </div>
         <i class="fa fa-bars toggle " aria-hidden="true"></i>
-        <div className="nav-ul">
-          {/* navbar items to show */}
-
-          <NavLink
-            to=""
-            className="nav-li"
-            style={({ isActive }) => ({
-              pointerEvents: isActive ? "none" : "",
-              borderBottom: isActive ? "1.5px solid white" : "",
-            })}
-          >
-            home
-          </NavLink>
-          <NavLink
-            to="/docs/arc"
-            className="nav-li"
-            style={({ isActive }) => ({
-              pointerEvents: isActive ? "none" : "",
-              borderBottom: isActive ? "1.5px solid white" : "",
-            })}
-          >
-            documentation
-          </NavLink>
-        </div>
+       {resolution?moblie():desktop()}
       </nav>
     </>
   );
+}
+
+
+
+const desktop=()=>{
+  return(
+  <div className="nav-ul">
+  {/* navbar items to show */}
+    
+  <NavLink
+    to=""
+    className="nav-li"
+    style={({ isActive }) => ({
+      pointerEvents: isActive ? "none" : "",
+      borderBottom: isActive ? "1.5px solid white" : "",
+    })}
+  >
+    Home
+  </NavLink>
+  <NavLink
+    to="/docs/arc"
+    className="nav-li"
+    style={({ isActive }) => ({
+      pointerEvents: isActive ? "none" : "",
+      borderBottom: isActive ? "1.5px solid white" : "",
+    })}
+  >
+    documentation
+  </NavLink>
+</div>
+  )
+}
+
+const moblie=()=>{
+  return(
+  <div className="nav-ul-m">
+  {/* navbar items to show */}
+  <i className="fa fa-bars icon-bar  " aria-hidden="true"/>
+    <div className="moblie-ul">
+  <NavLink
+    to=""
+    className="nav-li li-m"
+    style={({ isActive }) => ({
+      pointerEvents: isActive ? "none" : "",
+      borderBottom: isActive ? "1.5px solid white" : "",
+    })}
+  >
+    home
+  </NavLink>
+  <NavLink
+    to="/docs/arc"
+    className="nav-li li-m"
+    style={({ isActive }) => ({
+      pointerEvents: isActive ? "none" : "",
+      borderBottom: isActive ? "1.5px solid white" : "",
+    })}
+  >
+    documentation
+  </NavLink>
+  </div>
+</div>
+  )
 }

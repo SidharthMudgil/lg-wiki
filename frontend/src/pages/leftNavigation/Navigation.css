@@ -66,13 +66,14 @@
   font-size: clamp(1rem,  1.1333vw, 80rem);
   padding: 0.313rem;
   justify-content: space-evenly;
+overflow: hidden;
 
   max-width:calc(100% - 80%);
   padding: 1.125rem 1.125rem;
   text-transform: capitalize;
   background-color: var(--l-nav);
   text-wrap:nowrap;
-  overflow: hidden;
+
 }
 
 @media only screen and (max-width: 480px) {
