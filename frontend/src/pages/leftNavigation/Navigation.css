@@ -10,6 +10,7 @@
 .menu-ul {
   padding-top: 0.5rem;
   color: var(--white-color);
+  line-height: 1.3rem;
 }
 /* .menu-ul:hover {
   color: var(--selected-color);
@@ -39,6 +40,7 @@
 .menu-search {
   padding: 0.5rem 1rem 0.5rem 1.5rem !important;
   width: 100%;
+  color:rgba(255, 255, 255, 0.799);
 }
 
 .nav-search {
@@ -72,7 +74,7 @@ overflow: hidden;
   padding: 1.125rem 1.125rem;
   text-transform: capitalize;
   background-color: var(--l-nav);
-  text-wrap:nowrap;
+  text-wrap:wrap; 
 
 }
 

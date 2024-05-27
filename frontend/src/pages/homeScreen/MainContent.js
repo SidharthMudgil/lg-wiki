@@ -77,16 +77,16 @@ export default function MainContent() {
               <img src={lg} alt="liquild GALAXY" className="home-logo   " />
             </div>
           </div>
-          <div className=" search-main w-full">
-            <div className="search-box">
+          <div className=" main_search-main w-full">
+            <div className="main_search-box">
               <input
-                type="search "
+                type="Search "
                 placeholder="Search..."
-                className="  search focus:outline-none  "
+                className="  main_search focus:outline-none  "
                 ref={inputRef}
                 onChange={handleSearch}
               />
-              <span className="search-icon  " id="icon">
+              <span className="main_search-icon  " id="icon">
                 {" "}
                 <i className="fas fa-search"></i>{" "}
               </span>

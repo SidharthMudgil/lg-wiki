@@ -4,13 +4,17 @@ import { Query } from "appwrite";
 import "./Navigation.css";
 import uploadService from "../../appWrite/services/uplaod";
 import { HashLink as Link } from "react-router-hash-link";
-
+import { menubar } from "../../appWrite/fun"; 
 export default function Navigation() {
   const inputRef = useRef(null);
   const [fetchTitle, setFetchTitle] = useState([]);
 
   const [clickedLinkId, setClickedLinkId] = useState(null); 
+
+    
+   
   useEffect(() => {
+
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.key === "k") {
         e.preventDefault();
@@ -44,23 +48,6 @@ export default function Navigation() {
     menubar(e.target.value);
 };
 
-function menubar(inputValue) {
-    const items = document.querySelectorAll(".menu-ul");
-    items.forEach((item) => {
-        const linkText = item.textContent.toLowerCase();
-        if (inputValue.trim() === "") {
-            // If input value is empty or contains only whitespace characters, display all items
-            item.style.display = "block";
-        } else {
-            if (linkText.includes(inputValue.toLowerCase())) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
-            }
-        }
-    });
-}
-
 
 
   const handleNavClick = (id) => {
@@ -73,7 +60,7 @@ function menubar(inputValue) {
         <input
           type="search"
           placeholder="Search..."
-          className="search menu-search focus:outline-none"
+          className="main_search menu-search focus:outline-none"
           ref={inputRef}
           onChange={handleChange}
           id="search"

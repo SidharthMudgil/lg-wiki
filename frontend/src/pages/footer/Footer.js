@@ -5,7 +5,7 @@ export default function Footer() {
     <>
       <div className="w-full  bottom-0 footer">
         <label className="mx-auto  block text-center p-5 font-bold text-2xl capitalize">
-          our team
+          developed by 
         </label>
 
        <div className="capitalize  credit mx-auto">
@@ -43,7 +43,7 @@ export default function Footer() {
              <p className="py-2  mx-auto">
               {" "}
               <a
-                href="https://github.com/vedantkingh"
+                href="https://github.com/yashrajbharti"
                 target="_blank"
                 rel="noreferrer"
               >
