@@ -66,7 +66,7 @@
   font-weight: 600;
   color: var(--text-color);
   background-color: var(--footer-color);
-
+  padding-bottom: 3rem;
 }
 
 
@@ -102,7 +102,7 @@ display: flex;
   display: none;
   position: absolute;
    inset-block-start: 50px;
-   z-index: 1;
+   z-index: 3;
 
   background-color:var(--header-color); 
   width: 100%;
@@ -111,3 +111,4 @@ display: flex;
 .li-m{
   padding: 1rem!important;
 justify-content: center!important;}
+

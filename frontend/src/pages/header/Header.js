@@ -6,6 +6,7 @@ import "./header.css";
 
 export default function Header() {
   const [resolution, setResolution] = useState();
+  const [nav, setnav] = useState(true);
 
   // moblie function
   function Resizewin() {
@@ -32,7 +33,7 @@ export default function Header() {
           </a>
         </div>
         <i class="fa fa-bars toggle " aria-hidden="true"></i>
-        {resolution ? moblie() : desktop()}
+        {resolution ? moblie(nav,setnav) : desktop()}
       </nav>
     </>
   );
@@ -66,15 +67,25 @@ const desktop = () => {
     </div>
   );
 };
-
-const moblie = () => {
+const moblie = (nav, setNav) => {
+  const mobMenu = () => {
+    if (nav) {
+      document.getElementById("mobMenu").style.display = "block";
+      setNav(false);
+    } else {
+      document.getElementById("mobMenu").style.display = "none";
+      setNav(true);
+    }
+  };
   return (
     <div className="nav-ul-m">
+
       {/* navbar items to show */}
-      <i className="fa fa-bars icon-bar  " aria-hidden="true" />
-      <div className="moblie-ul">
+      <i className="fa fa-bars icon-bar  " aria-hidden="true"  id="icon-nav" onClick={()=>mobMenu()} ></i>
+      <div className="moblie-ul" id="mobMenu">
         <NavLink
           to=""
+          onClick={()=>mobMenu()}
           className="nav-li li-m"
           style={({ isActive }) => ({
             pointerEvents: isActive ? "none" : "",
@@ -85,6 +96,7 @@ const moblie = () => {
         </NavLink>
         <NavLink
           to="/docs/arc"
+          onClick={()=>mobMenu()}
           className="nav-li li-m"
           style={({ isActive }) => ({
             pointerEvents: isActive ? "none" : "",

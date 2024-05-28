@@ -36,11 +36,11 @@ body {
   --black-color: #272424cf;
   --white-color: #f5f5f5;
   --backgroud: #0e1012;/*BACKGROUND COLOR */
-  --header-color: #1a171d;/*HEADER COLOR  */
+  --header-color: #0e1012;/*HEADER COLOR  */
   --l-nav: #171a1db3; /*LEFT NAVGATION BAR*/ 
   --text-color: #ffffff;
   --footer-color: #1a171d;/*FOOTER COLOR*/
- 
+ --selected-color:#34A853;
 }
 
 
