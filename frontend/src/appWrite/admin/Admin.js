@@ -124,7 +124,7 @@ const remove = async (id) => {
         </div>
         <div className="right-nav h-screen justify-center flex overflow-hidden bg-[#121615] text-lg font-bold"  id="admin-nav">
 
-          <div className="container flex flex-col p-12 pb-0 overflow-y-scroll ">
+          <div className="container flex flex-col p-12 pb-0 overflow-y-scroll no-scrollbar ">
           <div className={" divide-y divide-gray-200 text-white"}>
 
           {fetchData.length!==0? fetchData &&

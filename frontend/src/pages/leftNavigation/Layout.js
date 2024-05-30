@@ -17,7 +17,7 @@ export default function Layout() {
       <div className="main h-screen  ">
 
         <Navigaton />
-        <div className="h-screen overflow-auto p-12  no-scrollbar scroll-smooth relative">
+        <div className="h-screen main-docs overflow-auto p-12   scroll-smooth relative">
           <Outlet />
             
        

@@ -96,3 +96,8 @@ h3 {
 p {
   font-size: clamp(1rem, 0.8vw, 50rem);
 }
+
+/* /admin css */
+.no-scrollbar{
+  scrollbar-width: none!important ;
+}

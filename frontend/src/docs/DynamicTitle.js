@@ -10,7 +10,7 @@ export default function DynamicTitle(props) {
     const id =props.conid
   const content =props.data;
   return (
-    <div className="dynamic-container no-scrollbar" id={id}>
+    <div className="dynamic-container " id={id}>
         <div className="dynamic-title" >{title}</div>
       <Markdown
         children={content}
