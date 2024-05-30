@@ -253,12 +253,13 @@ export default function UserInput() {
           data
         );
         setResponse(response.data); // Set success message
-        alertfun("main_mark","Submitted successfully");
+       
         setEmail("");
         setText("");
         settitle("");
         setIsSubmitting(false);
         navigate("/input");
+        alertfun("main_mark","Submitted successfully");
       } catch (error) {
         if (error.response && error.response.status) {
           // If the error object contains a response with a status code
