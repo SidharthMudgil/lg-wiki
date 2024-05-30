@@ -28,5 +28,14 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <script>
+      function sendHeight() {
+          window.parent.postMessage(document.body.scrollHeight, '*');
+      }
+
+      window.onload = sendHeight;
+      window.onresize = sendHeight;
+  </script>
   </body>
 </html>

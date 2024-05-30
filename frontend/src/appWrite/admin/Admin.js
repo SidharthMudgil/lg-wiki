@@ -10,6 +10,8 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { NavLink } from "react-router-dom";
 import Auth from "../services/auth";
 import { useNavigate } from "react-router-dom";
+import { alertfun } from "../../appWrite/fun";
+
 
 export default function Admin() {
   
@@ -51,7 +53,7 @@ export default function Admin() {
    
     if (Active != null) {
       console.log("update");
-      alert("updated to approved")
+      alertfun("admin-nav","updated to approved")
       fetchContent();
     }
   };
@@ -81,7 +83,7 @@ const remove = async (id) => {
   }
   fetchContent();
 
-   alert("deleted succesfully")
+   alertfun("admin-nav","deleted succesfully")
   } catch (error) {
     console.log(error);
   }
@@ -94,6 +96,7 @@ const remove = async (id) => {
     <>
       
       <div className="admin-nav">
+
         <div className="left-nav h-screen w-52  flex float-left text-left  px-2 flex-col  bg-[#293130]  bg-gradient-to-b">
           {" "}
           <p className="text-white font-mono capitalize  text-xl m-3   ">
@@ -119,9 +122,9 @@ const remove = async (id) => {
           {/* <p className="text-white font-mono capitalize  text-xl m-3  hover:  ">user</p> */}
           {/* <p className="text-white font-mono capitalize  text-xl m-3"></p>{" "} */}
         </div>
-        <div className="right-nav h-screen justify-center flex  bg-[#121615] text-lg font-bold">
+        <div className="right-nav h-screen justify-center flex overflow-hidden bg-[#121615] text-lg font-bold"  id="admin-nav">
 
-          <div className="container flex flex-col p-12 pb-0">
+          <div className="container flex flex-col p-12 pb-0 overflow-y-scroll ">
           <div className={" divide-y divide-gray-200 text-white"}>
 
           {fetchData.length!==0? fetchData &&

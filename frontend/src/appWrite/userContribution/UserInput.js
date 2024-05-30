@@ -5,6 +5,7 @@ import "./UserInput.css";
 import remarkGfm from "remark-gfm";
 import axios from "axios";
 import TurndownService from "turndown";
+import { alertfun } from "../../appWrite/fun";
 
 import hljs from "highlight.js";
 import "highlight.js/styles/vs2015.css";
@@ -65,7 +66,7 @@ export default function UserInput() {
     for (let i = 0; i < file.files.length; i++) {
       const files = file.files[i];
       if (files.size > maxSize) {
-        alert(
+        alertfun("main_mark",
           `File "${files.name}" exceeds the maximum size limit of 1MB. Please re-select all files.`
         );
         return null; // Exit the function
@@ -139,7 +140,7 @@ export default function UserInput() {
 
     const promisesArray = files.map(async (currentFile) => {
       if (currentFile.size > maxSize) {
-        alert(
+        alertfun("main_mark",
           `File "${currentFile.name}" exceeds the maximum size limit of ${
             maxSize / 1024 / 1024
           }MB. Please re-select files.`
@@ -252,7 +253,7 @@ export default function UserInput() {
           data
         );
         setResponse(response.data); // Set success message
-        alert("Submitted successfully");
+        alertfun("main_mark","Submitted successfully");
         setEmail("");
         setText("");
         settitle("");
@@ -263,27 +264,30 @@ export default function UserInput() {
           // If the error object contains a response with a status code
           const statusCode = error.response.status;
           setResponse({ error: `Error submitting: ${statusCode}` });
-          alert(`Error submitting: ${statusCode}`);
+          alertfun("main_mark",`Error submitting: ${statusCode}`);
         } else {
           // If the error object doesn't contain a response with a status code
           setResponse({ error: error.message });
-          alert("Error submitting  data");
+          alertfun("main_mark","Error submitting  data");
         }
         console.error("Error submitting:", error);
       } finally {
         setIsSubmitting(false); // Reset loading state
       }
     } else {
-      alert("fill the title and content filed ");
+   
+      alertfun("main_mark","fill the title and content filed")
     }
   };
 
   return (
     <>
+   
       <div id="preview" className="preview">
         {/* <p class="close-button"  onClick={()=>document.getElementById("preview").style.display = "none"}>close</p> */}
       </div>
-      <div className="markdown h-s">
+      
+      <div className="markdown h-s" id="main_mark">
         <div className="markdown-input">
           <input
             type="text "
@@ -387,6 +391,7 @@ export default function UserInput() {
           </div>
         </div>
       </div>
+      
     </>
   );
 }

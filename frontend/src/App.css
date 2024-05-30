@@ -1,0 +1,18 @@
+.alertcss{
+    position: absolute;
+    inset-inline-end: 45px;
+    color: var(--text-color);
+    background-color: #1a171d;
+    width: auto;
+    height: 3.5rem;
+    padding: 1rem;
+    text-transform: capitalize;
+    opacity: 0; /* Start hidden */
+    transform: translateY(-20px); /* Start above */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Apply transitions */
+}
+
+.alertcss.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide down */
+}

@@ -1,81 +1,98 @@
-.dynamic-container{
-    color: white;
-    overflow: hidden;
-    
+.dynamic-container {
+  color: white;
+  overflow: hidden;
+  scrollbar-width: none;
 }
-.dynamic-container ul li ol{
-    list-style: decimal;
 
+/* For WebKit-based browsers (Chrome, Safari, Opera) */
+.dynamic-container::-webkit-scrollbar {
+  display: none;
 }
-.dynamic-output{
-    margin-top: 12px;
+
+/* For Firefox */
+.dynamic-container {
+  scrollbar-width: none;
 }
+
+/* For Internet Explorer and Edge */
+.dynamic-container {
+  -ms-overflow-style: none;
+}
+
+.dynamic-container > div {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  -webkit-scrollbar: none; /* for Safari, Chrome */
+  scroll-behavior: smooth;
+  scrollbar-color: transparent;
+}
+
+.dynamic-container > div::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.dynamic-title {
+  font-size: clamp(1.5rem, 2.5vw, 100rem);
+  padding: 10px 0;
+  border-bottom: rgba(255, 255, 255, 0.668) solid 1px;
+}
+
+.dynamic-output {
+  margin-top: 12px;
+}
+
 .dynamic-output img {
   width: auto;
-object-fit: contain;
+  object-fit: contain;
   height: 300px;
 }
+
 .dynamic-output a {
- color:blue;
+  color: blue;
 }
-.dynamic-container > div  {
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-    overflow-y: scroll; 
-    scroll-behavior: smooth;
 
-  }
-  .dynamic-title{
-    font-size:clamp(1.5rem, 2.5vw, 100rem);
-    padding: 10px 0;
-    border-bottom: rgba(255, 255, 255, 0.668) solid 1px;
-  }
-  .dynamic-container > div::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-  }
-  
-h1 {
-    font-size: clamp(1.3rem,1.8vw,100rem) /* 2 times the base font size */
-  }
-  
-  h2 {
-    font-size:clamp(1.2rem,1.3vw,70rem) /* 1.5 times the base font size */
-  }
-  
-  h3 {
-    font-size: clamp(1.1rem,1vw,60rem)  /* 1.2 times the base font size */
-  }
+.dynamic-output ul li {
+  list-style: decimal;
+}
 
-  h1,h2,h3,h4,h5,h6,p{
-    margin-bottom: 10px;
-  }
-  p{
-    font-size: clamp(1rem ,0.8vw,50rem) 
+.dynamic-output ol li {
+  list-style: decimal;
+}
 
-  }
-  .code {
-    margin: 10px;
-    padding: 5px;
-    display: inline-block;
-    border-radius: 10px;
+.code {
+  margin: 10px;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 10px;
   background-color: #2f3232;
-  }
-.blockquote{
+}
+
+.blockquote {
   padding: 10px 14px 10px;
   background: #535457;
   border-left: 3px solid #06fff1;
   color: #ffffff;
   font-style: italic;
   letter-spacing: 0.1em;
-
-}
-.dynamic-output ul li{
-  list-style-type: disc;
-  margin-left: 1.5em; 
-}
-.dynamic-output  ol li{
-  list-style-type: decimal;
-  margin-left: 1.5em;  
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 10px;
+}
 
+h1 {
+  font-size: clamp(1.3rem, 1.8vw, 100rem);
+}
+
+h2 {
+  font-size: clamp(1.2rem, 1.3vw, 70rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 1vw, 60rem);
+}
+
+p {
+  font-size: clamp(1rem, 0.8vw, 50rem);
+}
