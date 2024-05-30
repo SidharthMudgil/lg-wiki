@@ -6,7 +6,7 @@ import "./header.css";
 
 export default function Header() {
   const [resolution, setResolution] = useState();
-  const [nav, setnav] = useState(true);
+  const [nav, setnav] = useState(false);
 
   // moblie function
   function Resizewin() {

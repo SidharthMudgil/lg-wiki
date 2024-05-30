@@ -65,7 +65,7 @@
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-color);
-  background-color: var(--footer-color);
+  background-color: transparent;
   padding-bottom: 3rem;
 }
 
