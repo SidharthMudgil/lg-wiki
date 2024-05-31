@@ -86,7 +86,7 @@
   flex-grow: 1;
   border-radius: 30px;
   padding: 1rem 3.4rem 1rem 4rem !important;
-  background-color: #1a171d;
+  background-color:#56617183;
   align-items: center;
   border-radius: 45;
   font-family: "";
@@ -107,8 +107,12 @@
 @media only screen and (max-width: 480px) {
   .main_search-icon {
     position: absolute;
-    inset-inline-start: -60px;
+    inset-inline-start: -70px;
     z-index:1;
+
+  }
+  .main_search {
+    text-align: center;
   }
 }
 /* .main_search-img-icon {

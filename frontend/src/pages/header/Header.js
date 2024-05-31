@@ -5,7 +5,7 @@ import logo from "../../assets/wiki-logo.png";
 import "./header.css";
 
 export default function Header() {
-  const [resolution, setResolution] = useState();
+  const [resolution, setResolution] = useState(false);
   const [nav, setnav] = useState(false);
 
   // moblie function

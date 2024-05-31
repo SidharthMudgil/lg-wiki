@@ -61,11 +61,11 @@
 
 
 .footer {
-  font-family: "Montserrat";
+  font-family: "Montserrat";        
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-color);
-  background-color: transparent;
+  background-color: initial;
   padding-bottom: 3rem;
 }
 
@@ -94,9 +94,6 @@ display: flex;
   position: relative; 
   
 }
-.nav-ul-m:hover .moblie-ul{
-  display: block; 
-} 
 
 .moblie-ul{
   display: none;
