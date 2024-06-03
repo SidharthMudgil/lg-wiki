@@ -32,7 +32,7 @@ export default function Header() {
             <img src={logo} alt="logo" className="h-10" />
           </a>
         </div>
-        <i class="fa fa-bars toggle " aria-hidden="true"></i>
+        <i className="fa fa-bars toggle " aria-hidden="true"></i>
         {resolution ? moblie(nav,setnav) : desktop()}
       </nav>
     </>
