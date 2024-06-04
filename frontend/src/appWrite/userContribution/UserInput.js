@@ -382,7 +382,7 @@ export default function UserInput() {
             const imagePath = URL.createObjectURL(e.target.files[0]); // Get the image path
             setImagePath(imagePath); // Update the state with image path
           }} 
-        /> */}
+        /> */}</div>
           <div>
             <button
               className="submit-button "
@@ -395,7 +395,7 @@ export default function UserInput() {
               preview
             </button>
           </div>
-        </div>
+     
       </div>
       
     </>

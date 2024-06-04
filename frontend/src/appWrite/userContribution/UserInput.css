@@ -1,7 +1,7 @@
 .markdown {
   display: flex;
   width: 100%;
-  height:100vh ;
+  height:92vh ;
   background-color: var(--backgroud);
   gap: 10px ;
   padding: 1rem;
@@ -21,7 +21,8 @@
   width: 100%;
   height: 100%;
   padding-top: 10px;
-  color:var(--text-color)
+  color:var(--text-color);
+  scrollbar-width: none;
 }
 textarea:focus, input:focus {
   outline: none;  
@@ -33,6 +34,9 @@ textarea:focus, input:focus {
   padding: 1rem;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 .markdown-output{
   display: flex;
@@ -110,36 +114,35 @@ background-color: #2f3232;
 /*  and this button also change postion to inset   */
 .submit-button{
   position: absolute;
-  bottom:60px;
-  right: 0;
-  background-color:var(--selected-color);
+  top: 90vh;
+  right: 11vh;
+  background-color: var(--selected-color);
   padding: 10px;
   font-weight: 500;
-  font-size: 18px ;
+  font-size: 18px;
   text-transform: capitalize;
   color: var(--text-color);
   border-radius: 08px;
-
-
+}
   
 
-}
+
 .preview-button{
   position: absolute;
-  bottom:60px;
-  left: 0;
-  background-color:var(--selected-color);
+  top: 90vh;
+  right: calc(100% - 57%);
+  background-color: var(--selected-color);
   padding: 10px;
   font-weight: 500;
-  font-size: 18px ;
+  font-size: 18px;
   text-transform: capitalize;
   color: var(--text-color);
   border-radius: 8px;
-
+}
 
   
 
-}
+
 .blockquote{
   padding: 10px 14px 10px;
   background: #535457;
@@ -173,7 +176,10 @@ background-color: #2f3232;
   background-color: var(--backgroud);
   margin: 2rem auto;
   width: 50%;
+  height: inherit;
   position: relative;
+  scrollbar-width: none;
+  overflow-y: scroll;
   animation: fadeIn 1s ease-in-out;
   padding: 5rem;
   color: var(--text-color);
