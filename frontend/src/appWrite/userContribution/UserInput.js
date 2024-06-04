@@ -229,7 +229,7 @@ export default function UserInput() {
 
   const onSubmit = async () => {
     const content = String(text);
-    if (content != null && title != null && email != null && userName != null) {
+    if (content != "" && title != "" && email != "" && userName != "") {
       try {
         setIsSubmitting(true);
         const file = document.getElementById("file");
