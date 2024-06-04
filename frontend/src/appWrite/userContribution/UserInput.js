@@ -89,7 +89,7 @@ export default function UserInput() {
             );
           }
         } catch (error) {
-          console.error("Error uploading or processing file:", error);
+          alertfun("main_mark","Error uploading or processing file:"+ error);
           // Handle error (e.g., show an error message to the user)
         }
       }
@@ -258,8 +258,13 @@ export default function UserInput() {
         setText("");
         settitle("");
         setIsSubmitting(false);
-        navigate("/input");
-        alertfun("main_mark","Submitted successfully");
+            alertfun("main_mark","Submitted successfully");
+        setTimeout(() => {
+          
+          navigate("/")
+        }, 3000);
+         
+      
       } catch (error) {
         if (error.response && error.response.status) {
           // If the error object contains a response with a status code

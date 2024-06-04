@@ -26,6 +26,7 @@ export default function Layout() {
         <Link to="/input">
         <button className="absolute button-AddInput " >add</button>
         </Link>
+  
         <button className="absolute button-nav-add button-AddInput   " onClick={handleClick}>NAV</button>
       </div>
      

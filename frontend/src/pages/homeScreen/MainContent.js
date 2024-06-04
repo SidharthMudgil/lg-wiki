@@ -6,6 +6,8 @@ import React, { useRef, useEffect, useState } from "react";
 import uploadService from "../../appWrite/services/uplaod";
 import { Query } from "appwrite";
 import { HashLink as Link } from "react-router-hash-link";
+import { alertfun } from "../../appWrite/fun";
+
 export default function MainContent() {
   const [data, setData] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
@@ -69,9 +71,9 @@ export default function MainContent() {
 
   return (
     <>
-      <div className="background  ">
+      <div className="background  " >
         <div>
-          <div className="home  ">
+          <div className="home  "  id="home">
             {/* main logo */}
             <div className=" ">
               <img src={lg} alt="liquild GALAXY" className="home-logo   " />

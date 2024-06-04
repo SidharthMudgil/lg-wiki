@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, } from "react-router-dom";
+
+
 import logo from "../../assets/wiki-logo.png";
 
 import "./header.css";
 
-export default function Header() {
+export default function Header() {  
+  
+
   const [resolution, setResolution] = useState(false);
   const [nav, setnav] = useState(false);
 
@@ -32,7 +36,7 @@ export default function Header() {
             <img src={logo} alt="logo" className="h-10" />
           </a>
         </div>
-        <i className="fa fa-bars toggle " aria-hidden="true"></i>
+        <i className="fa fa-bars toggle " aria-hidden="true" ></i>
         {resolution ? moblie(nav,setnav) : desktop()}
       </nav>
     </>
@@ -40,6 +44,7 @@ export default function Header() {
 }
 
 const desktop = () => {
+ 
   return (
     <div className="nav-ul">
       {/* navbar items to show */}
@@ -104,6 +109,8 @@ const moblie = (nav, setNav) => {
           })}
         >
           documentation
+
+ 
         </NavLink>
       </div>
     </div>

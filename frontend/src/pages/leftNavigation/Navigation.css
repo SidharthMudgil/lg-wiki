@@ -84,7 +84,8 @@
   padding: 0.313rem;
   justify-content: space-evenly;
 overflow: hidden;
-
+overflow-y: scroll;
+scrollbar-width: none;
   max-width:calc(100% - 80%);
   padding: 1.125rem 1.125rem;
   text-transform: capitalize;
