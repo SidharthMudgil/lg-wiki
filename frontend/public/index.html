@@ -50,10 +50,12 @@
           console.log("Window loaded");
           debouncedSendHeight();
       };
-    
+    const prevWidth = window.innerWidth;
       window.onresize = () => {
-          console.log("Window resized");
-          debouncedSendHeight();
+         console.log("Window resized");
+         const width = window.innerWidth;
+         if (width !== prevWidth)
+            debouncedSendHeight();
       };
     
       // Create a MutationObserver to detect changes in the DOM
