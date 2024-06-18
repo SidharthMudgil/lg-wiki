@@ -24,7 +24,7 @@ export default function UserInput() {
   const [text, setText] = useState();
   const [title, settitle] = useState();
   const [email, setEmail] = useState();
-  const [userName, setuserName] = useState("");
+  const [userName, setuserName] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
   // eslint-disable-next-line
   const [response, setResponse] = useState(null); // Stores server response or error message
@@ -229,14 +229,14 @@ export default function UserInput() {
 
   const onSubmit = async () => {
     const content = String(text);
-    if (content != "" && title != "" && email != "" && userName != "") {
+    if (content !== "" && title !== "" && email !== "" && userName !== "") {
       try {
         setIsSubmitting(true);
         const file = document.getElementById("file");
         const markdownContent = await fileurl(content, file, email);
-        // console.log(replacemarkdown);  debugging
+        // console.log(replacemarkdown);  //debugging
 
-        //  console.log(markdownContent);// debugging
+         console.log(markdownContent);// debugging
 
         await uploadService
           .createPost({

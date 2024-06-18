@@ -106,13 +106,13 @@
 
 @media only screen and (max-width: 480px) {
   .main_search-icon {
-    position: absolute;
+    /* position: absolute;
     inset-inline-start: -70px;
-    z-index:1;
-
+    z-index:1; */
+    display: none;
   }
   .main_search {
-    text-align: center;
+    /* text-align: center; */
   }
 }
 /* .main_search-img-icon {
