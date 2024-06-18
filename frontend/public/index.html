@@ -34,7 +34,7 @@
           console.log("Sending height:", document.body.scrollHeight);
           window.parent.postMessage(document.body.scrollHeight, '*');
       }
-    
+      
       // Debounce function to limit the frequency of sendHeight calls
       function debounce(func, wait) {
           let timeout;
@@ -43,14 +43,16 @@
               timeout = setTimeout(() => func.apply(this, args), wait);
           };
       }
-    
+      
       const debouncedSendHeight = debounce(sendHeight, 200);
-    
+      
       window.onload = () => {
           console.log("Window loaded");
           debouncedSendHeight();
       };
-    const prevWidth = window.innerWidth;
+      
+      let prevWidth = window.innerWidth;
+      
       window.onresize = () => {
          console.log("Window resized");
          const width = window.innerWidth;
@@ -59,7 +61,7 @@
             prevWidth = width;
          }
       };
-    
+      
       // Create a MutationObserver to detect changes in the DOM
       const observer = new MutationObserver((mutationsList) => {
           // Check if the mutations affect the height
@@ -73,7 +75,7 @@
               //console.log("Irrelevant DOM mutation observed:", mutationsList);
           }
       });
-    
+      
       // Start observing the body for changes in child elements, subtree, and attributes
       observer.observe(document.body, {
           childList: true,

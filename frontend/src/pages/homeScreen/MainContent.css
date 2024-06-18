@@ -111,9 +111,8 @@
     z-index:1; */
     display: none;
   }
-  .main_search {
-    /* text-align: center; */
-  }
+  .main_search-box {
+    width:calc(100% - 69%);}
 }
 /* .main_search-img-icon {
   box-shadow: -1px 0px 0px rgba(209, 202, 209, 1),
