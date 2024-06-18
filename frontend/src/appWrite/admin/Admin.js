@@ -173,10 +173,10 @@ const remove = async (id) => {
 <div  className="px-4 py-4 whitespace-nowrap"
                        
                       >
-                        <div className="flex  flex-row w-full justify-between border-t-2 border-b-2 border-white">
+                        <div className="flex  flex-row w-full  justify-end border-b-2 border-white">
 
-<div className="text-lg  py-10  flex "> Email :  {post.userID} </div>   
-  <div className="text-lg  py-10 flex "> Name : {post.userName} </div>
+{/* <div className="text-lg  py-10  flex "> Email :  {post.userID} </div>    */}
+  <div className="text-lg  py-10 flex  "> Name : {post.userName} </div>
   </div>
   <div className="flex  flex-row w-full justify-between p-10 hover:cursor-pointer">
 

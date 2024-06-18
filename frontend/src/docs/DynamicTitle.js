@@ -9,6 +9,7 @@ export default function DynamicTitle(props) {
     const title=props.conTitle;
     const id =props.conid
   const content =props.data;
+  const name =props.creditname;
   return (
     <div className="dynamic-container " id={id}>
         <div className="dynamic-title" >{title}</div>
@@ -46,6 +47,8 @@ export default function DynamicTitle(props) {
           },
         }}
       />
+      <h1 className="block float-right"> Credit : {name}</h1>
+      <br/>
     </div>
   );
 }
