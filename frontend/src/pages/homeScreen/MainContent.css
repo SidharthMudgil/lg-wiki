@@ -112,7 +112,11 @@
     display: none;
   }
   .main_search-box {
-    width:calc(100% - 69%);}
+    width: 100% !important;;}
+    .main_search-main {
+      width: 20rem!important ;
+  
+    }
 }
 /* .main_search-img-icon {
   box-shadow: -1px 0px 0px rgba(209, 202, 209, 1),
