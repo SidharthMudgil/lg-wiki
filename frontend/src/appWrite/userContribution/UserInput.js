@@ -247,7 +247,7 @@ export default function UserInput() {
             imageID: imageID,
           })
           .then();
-        const data = { email, title: title };
+        const data = { email:userName, title: title };
         const response = await axios.post(
           "https://lg-wiki-back.onrender.com/api/email",
           data
