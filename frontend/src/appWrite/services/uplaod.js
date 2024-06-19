@@ -66,7 +66,10 @@ export class Upload {
       return await this.database.listDocuments(
         config.databases,
         config.collectionId,
-        queries
+        queries,
+    [
+        Query.limit(5000),
+    ]
       );
     } catch (error) {
       console.log("appwrite service ::getPosts::error", error);
