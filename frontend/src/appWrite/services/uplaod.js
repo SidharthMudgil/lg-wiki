@@ -26,7 +26,7 @@ export class Upload {
         config.collectionId,
 
         ID.unique(),
-        { title, markdown, status ,userID,userName,imageID}
+        { title, markdown, status, userID, userName, imageID }
       );
     } catch (error) {
       console.log("appwrite service ::createPost::error", error);
@@ -39,8 +39,8 @@ export class Upload {
         config.databases,
         config.collectionId,
         id,
-        {         
-        status,
+        {
+          status,
         }
       );
     } catch (error) {
@@ -61,19 +61,23 @@ export class Upload {
     }
   }
 
-  async getPosts(queries ) {
+  async getPosts(queries) {
     try {
+      // Combine the queries with the limit and offset options
+      const combinedQueries = [
+        ...queries,
+        Query.limit(2500),
+        Query.offset(0)
+      ];
+  
       return await this.database.listDocuments(
         config.databases,
         config.collectionId,
-        queries,
-    [
-        Query.limit(5000),
-    ]
+        combinedQueries
       );
     } catch (error) {
       console.log("appwrite service ::getPosts::error", error);
-      console.log("not authorise user")
+      console.log("not authorise user");
       return [];
     }
   }
@@ -90,26 +94,24 @@ export class Upload {
   }
   async filepreview(fileId) {
     try {
-      return this.bucket.getFilePreview(config.bucketId,  fileId );
+      return this.bucket.getFilePreview(config.bucketId, fileId);
     } catch (error) {
       console.log("appwrite service ::uploadFile::error", error);
       return null;
     }
   }
   async deleteDocument(id) {
-   
-      try {
-        return await this.database.deleteDocument(
-          config.databases,
-          config.collectionId,
-          id
-       
-        );
-      } catch (error) {
-        console.log("appwrite service ::deleteDocument::error", error);
-      }
+    try {
+      return await this.database.deleteDocument(
+        config.databases,
+        config.collectionId,
+        id
+      );
+    } catch (error) {
+      console.log("appwrite service ::deleteDocument::error", error);
     }
-  
+  }
+
   async deleteFile(fileId) {
     try {
       await this.bucket.deleteFile(config.bucketId, fileId);
@@ -119,9 +121,6 @@ export class Upload {
       return false;
     }
   }
-
-
-
 }
 
 const uploadService = new Upload();
