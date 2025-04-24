@@ -94,7 +94,7 @@ export class Upload {
   }
   async filepreview(fileId) {
     try {
-      return this.bucket.getFilePreview(config.bucketId, fileId);
+      return this.bucket.getFileView(config.bucketId, fileId);
     } catch (error) {
       console.log("appwrite service ::uploadFile::error", error);
       return null;
