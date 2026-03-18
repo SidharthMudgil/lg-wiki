@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -10,8 +11,6 @@ import { alertfun } from "../../appWrite/fun";
 import hljs from "highlight.js";
 import "highlight.js/styles/vs2015.css";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-// import MarkdownPreview from "@uiw/react-markdown-preview";
 
 import uploadService from "../services/uplaod";
 import { useNavigate } from "react-router-dom";
@@ -26,16 +25,12 @@ export default function UserInput() {
   const [email, setEmail] = useState();
   const [userName, setuserName] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  // eslint-disable-next-line
-  const [response, setResponse] = useState(null); // Stores server response or error message
-  // eslint-disable-next-line
+  const [response, setResponse] = useState(null);
   const [preview, setpreview] = useState();
   const imageID = [];
 
-  // replacing img with appwrite image link
   const fileurl = async (content, file, email) => {
     const md = markdownit();
-
     const htmlContent = md.render(content);
     const imageRegex = /<img src="([^"]+)"[^>]*>/g;
     const imageUrls = [];
@@ -45,10 +40,8 @@ export default function UserInput() {
       imageUrls.push(match[1]);
     }
     if (imageUrls.length === 0) {
-      // console.log("not file");
       return await content;
     } else {
-      // console.log("file");
       const markdownContent = backToMarkdown(
         await processContent(htmlContent, imageUrls, file)
       );
@@ -56,12 +49,11 @@ export default function UserInput() {
     }
   };
 
-  // getting file for upload to appwrite
   const processContent = async (htmlContent, imageUrls, file) => {
     let processedContent = htmlContent;
-    const maxSize = 1 * 1024 * 1024; // 10 MB in bytes
+    const maxSize = 1 * 1024 * 1024;
 
-    let filecheck = null; // Initialize filecheck outside the loop
+    let filecheck = null;
 
     for (let i = 0; i < file.files.length; i++) {
       const files = file.files[i];
@@ -69,19 +61,17 @@ export default function UserInput() {
         alertfun("main_mark",
           `File "${files.name}" exceeds the maximum size limit of 1MB. Please re-select all files.`
         );
-        return null; // Exit the function
+        return null;
       } else {
-        filecheck = files; // Assign the file to filecheck if it's within the limit
+        filecheck = files;
       }
     }
     if (filecheck !== null && file.files.length > 0) {
-      for (let i = 0; i <imageUrls.length; i++) {
+      for (let i = 0; i < imageUrls.length; i++) {
         try {
           const uploadedFile = await uploadService.uploadFile(file.files[i]);
-
           if (uploadedFile !== null) {
             imageID.push(uploadedFile.$id);
-
             const result = await uploadService.filepreview(uploadedFile.$id);
             processedContent = processedContent.replace(
               new RegExp(`src=["']${imageUrls[i]}["']`),
@@ -89,30 +79,18 @@ export default function UserInput() {
             );
           }
         } catch (error) {
-          alertfun("main_mark","Error uploading or processing file:"+ error);
-          // Handle error (e.g., show an error message to the user)
+          alertfun("main_mark", "Error uploading or processing file:" + error);
         }
       }
     }
 
     return processedContent;
   };
-  // const processImage = (imageUrls, newImages, htmlContent) => {
-  //   for (let j = 0; j < newImages.length; j++) {
-  //     htmlContent = htmlContent.replace(
-  //       new RegExp(`src=["']${imageUrls[j]}["']`, "g"),
-  //       `src="${newImages[j]}"`
-  //     );
-  //   }
-  //   const markdownContent = backToMarkdown(htmlContent);
-  //   setpreview(markdownContent); // Assuming setpreview is defined somewhere
-  // };
 
   const loadImageAsync = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = (event) => {
-        // console.log("File loaded:", file.name); // Debug
         resolve(event.target.result);
       };
       reader.onerror = (error) => reject(error);
@@ -123,7 +101,7 @@ export default function UserInput() {
   const imagepreview = async () => {
     const fileInput = document.getElementById("file");
     const files = Array.from(fileInput.files);
-    const content = String(text); // Assuming text is defined somewhere
+    const content = String(text);
     const md = markdownit();
 
     const htmlContent = md.render(content);
@@ -136,7 +114,7 @@ export default function UserInput() {
     }
 
     let imageProcessed = htmlContent;
-    const maxSize = 1 * 1024 * 1024; // 1 MB in bytes
+    const maxSize = 1 * 1024 * 1024;
 
     const promisesArray = files.map(async (currentFile) => {
       if (currentFile.size > maxSize) {
@@ -165,7 +143,6 @@ export default function UserInput() {
     });
 
     var previewElement = document.getElementById("preview");
-
     var processedElement = document.createElement("div");
     processedElement.classList.add("pop-up");
 
@@ -181,15 +158,14 @@ export default function UserInput() {
     previewElement.innerHTML = "";
     var textPreview = document.createElement("div");
     textPreview.classList.add("text-preview");
-
     textPreview.innerHTML = "only for image preview";
 
     previewElement.appendChild(textPreview);
     previewElement.appendChild(processedElement);
     previewElement.appendChild(processedremove);
     previewElement.style.display = "block";
-    const pretags = document.querySelectorAll(".preview pre");
 
+    const pretags = document.querySelectorAll(".preview pre");
     pretags.forEach((preTag) => {
       const codeElement = preTag.querySelector("code");
       if (codeElement) {
@@ -201,17 +177,11 @@ export default function UserInput() {
     });
 
     hljs.highlightAll();
-
-    // setpreview(htmlContent); // Update the preview with processed content
-    // console.log(imageProcessed);
     return imageProcessed;
   };
 
-  //converting html fromat to markdown to store
   const backToMarkdown = (htmldata) => {
     const turndown = new TurndownService();
-
-    // Add the GFM plugin to support code language blocks
     turndown.addRule("codeBlock", {
       filter: ["pre"],
       replacement: function (content, node) {
@@ -234,76 +204,67 @@ export default function UserInput() {
         setIsSubmitting(true);
         const file = document.getElementById("file");
         const markdownContent = await fileurl(content, file, email);
-        // console.log(replacemarkdown);  //debugging
 
-         console.log(markdownContent);// debugging
+        await uploadService.createPost({
+          title,
+          markdown: markdownContent,
+          userID: email,
+          userName: userName,
+          imageID: imageID,
+        });
 
-        await uploadService
-          .createPost({
-            title,
-            markdown: markdownContent,
-            userID: email,
-            userName: userName,
-            imageID: imageID,
-          })
-          .then();
-        const data = { email:userName, title: title };
-        const response = await axios.post(
-          "https://lg-wiki-back.onrender.com/api/email",
-          data
-        );
-        setResponse(response.data); // Set success message
-       
+        try {
+          const data = { email: userName, title: title };
+          const emailResponse = await axios.post(
+            "https://lg-wiki-back.onrender.com/api/email",
+            data
+          );
+          setResponse(emailResponse.data);
+        } catch (emailError) {
+          console.warn("Email notification failed:", emailError.message);
+        }
+
         setEmail("");
         setText("");
         settitle("");
-        setIsSubmitting(false);
-            alertfun("main_mark","Submitted successfully");
+        alertfun("main_mark", "Submitted successfully");
         setTimeout(() => {
-          
-          navigate("/")
+          navigate("/");
         }, 3000);
-         
-      
+
       } catch (error) {
         if (error.response && error.response.status) {
-          // If the error object contains a response with a status code
           const statusCode = error.response.status;
           setResponse({ error: `Error submitting: ${statusCode}` });
-          alertfun("main_mark",`Error submitting: ${statusCode}`);
+          alertfun("main_mark", `Error submitting: ${statusCode}`);
         } else {
-          // If the error object doesn't contain a response with a status code
           setResponse({ error: error.message });
-          alertfun("main_mark","Error submitting  data");
+          alertfun("main_mark", "Error submitting data");
         }
         console.error("Error submitting:", error);
       } finally {
-        setIsSubmitting(false); // Reset loading state
+        setIsSubmitting(false);
       }
     } else {
-   
-      alertfun("main_mark","fill the title and content filed")
+      alertfun("main_mark", "fill the title and content field");
     }
   };
 
   return (
     <>
-   
-      <div id="preview" className="preview">
-        {/* <p class="close-button"  onClick={()=>document.getElementById("preview").style.display = "none"}>close</p> */}
-      </div>
-      
+      <div id="preview" className="preview"></div>
+
       <div className="markdown h-s" id="main_mark">
         <div className="markdown-input">
           <input
-            type="text "
+            type="text"
             className="title-input"
             placeholder=" Your  Title  "
             onChange={(e) => settitle(String(e.target.value))}
             required
           />
           <input
-            type="text "
+            type="text"
             className="title-input"
             placeholder=" Your  Name   "
             onChange={(e) => setuserName(String(e.target.value))}
@@ -322,7 +283,7 @@ export default function UserInput() {
           </label>
 
           <input
-            type="text "
+            type="text"
             className="title-input"
             placeholder=" Your  Email  "
             onChange={(e) => setEmail(String(e.target.value))}
@@ -330,15 +291,15 @@ export default function UserInput() {
           />
           <textarea
             width="1000px"
-            className="textinput-markdown "
-            placeholder="Write Your Text here in markdown format "
+            className="textinput-markdown"
+            placeholder="Write Your Text here in markdown format"
             onChange={(e) => {
               setText(String(e.target.value));
             }}
           />
         </div>
+
         <div className="markdown-container" id="output">
-          {/* <MarkdownPreview source={text} rehypePlugins={rehypePlugins}  className="markdown-output text-white" /> */}
           <Markdown
             children={text}
             remarkPlugins={[remarkGfm]}
@@ -376,28 +337,23 @@ export default function UserInput() {
               },
             }}
           />
-          {/* <input 
-          type="file" 
-          onChange={(e) => {
-            const imagePath = URL.createObjectURL(e.target.files[0]); // Get the image path
-            setImagePath(imagePath); // Update the state with image path
-          }} 
-        /> */}</div>
-          <div>
-            <button
-              className="submit-button "
-              onClick={onSubmit}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "submitting" : "Submit"}
-            </button>
-            <button className="preview-button " onClick={imagepreview}>
-              preview
-            </button>
-          </div>
-     
+        </div>
+
+        <div>
+          <button
+            className="submit-button"
+            onClick={onSubmit}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "submitting" : "Submit"}
+          </button>
+          <button className="preview-button" onClick={imagepreview}>
+            preview
+          </button>
+        </div>
       </div>
-      
     </>
   );
 }
+
+
