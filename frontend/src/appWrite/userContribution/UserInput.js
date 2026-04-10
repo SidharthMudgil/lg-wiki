@@ -232,6 +232,7 @@ export default function UserInput() {
     const isValidEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if (!email.match(isValidEmail)) {
       alertfun("main_mark","email has to be in format example@mail.com")
+      return;
     }
     if (content !== "" && title !== "" && email !== "" && userName !== "") {
       try {
